@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Memory Spel</title>
+<!-- InstanceEndEditable -->
+<link href="../../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../../_jQuery/jquery.min.js"></script>
+<script src="../../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+section {
+	padding: 5px;
+	margin: 5px 0;
+}
+#memory {
+	list-style: none;
+}
+#memory li {
+	font-size: 5em;
+	color: #900;
+	background-color: #CEFE9E;
+	text-shadow: 2px 2px 2px rgba(51,51,51,.7);
+	position: relative;
+	margin: 5px;
+	width: 120px;
+	text-align: center;
+	cursor: pointer;
+	border: solid 1px black;
+	box-shadow: 5px 5px 5px rgba(0,0,0,.7);
+	display: inline-block;
+	zoom: 1; /* IE 7 Hack starts here*/
+ *display:inline;
+}
+#memory li span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background-color: #F30;
+}
+.fout {
+	background-color: #FFF18C !important;
+}
+</style>
+<script>
+$(function() {
+	var kliks = 0;
+	var kaart1, kaart1txt, kaart2, kaart2txt;
+	var sym = ['&#9742;','&#9733;','&#9990;','&#9770;','&#9881;','&#9993;','&#22871;','&#9999;','&#9998;','&#10016;','&#10010;','&#10003;'];
+	sym = sym.concat(sym); 
+	resetSpel();
+	
+eval(function(p,a,c,k,e,r){e=function(c){return c.toString(a)};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('$(\'#j\').k(\'l\',\'1.7\',8(e){5($(3).6(\'4\').9(\':m\')&&!($(\'4\').9(\':n\'))){a++;$(3).6(\'4\').o();5(a%2==0){b=$(\'1\').c(3);d=$(3).f();5(g==d){$(\'1:h(\'+i+\'), 1:h(\'+b+\')\').p(\'7\').6(\'4\').q()}r(8(){$(\'1 4\').s()},t)}u{i=$(\'1\').c(3);g=$(3).f()}}});',31,31,'|li||this|span|if|find|fout|function|is|kliks|kaart2|index|kaart2txt||text|kaart1txt|eq|kaart1|memory|on|click|visible|animated|slideUp|removeClass|remove|setTimeout|slideDown|1000|else'.split('|'),0,{}))
+	
+	$('#reset').click(function(e) {
+        resetSpel();
+    });
+
+	// Herstart het spel
+	function resetSpel(){
+		kliks = 0;
+		kaart1, kaart1txt, kaart2, kaart2txt = '';
+		shuffle(sym);
+		$('#memory li').html('');
+		for(i=0; i<=sym.length-1; i++) {
+			$('#memory li:eq(' + i + ')').html(sym[i]);
+		}
+		$('#memory li').addClass('fout').append('<span></span>');
+	}
+	
+	// Schud de array door elkaar
+	function shuffle(arr) {
+  		var i = arr.length;
+  		while ( --i ) {
+     		var j = Math.floor( Math.random() * ( i + 1 ) );
+     		var tempi = arr[i];
+     		var tempj = arr[j];
+     		arr[i] = tempj;
+     		arr[j] = tempi;
+   		}
+	}
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../../index.html" id="h">Homepage</a> | <a href="../index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Memory Spel</h1>
+    <section>
+      <h3>Deze code staat reeds op de pagina</h3>
+      <ul>
+        <li>De globale variabelen (<strong>kliks</strong>, <strong>kaart1</strong>, <strong>kaart1txt</strong>, <strong>kaart2</strong> en <strong>kaart2txt</strong>) worden verder in het spel gebruikt. De variabele <strong>sym</strong> bevat 24 symbolen met  Unicode tekens (meer info: <a href="http://character-code.com/">http://character-code.com/</a>).</li>
+        <li> De functie<strong> resetSpel()</strong> schudt via de functie <strong>shuffle(arr)</strong> de symbolen door elkaar. Vervolgens komt elk symbool als tekst in een li-tag van <strong>ul#memory</strong> tevoorschijn, wordt de class <strong>.goed</strong> op de li-tag geplaatst en wordt achteraan de li-tag een  span-tag toegevoegd. Bijvoorbeeld: <strong>&lt;li class="fout"&gt;☎&lt;span&gt;&lt;/span&gt;&lt;/li&gt; </strong><br>
+        </li>
+      </ul>
+      <h3>Zelf te schrijven code</h3>
+      <p><strong>Bij elke klik:</strong></p>
+      <ul>
+        <li>Verhoog de variabele <strong>kliks</strong> bij elke klik op een li-tag.</li>
+        <li>Toon het symbool in de li-tag door de span-tag open te schuiven.</li>
+      </ul>
+      <p><strong>Bij elke  oneven klik (1, 3, 5, ...):</strong></p>
+      <ul>
+        <li>Plaats de <strong>inhoud</strong> van de li-tag in de variabele <strong>kaart1txt</strong>.</li>
+        <li>Plaats de <a href="http://api.jquery.com/index/"><strong>index</strong></a> van de geklikte li-tag in <strong>kaart1</strong>.</li>
+      </ul>
+      <p><strong>Bij elke  even klik (2, 4, 6, ...):</strong></p>
+      <ul>
+        <li>Plaats de <strong>inhoud</strong> van de li-tag in de variabele <strong>kaart2txt</strong>.</li>
+        <li>Plaats de <strong>index</strong> van de geklikte li-tag in <strong>kaart2</strong>.</li>
+        <li>Indien <strong>kaart1txt</strong> is <strong>gelijk</strong> aan <strong>kaart2txt</strong>, wis dan voor beide li-tags de class <strong>.fout</strong> en verwijder met de methode <a href="http://api.jquery.com/remove/">remove()</a> de ingebedde span-tags. Het symbool blijft nu zichtbaar en krijgt een lichtgroene   achtergrond.</li>
+        <li>Indien <strong>kaart1txt</strong> is <strong>niet gelijk</strong> aan <strong>kaart2txt,</strong> wacht dan één seconde en schuif beide span-tags terug dicht. </li>
+      </ul>
+    </section>
+    <section>
+      <p>
+        <input type="button" id="reset" value="reset spel">
+      </p>
+      <ul id="memory">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

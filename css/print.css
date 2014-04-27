@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#outline {
+	width: 98%;
+}
+code {
+	font-size: 100%;
+	color: #000;
+}
+#body {
+	font-size: 80%;
+}
+
+header , footer{
+	display: none;
+}

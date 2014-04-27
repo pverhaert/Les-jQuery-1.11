@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>jQuery Google Geocoding</title>
+<!-- InstanceEndEditable -->
+<link href="../../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../../_jQuery/jquery.min.js"></script>
+<script src="../../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#map div {
+	clear:both;
+}
+#map img {
+	/*float:right;*/
+	margin-right: 20px;
+	border: solid 1px black;
+	box-shadow: 3px 3px 3px rgba(51,51,51,.7);
+}
+#preloader {
+	text-align:center;
+}
+</style>
+
+<script>
+$(function() {
+	// Foutafhandeling
+	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
+		alert('Er is een fout opgetreden!\n' + thrownError);
+    });
+
+	$('#preloader, #map').hide();
+	$('#mapsForm').submit(function(e) {
+		e.preventDefault();
+		$('#preloader').show();
+		$('#aantal').text('');
+		$('#map').empty().hide();
+		var str = $(this).serialize();
+		var url = 'http://maps.googleapis.com/maps/api/geocode/json?sensor=true&';
+		var url = encodeURIComponent(url + str);
+       	$.getJSON('proxy.php?url=' + url, function(data){
+			if (data.status != 'OK') {
+				$('#aantal').text('Geen locaties gevonden');
+			} else {
+				var aantal = data.results.length;
+				$('#aantal').text(aantal + ' locaties gevonden');
+				$.each(data.results, function(index, value) { 
+					var adres =  this.formatted_address;
+					var lat = this.geometry.location.lat;
+					var lng = this.geometry.location.lng;
+					var map = 'https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=640x200&sensor=false&center=' + lat + ',' + lng;
+					$('#map').append('<p><b>' + adres + '</b><br>' + lat + ',' + lng + '</p>');
+					$('#map').append('<p><img src="' + map + '"></p>');
+				});
+				$('#map').show();
+			}
+			
+			$('#preloader').hide();
+		});
+    });
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../../index.html" id="h">Homepage</a> | <a href="../../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Google Geocoding</h1>
+    <ul>
+      <li>Voorbeeld JSON: <a href="http://maps.googleapis.com/maps/api/geocode/json?sensor=true&address=Vogelzang">Vogelzang</a> - <a href="http://maps.googleapis.com/maps/api/geocode/json?sensor=true&address=mijr">Mijr</a></li>
+    </ul>
+    <form name="mapsForm"  id="mapsForm" method="get" action="http://maps.google.be/">
+      <label for="address">Zoek plaats:</label>
+      <input name="address" type="text" id="address" value="Vogelzang" size="50" required>
+      <input type="submit" name="submit" id="submit" value="Submit">
+    </form>
+    <p>&nbsp;</p>
+    <section id="preloader"><img src="../../assets/preloader.gif" width="160" height="24" alt="Even geduld..."></section>
+    <h2 id="aantal"></h2>
+    <section id="map" class="drop-shadow">
+      <p>Ullamco laboris nisi quis nostrud exercitation ut aliquip ex ea commodo consequat. Sunt in culpa cupidatat non proident, eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, in reprehenderit in voluptate ut enim ad minim veniam. Ut aliquip ex ea commodo consequat.</p>
+      <p>Consectetur adipisicing elit, duis aute irure dolor ut labore et dolore magna aliqua. Qui officia deserunt in reprehenderit in voluptate quis nostrud exercitation. Excepteur sint occaecat. Ut aliquip ex ea commodo consequat.</p>
+      <p>Duis aute irure dolor excepteur sint occaecat in reprehenderit in voluptate. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Qui officia deserunt ut aliquip ex ea commodo consequat. Cupidatat non proident, velit esse cillum dolore ullamco laboris nisi.</p>
+    </section>
+    <div class="reset">&nbsp;</div>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

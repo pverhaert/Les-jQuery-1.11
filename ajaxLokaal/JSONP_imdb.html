@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>jQuery: IMDB</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#preloader {
+	text-align:center;
+}
+#cover {
+	float:right;
+}
+label {
+	width: 80px;
+}
+</style>
+<script>
+$(function() {
+	// Foutafhandeling
+	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
+		alert('Er is een fout opgetreden!\n' + thrownError);
+    });
+
+	$('#imdbInfo, #preloader').hide();
+	
+	$('#imdbForm').submit(function(e) {
+		e.preventDefault();
+		$('#imdbInfo').hide();
+		$('#preloader').show();
+		var pars = $(this).serialize();
+		//alert(pars);
+		$.getJSON('http://www.omdbapi.com/?callback=?&' + pars , function(data){
+			$('#titel').text(data.Title);
+			$('#genre').text(data.Genre);
+			$('#release').text(data.Released);
+			$('#acteurs').text(data.Actors);
+			$('#director').text(data.Director);
+			$('#runtime').text(data.Runtime);
+			$('#plotInfo').text(data.Plot);
+			$('#cover').attr('src', data.Poster);
+			$('#link').attr('href', 'http://imdb.com/title/' + data.imdbID);
+			data.Poster.length > 10 ? $('#cover').show() : $('#cover').hide();
+			$('#imdbInfo').show();
+			$('#preloader').hide();
+		});
+    });
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>IMDB <span>(http://www.imdb.com/)</span></h1>
+    <p><strong>API</strong>: <a href="http://www.omdbapi.com/">http://www.omdbapi.com/</a><br>
+      Voorbeeld Harry Potter: <a href="http://www.omdbapi.com/?t=pulp+fiction">http://www.omdbapi.com/?t=pulp+fiction</a><br>
+      <strong>Formatteer JSON</strong>: <a href="http://jsonlint.com/">http://jsonlint.com/</a></p>
+    <h2>Filter</h2>
+    <form name="imdbForm" id="imdbForm" method="get" action="http://www.omdbapi.com/">
+      <p>
+        <label for="t">Zoek titel:</label>
+        <input type="text" name="t" id="t" required value="pulp fiction">
+      </p>
+      <p>
+        <label for="y">Jaar:</label>
+        <input type="number" name="y" id="y">
+      </p>
+      <p>
+        <label for="plot">Plot:</label>
+        <select name="plot" id="plot">
+          <option value="short">korte samenvatting</option>
+          <option value="full">volledig</option>
+        </select>
+        <input type="submit" name="submit" id="submit" value="Submit">
+      </p>
+    </form>
+    <section id="preloader"><img src="../assets/preloader.gif" width="160" height="24" alt="Even geduld..."></section>
+    <section id="imdbInfo">
+      <h2 id="titel">Titel</h2>
+      <img id="cover" src="http://lorempixum.com/200/200" alt="IMDB cover" class="drop-shadow">
+      <p><strong>Genre</strong>: <span id="genre">...</span><br>
+        <strong>Release</strong>: <span id="release">...</span><br>
+        <strong>Actors</strong>: <span id="acteurs">...</span><br>
+        <strong>Director</strong>: <span id="director">...</span><br>
+        <strong>Runtime</strong>: <span id="runtime">...</span><br>
+      </p>
+      <h2>Plot</h2>
+      <p id="plotInfo">...</p>
+      <p><a href="#" id="link" target="_blank">Meer info</a></p>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

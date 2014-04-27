@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>jQuery: Json (meerdere objecten)</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+.drop-shadow {
+	margin: 20px;
+}
+.drop-shadow img {
+	float: right;
+	margin: 0 10px;
+	border: solid 1px lightGrey;
+	padding: 3px;
+	box-shadow: 3px 3px 3px rgba(51,51,51,1);
+}
+</style>
+
+<script>
+$(function() {
+	// Foutafhandeling
+	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
+		alert('Er is een fout opgetreden!\n' + thrownError);
+    });
+
+	$.getJSON('data/bloemen3.json', function(data) {
+		//alert('data:\n' + data + '\n\ndata.bloemzaden:\n' + data.bloemzaden + '\n\ndata.bloem:\n' + data.bloem  + '\n\ndata.bloem[0].titel:\n' + data.bloem[0].titel);
+		// bloemzaden
+ 		$.each(data.bloemzaden, function(index, value) {
+			$("#bloemzadenlijst").append('<li><strong>' + this.titel + '</strong><br>' + this.omschrijving + '</li>\n\t');
+  		});
+		// bloemen
+ 		$.each(data.bloem, function(index, value) {
+			$('.sjabloon').clone()
+				.find('h2').text(this.titel).end()
+				.find('div:first').html(this.omschrijving).end()
+				.find('a').attr('href', this.url).end()
+				.find('img').attr('src', '../assets/fotos/' + this.foto).end()
+				.removeClass('sjabloon').insertBefore('.sjabloon');
+  		});
+		$('.sjabloon').remove();
+		
+	});
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>$.getJSON <span>(meerdere objecten)</span></h1>
+    <h2>Bloemzaden</h2>
+    <section>
+      <ul id="bloemzadenlijst">
+      </ul>
+    </section>
+    <h2>Bloemen</h2>
+    <section class="sjabloon drop-shadow">
+        <h2>titel</h2>
+        <img src="../assets/fotos/thumb_roos.jpg">
+        <div>Omschrijving</div>
+        <p><a href="#">Meer info</a></p>
+        <div class="reset"></div>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

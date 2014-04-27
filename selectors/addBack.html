@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>addBack() methode</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#theItem {
+	color: red;
+	background-color: lightGrey;
+}
+#start, #end, .grey {
+	color: blue;
+	background-color: lightGrey;
+}
+</style>
+<script>
+$(function() {	
+	$('#prevAll').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').prevAll().addClass('highLight');
+	});
+	$('#addBack1').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').prevAll().addBack().addClass('highLight');
+	});
+	$('#prevUntil').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').prevUntil('#start').addClass('highLight');
+	});
+	$('#addBack2').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').prevUntil('#start').addBack().addClass('highLight');
+	});
+	$('#addBack3').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').prevUntil('#start').addBack().addClass('highLight');
+		$('#start').addClass('highLight');
+	});
+
+	$('#nextAll').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').nextAll().addClass('highLight');
+	});
+	$('#addBack4').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').nextAll().addBack().addClass('highLight');
+	});
+	$('#nextUntil').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').nextUntil('#end').addClass('highLight');
+	});
+	$('#addBack5').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').nextUntil('#end').addBack().addClass('highLight');
+	});
+	$('#addBack6').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').nextUntil('#end').addBack().addClass('highLight');
+		$('#end').addClass('highLight');
+	});
+	$('#siblings').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').siblings('.grey').addClass('highLight');
+		$('#end').addClass('highLight');
+	});
+	$('#addBack7').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').siblings('.grey').addBack().addClass('highLight');
+	});
+	$('#closest').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').closest('ul').addClass('highLight');
+	});
+	$('#addBack8').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').closest('ul').addBack().addClass('highLight');
+	});
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>addBack() methode</h1>
+    <section>
+      <p>
+        <input type="button" name="prevAll" id="prevAll" value="prevAll()">
+        <input type="button" name="addBack1" id="addBack1" value="prevAll().addBack()">
+        <input type="button" name="prevUntil" id="prevUntil" value="prevUntil('#start')">
+        <input type="button" name="addBack2" id="addBack2" value="prevUntil('#start').addBack()">
+        <input type="button" name="addBack3" id="addBack3" value="prevUntil('#start').addBack() en  $('#start')">
+      </p>
+      <p>
+        <input type="button" name="nextAll" id="nextAll" value="nextAll()">
+        <input type="button" name="addBack4" id="addBack4" value="nextAll().addBack()">
+        <input type="button" name="nextUntil" id="nextUntil" value="nextUntil('#end')">
+        <input type="button" name="addBack5" id="addBack5" value="nextUntil('#end').addBack()">
+        <input type="button" name="addBack6" id="addBack6" value="nextUntil('#end').addBack() en  $('#end')">
+      </p>
+      <p>
+        <input type="button" name="siblings" id="siblings" value="siblings('.grey')">
+        <input type="button" name="addBack7" id="addBack7" value="siblings('.grey').addBack()">
+        <input type="button" name="closest" id="closest" value="closest('ul')">
+        <input type="button" name="addBack8" id="addBack8" value="closest('ul').addBack()">
+      </p>
+    </section>
+    <section>
+      <h2>Lijst 1</h2>
+      <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        <li>Sed tincidunt vestibulum felis, eget iaculis tellus gravida at.</li>
+        <li>Mauris sit amet lectus nulla, vel rhoncus est.</li>
+        <li>Curabitur pulvinar eros ut enim aliquam sed imperdiet sapien ullamcorper.
+          <ul>
+            <li>Fusce imperdiet tempor ligula, sed eleifend lorem mattis sit amet.</li>
+            <li id="start" class="grey"> --- li met id=&quot;start&quot; ---</li>
+            <li>Fusce nec risus vitae massa eleifend rutrum.</li>
+            <li>Vestibulum ac odio nibh, aliquam consequat lectus.</li>
+            <li>Nunc et turpis orci, sit amet imperdiet risus.</li>
+            <li id="theItem" class="grey">--- li met id=&quot;theItem&quot; ---</li>
+            <li>Sed vehicula metus et tellus sagittis semper.</li>
+            <li>Praesent quis nunc ante, vitae iaculis risus.
+              <ul>
+                <li>Pellentesque interdum magna nec mauris congue volutpat.</li>
+                <li>Vivamus varius nulla vel lorem tempus nec lacinia nulla dapibus.</li>
+              </ul>
+            </li>
+            <li>Namscelerisque magna dolor, nec mollis magna.</li>
+            <li>Morbi placerat leo ac turpis egestas ut lobortis nisl congue. </li>
+            <li id="end" class="grey">--- li met id=&quot;end&quot; ---</li>
+            <li>Aliquam ut tellus pretium tellus iaculis sagittis vel vehicula lacus.</li>
+            <li>Sed tincidunt vestibulum felis, eget iaculis tellus gravida at.</li>
+            <li>Mauris sit amet lectus nulla, vel rhoncus est.</li>
+          </ul>
+        </li>
+        <li>Phasellus ut ante eget eros tempor laoreet.</li>
+        <li>Maecenas porttitor sem non nulla pulvinar a mattis urna pharetra. </li>
+        <li>Phasellus at erat dolor, eu dignissim ante.</li>
+      </ul>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

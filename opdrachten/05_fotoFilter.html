@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Fotofilter met checkboxen</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+label:first-child {
+	width: 80px;
+}
+#album {
+	padding: 0;
+}
+#album li {
+	float: left;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+#album img {
+	border: solid 1px black;
+	box-shadow: 3px 3px 3px rgba(51,51,51,1);
+	margin: 0 20px 20px 0;
+}
+</style>
+<script>
+$(function() {
+	// Vink bij het openen van de pagina alle checkboxen aan
+	$('#filter input').attr('checked', 'checked');
+	
+	// Toon/verberg foto's
+	$('#filter input').click(function(e) {
+		//
+    });
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Fotofilter met checkboxen</h1>
+    <ul>
+      <li>Op de pagina verschijnen zestien foto's, verdeeld over vier categorieën  (abstract, sport, voeding en natuur).<br>
+        De categorie staat als class aan de foto gekoppeld. Bijvoorbeeld:<br>
+      &lt;img alt=&quot;&quot; src=&quot;http://lorempixel.com/200/200/abstract/1/abstract/&quot;<strong> class=&quot;abstract&quot;</strong>&gt;      </li>
+      <li>De vier checkboxen bepalen of een foto met een bepaalde class zichtbaar of onzichtbaar staat.<br>
+        &lt;label&gt;&lt;input <strong>name=&quot;abstract&quot;</strong> type=&quot;checkbox&quot;<strong> id=&quot;abstract&quot; value=&quot;abstract&quot;</strong>&gt;           Abstract&lt;/label&gt;</li>
+      <li>Merk op dat <strong>het id, de name en de value van een checkbox</strong> overeenstemt met een <strong>class op een foto</strong>.</li>
+      <li>Is de checkbox met id <strong>#abstract  aangevinkt</strong>, dan zijn alle foto's met de class<strong> .abstract zichtbaar</strong>.<br>
+      Is de checkbox met id<strong> #abstract afgevinkt</strong>, dan zijn alle foto's met de class<strong> .abstract onzichtbaar</strong>.      </li>
+      <li>Maak de foto's zichbaar/onzichtbaar met de jQuery methodes <a href="http://api.jquery.com/fadeIn/">fadeIn()</a> en <a href="http://api.jquery.com/fadeOut/">fadeOut()</a>.</li>
+    </ul>
+    <h2>Filter foto's</h2>
+    <section id="filter">
+      <p>
+        <label>Onderwerp:</label>
+        <label>
+          <input name="abstract" type="checkbox" id="abstract" value="abstract">
+          Abstract</label>
+        <label>
+          <input name="sport" type="checkbox" id="sport" value="sport">
+          Sport</label>
+        <label>
+          <input name="voeding" type="checkbox" id="voeding" value="voeding">
+          Voeding</label>
+        <label>
+          <input name="natuur" type="checkbox" id="natuur" value="natuur" checked>
+          Natuur</label>
+      </p>
+    </section>
+    <ul id="album">
+      <li><img alt="" src="http://lorempixel.com/200/200/abstract/1/abstract/" class="abstract"></li>
+      <li><img alt="" src="http://lorempixel.com/200/200/abstract/2/abstract/" class="abstract"></li>
+      <li><img alt="" src="http://lorempixel.com/200/200/sports/1/sport/" class="sport"></li>
+      <li><img alt="" src="http://lorempixel.com/200/200/abstract/3/abstract/" class="abstract"></li>
+      <li><img alt="" src="http://lorempixel.com/200/200/sports/2/sport/" class="sport"></li>
+      <li><img alt="" src="http://lorempixel.com/200/200/food/1/voeding/" class="voeding"></li>
+      <li><img alt="" src="http://lorempixel.com/200/200/sports/3/sport/" class="sport"></li>
+      <li><img alt="" src="http://lorempixel.com/200/200/food/2/voeding" class="voeding"></li>
+      <li><img alt="" src="http://lorempixel.com/200/200/abstract/4/abstract/" class="abstract"></li>
+      <li><img alt="" src="http://lorempixel.com/200/200/nature/1/natuur/" class="natuur"></li>
+      <li><img alt="" src="http://lorempixel.com/200/200/nature/2/natuur/" class="natuur"></li>
+      <li><img alt="" src="http://lorempixel.com/200/200/food/3/voeding" class="voeding"></li>
+      <li><img alt="" src="http://lorempixel.com/200/200/sports/4/sport/" class="sport"></li>
+      <li><img alt="" src="http://lorempixel.com/200/200/abstract/5/abstract/" class="abstract"></li>
+      <li><img alt="" src="http://lorempixel.com/200/200/sports/5/sport/" class="sport"></li>
+      <li><img alt="" src="http://lorempixel.com/200/200/nature/3/natuur/" class="natuur"></li>
+    </ul>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

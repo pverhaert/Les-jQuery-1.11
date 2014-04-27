@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Flickr</title>
+<!-- InstanceEndEditable -->
+<link href="../../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../../_jQuery/jquery.min.js"></script>
+<script src="../../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+label {
+	width: 100px;
+}
+section {
+	padding: 5px;
+	margin: 5px 0;
+}
+#album {
+	list-style: none;
+}
+#album li {
+	float: left;
+	margin: 5px;
+	width: 260px;
+	height: 270px;
+	text-align: center;
+}
+#album img {
+	border: solid 1px black;
+	box-shadow: 3px 3px 3px rgba(51,51,51,1);
+}
+</style>
+<script>
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('$(3(){$(\'#i\').j(3(e){e.k();$(\'#2 4\').c();$(\'#2\').d(\'<4 l="n">o p ...</4>\');q b=$(6).r();$.s(\'t://u.v.w/x/y/z.A?B=C&D=?&\'+b,3(a){$(\'#2 4\').c();a.8.E==0?F(\'G 8 H\'):\'\';$.I(a.8,3(){$(\'#2\').d(\'<4><7 J="\'+6.K.m+\'" f="\'+6.f+\'"></4>\')});$(\'#2 7\').L(\'9\',.5)});$(\'#2\').g(\'M\',\'7\',3(){$(6).h({9:1})});$(\'#2\').g(\'N\',\'7\',3(){$(6).h({9:.5})})})});',50,50,'||album|function|li||this|img|items|opacity|||remove|append||title|on|animate|flickrForm|submit|preventDefault|class||error|Even|geduld|var|serialize|getJSON|http|api|flickr|com|services|feeds|photos_public|gne|format|json|jsoncallback|length|alert|Geen|gevonden|each|src|media|css|mouseenter|mouseleave'.split('|'),0,{}));
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../../index.html" id="h">Homepage</a> | <a href="../index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Flickr <span>(JSONP)</span></h1>
+    <section>
+      <ul>
+        <li>Haal, aan de hand van een zoektag, foto's uit het Flickr-archief op.</li>
+        <li>Plaats elke foto binnen een li-tag in ul#album. De lay-out is reeds in css aanwezig.<br>
+        De code: &lt;ul id=&quot;album&quot;&gt;         &lt;li&gt;<strong>&lt;img ...&gt;</strong>&lt;/li&gt;         &lt;li&gt;<strong>&lt;img ...&gt;</strong>&lt;/li&gt;         &lt;li&gt;<strong>&lt;img ...&gt;</strong>&lt;/li&gt;...       &lt;/ul&gt;</li>
+        <li>Maak alle foto's 50% transparant. Zodra u met de muis over de foto komt, wordt deze volledig zichtbaar.</li>
+        <li>Flickr API: <br>
+          <a href="http://www.flickr.com/services/feeds/">http://www.flickr.com/services/feeds/</a><br>
+          <a href="http://www.flickr.com/services/feeds/docs/photos_public/">http://www.flickr.com/services/feeds/docs/photos_public/</a> </li>
+        <li>Voorbeeld: <a href="http://api.flickr.com/services/feeds/photos_public.gne?format=json&jsoncallback=?&tags=cat">http://api.flickr.com/services/feeds/photos_public.gne?format=json&<strong>jsoncallback=?</strong>&tags=cat</a></li>
+        <li><strong>LET OP</strong>: gebruik in $.getJSON() niet <strong>callback=?</strong> maar wel <strong>jsoncallback=?</strong>;</li>
+      </ul>
+    </section>
+    <form name="flickrForm" id="flickrForm" method="post" action="http://www.flickr.com/">
+      <label for="tags">tags:</label>
+      <input type="text" name="tags" id="tags" value="rubens, painting">
+      <input type="submit" name="submit" id="submit" value="Submit">
+    </form>
+    <section>
+      <ul id="album">
+        <li></li>
+      </ul>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Event properties</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#props {
+	background-color:#FF9;
+	border: solid 1px red;
+	padding: 10px;
+}
+</style>
+<script>
+$(function() {
+	$('h1, h2, p, li').click(function(e) {
+		var props = '';
+		props +=  'e.currentTarget: ' + e.currentTarget + '<br>';
+		props +=  'e.pageX: ' + e.pageX + '<br>';
+		props +=  'e.pageY: ' + e.pageY + '<br>';
+		props +=  'e.timeStamp: ' + e.timeStamp + '<br>';
+		props +=  'e.type: ' + e.type + '<br>';
+		$('#props').html(props);
+    });
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Event properties (h1)</h1>
+    <p>Paragraaf 1 (p)</p>
+    <h2>List1 (h2)</h2>
+    <ul>
+      <li> Ullamco laboris nisi quis nostrud exercitation</li>
+      <li>Ex ea commodo consequat</li>
+      <li>Sunt in culpa  cupidatat non proident, eu fugiat nulla pariatur</li>
+    </ul>
+    <section id="props"></section>
+    <section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

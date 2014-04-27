@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>jQuery: Bloemen masterpage</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+.foto {
+	float: right;
+	margin: 0 10px;
+	border: solid 1px lightGrey;
+	padding: 3px;
+	box-shadow: 3px 3px 3px rgba(51,51,51,1);
+}
+</style>
+<script>
+$(function() {
+	// Foutafhandeling
+	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
+		alert('Er is een fout opgetreden!\n' + thrownError);
+    });
+
+	$('#form').submit(function(e) {
+        e.preventDefault();
+		var str = $('#id').serialize();
+		$.get('bloemenDetail.php', str, function(data){
+			$('#detail').html($(data).find('#bloemInfo'));
+			$('#bloemInfo p:first').remove();
+		}, 'html');
+
+    });
+	
+	$('#id').change( function(){
+		$('#form').submit();
+	});
+	$('#form').submit();
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Bloemen <span>(masterpage)</span></h1>
+    <section id="master">
+      <form name="form" id="form" method="get" action="bloemenDetail.php">
+        <label for="id">Kies een bloem:</label>
+        <select name="id" id="id">
+          <option value="1" selected>Anjer</option>
+          <option value="2">Lelie</option>
+          <option value="3">Narcis</option>
+          <option value="4">Roos</option>
+          <option value="5">Tulp</option>
+          <option value="100">Dummy</option>
+        </select>
+        <input type="submit" name="submit" id="submit" value="Submit">
+      </form>
+    </section>
+    <p>&nbsp;</p>
+    <section id="detail"></section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

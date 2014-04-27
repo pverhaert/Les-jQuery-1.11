@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Links met QR-code</title>
+<!-- InstanceEndEditable -->
+<link href="../../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../../_jQuery/jquery.min.js"></script>
+<script src="../../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+section {
+	padding: 5px;
+	margin: 5px 0;
+}
+</style>
+<script>
+eval(function(p,a,c,k,e,r){e=function(c){return c.toString(a)};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('$(0(){$(\'#3 a\').4(0(1){1.5();6 a=$(7).2(\'8-9\')+\'.b\';$(\'#c\').2(\'d\',a)})});',14,14,'function|e|attr|links|click|preventDefault|var|this|data|url||qr|QRcode|src'.split('|'),0,{}))
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../../index.html" id="h">Homepage</a> | <a href="../index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Links met QR-code</h1>
+    <section>
+      <ul>
+        <li>Bereken voor elke link een korte URL via <a href="http://goo.gl/">Google url shortener</a></li>
+        <li>Voeg de verkorte URL aan de a-tag toe via het<strong> data-url</strong> attrubuut.</li>
+        <li>Lees met jQuery de short URL uit en genereer de bijbehorende QR-code. Bijvoorbeeld:<br>
+          <strong>ShortURL</strong> Thomas More website: <a href="http://goo.gl/sgDj5J">http://goo.gl/sgDj5J</a><br>
+          <strong>QR-code</strong> Thomas More website: <a href="http://goo.gl/sgDj5J.qr">http://goo.gl/sgDj5J<strong>.qr</strong></a> (.qr toevoegen aan de URL)</li>
+        <li>De link die de QR-code genereert is een afbeelding. Gebruik deze link als source voor de afbeelding<strong> #QRcode</strong>.</li>
+        <li>Verplaats de link op de a-tag rond de afbeelding<strong> #QRcode</strong>.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Links</h2>
+      <a target="_blank" href="javascript:;"><img src="../../assets/pixel.png" id="QRcode" alt="QR-code" style="float:right; padding-right:400px;"></a>
+      <ul id="links">
+        <li><a data-url="http://goo.gl/sgDj5J" href="http://www.thomasmore.be/">http://www.thomasmore.be/</a></li>
+        <li><a data-url="http://goo.gl/WHvp" href="http://jquery.com/">http://jquery.com/</a></li>
+        <li><a data-url="http://goo.gl/GBPV" href="http://jquerymobile.com/">http://jquerymobile.com/</a></li>
+      </ul>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

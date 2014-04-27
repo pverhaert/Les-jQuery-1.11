@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Wunderground weather</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#weer div {
+	text-align:center;
+	margin-bottom: 20px;
+}
+</style>
+<script>
+$(function() {
+	// Foutafhandeling
+	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
+		alert('Er is een fout opgetreden!\n' + thrownError);
+    });
+
+	// Bepaal geolocatie met de HTML5 Geolocation API
+	var lat = 0;
+	var lng = 0;
+	function geolocation(){
+		if (navigator.geolocation){
+    		navigator.geolocation.getCurrentPosition( function(position) {
+				lat = position.coords.latitude;
+				lng = position.coords.longitude;
+				$('#latLng').text('Lat: ' + lat + ' -  Lng: ' + lng);
+				verwerkData();
+			});
+    	} else{
+			$('#latLng').text('Geolocation wordt door deze browser niet ondersteund.');
+  		}
+	}
+	geolocation();
+	
+	// Verwerk gegevens
+	function verwerkData() {
+		$.getJSON('http://api.wunderground.com/api/adaebe40743a9ca6/forecast/geolookup/lang:NL/q/' + lat +',' + lng +'.json?callback=?' , function(data){
+			//
+		});
+	};
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Wunderground weather <span>(http://www.wunderground.com/weather/api/d/docs?d=data/index)</span></h1>
+    <ul>
+      <li>Bepaal uw coördinaten aan de hand van <a href="http://www.w3schools.com/html5/html5_geolocation.asp">HTML5 geolocation API</a>. (Dode staat reeds op de pagina.)<br>
+      Toon de coördinaten in de span-tag <strong>#latLng</strong>.</li>
+      <li>Haal de gegevens in JSONP op via de URL:<br>
+        <a href="http://api.wunderground.com/api/adaebe40743a9ca6/forecast/geolookup/lang:NL/q/xxx,yyy.json">http://api.wunderground.com/api/adaebe40743a9ca6<strong>/forecast/geolookup</strong>/lang:NL/q/xxx,yyy.json</a><br>
+      Met <strong>xxx</strong> de waarde van <strong>lat</strong> en <strong>yyy</strong> de waarde van <strong>lng</strong>.<br>
+      Onderstaande link toont het weerbericht  voor Bobbejaanland (lat = 51.20164, lng = 4.9025).<br>
+      <a href="http://api.wunderground.com/api/adaebe40743a9ca6/forecast/geolookup/lang:NL/q/51.20164,4.9025.json">http://api.wunderground.com/api/adaebe40743a9ca6/forecast/geolookup/lang:NL/q/51.20164,4.9025.json</a>      </li>
+      <li>Bekijk het resultaat van de JSON-requert en toon volgende gegevens:<br>
+        Toon gemeente en land in de <strong>h2-tag #locatie</strong>.</li>
+      <li>Plaats het weer elke dag (dag, icoon en omschrijving) in een<strong> div-tag</strong> met class <strong>.drop-shadow</strong>.</li>
+      <li>Maak alle div-tags even hoog zodat ze mooie formatie vormen.</li>
+      <li><strong>LET OP</strong>: eindig de URL in $.getJSON() met <strong>callback=?</strong><br>
+      </li>
+    </ul>
+    <h1>Weersverwachting <span id="latLng">???</span></h1>
+    <h2 id="locatie">Locatie</h2>
+    <section id="weer" class="columns_2"> </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

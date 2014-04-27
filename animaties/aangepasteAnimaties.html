@@ -1,0 +1,174 @@
+﻿<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Aangepaste animaties</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+article div {
+	background-color:#FF9;
+	border: solid 1px red;
+	position: relative;
+}
+</style>
+<script>
+$(function() {
+	var snelheid = 2000;
+	// animatie op div1
+	$('#anim1').click(function(){
+		$('#div1').animate({
+			width: '50%',
+    		left: 200,  // vervang waarde door '+=200'
+    		opacity: 0.25,
+			borderWidth: '20px'
+  		}, snelheid, function() {
+   			// $(this).delay(3000).queue(function(){
+			//	 $('#reset1').click();
+			// });
+  		});
+	});
+
+	// animatie op div2
+	$('#anim2').click(function(){
+		$('#div2').animate({
+			width: '50%'
+		}, snelheid).animate({
+			left: 200
+		}, snelheid).animate({
+			opacity: .25
+		}, snelheid).slideUp(snelheid);
+	});
+
+	// animatie op div3
+	$('#anim3').click(function(){
+		$('#div3').animate({
+			width: '50%',
+    		left: 200,
+    		opacity: 0.25
+  		}, snelheid).slideUp(snelheid);
+	});
+	
+	// animatie op div4
+	$('#anim4').click(function(){
+		$('#div4').animate({
+			width: '50%',
+    		left: 200,
+    		opacity: 0.25
+		}, snelheid).delay(3000).slideUp(snelheid);
+	});
+	
+	// animatie op div5
+	$('#anim5').click(function(){
+		$('#div5').animate({
+			width: '50%'
+		}, snelheid).animate({
+			left: 200
+		}, snelheid).animate({
+			opacity: .25
+		}, snelheid);
+	});
+	$('#finish5').click(function(){
+		$('#div5').finish();
+	});
+
+ 	//Reset animatie
+	$('.resetAnim').click(function(){
+		var deDiv = $(this).attr('data-id');	// of $(this).data('id');
+		$('#' + deDiv).stop(true,true).attr('style', '');
+  	});
+
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Aangepaste animaties</h1>
+    <section>
+      <h2>Div1: simultane  animates (width, left, opacity en borderWidth)</h2>
+      <p>
+        <input type="button" name="anim1" id="anim1" value="animate div1">
+        <input type="button" name="reset1" id="reset1" class="resetAnim" data-id="div1" value="reset div1">
+      </p>
+      <div id="div1">
+        <h3>&lt;div id=&quot;div1&quot;&gt;</h3>
+        <p><strong>Let op: de DIV-tag heeft als CSS-eigenschap &quot;position: relative&quot;</strong> </p>
+        <p>Ut aliquip ex ea commodo consequat. Ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, lorem ipsum dolor sit amet.</p>
+        <p>Consectetur adipisicing elit, ut aliquip ex ea commodo consequat. Qui officia deserunt ut labore et dolore magna aliqua. Duis aute irure dolor excepteur sint occaecat ullamco laboris nisi.</p>
+        <p>Ut aliquip ex ea commodo consequat. Sed do eiusmod tempor incididunt velit esse cillum dolore ut enim ad minim veniam. Ut labore et dolore magna aliqua.</p>
+      </div>
+    </section>
+    <section>
+      <h2>Div2: sequentiële  animaties  (width, left, opacity en slideUp)</h2>
+      <p>
+        <input type="button" name="anim2" id="anim2" value="animate div2">
+        <input type="button" name="reset2" id="reset2" class="resetAnim" data-id="div2" value="reset div2">
+      </p>
+      <div id="div2">
+        <h3>&lt;div id=&quot;div2&quot;&gt;</h3>
+        <p>Ut aliquip ex ea commodo consequat. Consectetur adipisicing elit, ut labore et dolore magna aliqua. Excepteur sint occaecat duis aute irure dolor sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, ut enim ad minim veniam, eu fugiat nulla pariatur.</p>
+        <p>Velit esse cillum dolore consectetur adipisicing elit, in reprehenderit in voluptate. Ut aliquip ex ea commodo consequat. Sed do eiusmod tempor incididunt sunt in culpa mollit anim id est laborum.</p>
+        <p>Cupidatat non proident. Ut enim ad minim veniam, eu fugiat nulla pariatur. Velit esse cillum dolore lorem ipsum dolor sit amet, ullamco laboris nisi. Qui officia deserunt quis nostrud exercitation eu fugiat nulla pariatur. Velit esse cillum dolore lorem ipsum dolor sit amet, ullamco laboris nisi.</p>
+      </div>
+    </section>
+    <section>
+      <h2>Div3: simultane (width, left en opacity )+ sequentiële animaties   (slideUp)</h2>
+      <p>
+        <input type="button" name="anim3" id="anim3" value="animate div3">
+        <input type="button" name="reset3" id="reset3" class="resetAnim" data-id="div3"  value="reset div3">
+      </p>
+      <div id="div3">
+        <h3>&lt;div id=&quot;div3&quot;&gt;</h3>
+        <p>Ut labore et dolore magna aliqua. Ullamco laboris nisi cupidatat non proident, lorem ipsum dolor sit amet. Qui officia deserunt excepteur sint occaecat in reprehenderit in voluptate.</p>
+        <p>Sed do eiusmod tempor incididunt eu fugiat nulla pariatur. Velit esse cillum dolore lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepteur sint occaecat ut enim ad minim veniam, in reprehenderit in voluptate.</p>
+        <p>Cupidatat non proident, duis aute irure dolor. Quis nostrud exercitation ullamco laboris nisi velit esse cillum dolore. Excepteur sint occaecat qui officia deserunt duis aute irure dolor.</p>
+      </div>
+    </section>
+    <section>
+      <h2>Div4: simultane + sequentiële animaties met delay</h2>
+      <p>
+        <input type="button" name="anim4" id="anim4" value="animate div4">
+        <input type="button" name="reset4" id="reset4" class="resetAnim" data-id="div4" value="reset div4">
+      </p>
+      <div id="div4">
+        <h3>&lt;div id=&quot;div4&quot;&gt;</h3>
+        <p>Ut aliquip ex ea commodo consequat. Consectetur adipisicing elit, ut labore et dolore magna aliqua. Excepteur sint occaecat duis aute irure dolor sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, ut enim ad minim veniam, eu fugiat nulla pariatur.</p>
+        <p>Velit esse cillum dolore consectetur adipisicing elit, in reprehenderit in voluptate. Ut aliquip ex ea commodo consequat. Sed do eiusmod tempor incididunt sunt in culpa mollit anim id est laborum.</p>
+        <p>Cupidatat non proident. Ut enim ad minim veniam, eu fugiat nulla pariatur. Velit esse cillum dolore lorem ipsum dolor sit amet, ullamco laboris nisi. Qui officia deserunt quis nostrud exercitation eu fugiat nulla pariatur. Velit esse cillum dolore lorem ipsum dolor sit amet, ullamco laboris nisi.</p>
+      </div>
+    </section>
+    <section>
+      <h2>Div5: sequentiële  animaties  (width, left en opacity)</h2>
+      <p>
+        <input type="button" name="anim5" id="anim5" value="animate div5">
+        <input type="button" name="finish5" id="finish5"  value="finish div5">
+        <input type="button" name="reset5" id="reset5" class="resetAnim" data-id="div5" value="reset div5">
+      </p>
+      <div id="div5">
+        <h3>&lt;div id=&quot;div4&quot;&gt;</h3>
+        <p>Ut aliquip ex ea commodo consequat. Consectetur adipisicing elit, ut labore et dolore magna aliqua. Excepteur sint occaecat duis aute irure dolor sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, ut enim ad minim veniam, eu fugiat nulla pariatur.</p>
+        <p>Velit esse cillum dolore consectetur adipisicing elit, in reprehenderit in voluptate. Ut aliquip ex ea commodo consequat. Sed do eiusmod tempor incididunt sunt in culpa mollit anim id est laborum.</p>
+        <p>Cupidatat non proident. Ut enim ad minim veniam, eu fugiat nulla pariatur. Velit esse cillum dolore lorem ipsum dolor sit amet, ullamco laboris nisi. Qui officia deserunt quis nostrud exercitation eu fugiat nulla pariatur. Velit esse cillum dolore lorem ipsum dolor sit amet, ullamco laboris nisi.</p>
+      </div>
+    </section>
+    <!-- end .content --> <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

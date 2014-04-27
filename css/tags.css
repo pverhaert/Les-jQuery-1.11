@@ -1,0 +1,84 @@
+@charset "UTF-8";
+body {
+	font: normal 90% "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;
+	line-height: 1.4;
+	background: #51606F url(../assets/body_bg.png) repeat-x fixed;
+	color: #000;
+	text-align: center;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	color: #872651;
+}
+h1 {
+	font-size: 200%;
+	margin: 0 0 0.5em;
+}
+h2 {
+	font-size: 130%;
+	margin: 0.7em 0 0.5em;
+}
+h3 {
+	margin: 0.7em 0 0.5em 1em;
+}
+p, table {
+	margin: 0.33em 0 1em 1em;
+}
+em , i{
+	font-style: italic;
+}
+strong , b{
+	font-weight:bold;
+}
+a {
+	color: #872651;
+	text-decoration: underline;
+}
+a:hover {
+	color: #331C1B;
+	text-decoration: none;
+}
+a img {
+	border: none;
+}
+
+header {
+	border-radius: 10px 10px 0px 0px;
+	background: #0F1923 url(../assets/jQueryLogo.png) no-repeat;
+	height: 63px;
+	position: relative;
+}
+article {
+	padding: 10px;
+}
+article ul, article ol {
+	padding: 0 15px 15px 40px;
+}
+footer {
+	padding: 5px;
+	background: #51626F;
+	position: relative;
+	border-radius: 0px 0px 10px 10px;
+	clear: both;
+}
+footer p, footer a, footer a:visited {
+	margin: .3em 1em;
+	text-align: right;
+	color: white;
+}
+header, section, footer, aside, nav, article, figure {
+	display: block;
+}
+pre {
+	padding: 0 !important;
+	margin-bottom: 10px;
+	overflow:auto;
+}
+
+code {
+	font-family: Courier, "Courier New", monospace;
+	padding: 0 3px;
+	color:#872652;
+	font-size: 100%;
+}

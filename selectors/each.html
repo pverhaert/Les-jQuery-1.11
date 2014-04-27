@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>each() methode</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<script>
+$(function() {
+	// Knop1
+	$('#firstLast').click(function(){
+		$('*').removeClass('highLight');
+		$('li').first().addClass('highLight');
+		$('li').last().addClass('highLight');
+	});
+	// Knop2
+	$('#each').click(function(){		
+		$('*').removeClass('highLight');
+		$('ul').each(function() {
+			$(this).find('li:first').first().addClass('highLight');
+			$(this).find('li').last().addClass('highLight');
+   		});	
+	});
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>each() methode</h1>
+    <section>
+      <p>
+        <input type="button" name="firstLast" id="firstLast" value="highLight (first en last)">
+        <input type="button" name="each" id="each" value="highLight (each)">
+      </p>
+    </section>
+    <section>
+      <h2>Lijst 1</h2>
+      <ul>
+        <li>Ullamco laboris nisi quis nostrud exercitation</li>
+        <li>ut aliquip ex ea commodo consequat</li>
+        <li>Sunt in culpa cupidatat non proident, eu fugiat nulla pariatur</li>
+        <li>Lorem ipsum dolor sit amet, in reprehenderit in voluptate ut enim ad minim veniam</li>
+        <li>Ut aliquip ex ea commodo consequat.</li>
+      </ul>
+      <h2>Lijst 2</h2>
+      <ul>
+        <li>Ullamco laboris nisi quis nostrud exercitation</li>
+        <li>ut aliquip ex ea commodo consequat</li>
+        <li>Sunt in culpa cupidatat non proident, eu fugiat nulla pariatur</li>
+        <li>Lorem ipsum dolor sit amet, in reprehenderit in voluptate ut enim ad minim veniam</li>
+        <li>Ut aliquip ex ea commodo consequat.</li>
+      </ul>
+      <h2>Lijst 3</h2>
+      <ul>
+        <li>Ullamco laboris nisi quis nostrud exercitation</li>
+        <li>ut aliquip ex ea commodo consequat</li>
+        <li>Sunt in culpa cupidatat non proident, eu fugiat nulla pariatur</li>
+        <li>Lorem ipsum dolor sit amet, in reprehenderit in voluptate ut enim ad minim veniam</li>
+        <li>Ut aliquip ex ea commodo consequat.</li>
+      </ul>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

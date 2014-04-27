@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Date object</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<script>
+$(function() {
+	// Datum voorbeeld 1
+	var vandaag = new Date();
+	var datum = vandaag.getDate() + '-' + (vandaag.getMonth() + 1 ) + '-' + vandaag.getFullYear();
+	var uur = vandaag.getHours();
+	var minuten = vandaag.getMinutes();
+	var APm = '';
+	if (minuten < 10) {
+		minuten = '0' + minuten;
+	}
+	if (uur <= 12) {
+		APm = ' AM';
+	}else {
+		uur = uur - 12;
+		APm = ' PM';
+	}
+	$('#datum1').html('Het is vandaag: ' + datum + '<br>Het is momenteel ' + uur + ':' + minuten + ' ' + APm);
+	
+	// Datum voorbeeld 2
+	var arDagen = ['zo','ma','di','wo','do','vr','za'];
+	var dag = vandaag.getDay();
+	$('#datum2').html('Het is vandaag: ' + arDagen[dag] + ' ' + datum);
+	
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Date object</h1>
+    <section>
+      <h2>Voorbeeld 1</h2>
+      <p id="datum1"></p>
+    </section>
+    <section>
+      <h2>Voorbeeld 2</h2>
+      <p id="datum2"></p>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

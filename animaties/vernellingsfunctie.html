@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Versnellingsfunctie</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+article div {
+	background-color:#FF9;
+	border: solid 1px red;
+	position: relative;
+	overflow: hidden;
+}
+</style>
+<script src="../_jQuery/jquery.easing.1.3.js"></script>
+<script>
+$(function() {
+	var hoogte = $('#div1').height();
+	var snelheid = 1000;
+	$('#easing').change(function(){
+		var easing = $(this).val();
+		$('#effect').text(easing);
+		$('#div1').animate({height:100}, snelheid, easing).delay(300).animate({height:hoogte}, snelheid, easing);
+	});
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Versnellingsfunctie</h1>
+    <section>
+      <h2>Div1: easing effecten</h2>
+      <p>
+        <label for="easing"><strong>Kies een effect: </strong></label>
+        <select name="easing" id="easing">
+          <optgroup label="jQuery Core">
+          <option value="linear">linear</option>
+          <option value="swing">swing</option>
+          </optgroup>
+          <optgroup label="jQuery easing plugin">
+          <option value="easeInOutBounce">easeInOutBounce</option>
+          <option value="easeInOutQuart">easeInOutQuart</option>
+          <option value="easeInOutCubic">easeInOutCubic</option>
+          <option value="easeInOutQuint">easeInOutQuint</option>
+          <option value="easeInOutSine">easeInOutSine</option>
+          <option value="easeInOutExpo">easeInOutExpo</option>
+          <option value="easeInOutCirc">easeInOutCirc</option>
+          <option value="easeInOutElastic">easeInOutElastic</option>
+          <option value="easeInOutBack">easeInOutBack</option>
+          </optgroup>
+        </select>
+      </p>
+      <br class="reset">
+      <div id="div1">
+        <h3> Easing effect = <span id="effect">...</span></h3>
+        <h3>jQuery easing plugin:</h3>
+        <p><a href="http://gsgd.co.uk/sandbox/jquery/easing/">http://gsgd.co.uk/sandbox/jquery/easing/</a> </p>
+        <p>Ut enim ad minim veniam, duis aute irure dolor velit esse cillum dolore. In reprehenderit in voluptate sed do eiusmod tempor incididunt excepteur sint occaecat. Cupidatat non proident, consectetur adipisicing elit, lorem ipsum dolor sit amet. Ut enim ad minim veniam, eu fugiat nulla pariatur. Mollit anim id est laborum.</p>
+        <p>Sed do eiusmod tempor incididunt qui officia deserunt quis nostrud exercitation. In reprehenderit in voluptate ut labore et dolore magna aliqua. Eu fugiat nulla pariatur.</p>
+        <p>Lorem ipsum dolor sit amet, ut enim ad minim veniam, ullamco laboris nisi. Ut aliquip ex ea commodo consequat. Cupidatat non proident, qui officia deserunt sed do eiusmod tempor incididunt. Duis aute irure dolor sunt in culpa consectetur adipisicing elit. Mollit anim id est laborum.</p>
+      </div>
+    </section>
+    <!-- end .content --> <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

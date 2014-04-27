@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>String object</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+label {
+	width: 100px;
+}
+.highlightYellow {
+	background-color:#FF6;
+}
+.highlightRed {
+	background-color:#F66;
+}
+</style>
+<script>
+$(function() {
+	// Voorbeeld 1
+	$('#email').blur(function(){
+		var resultaat = "";
+		var mailadres = $(this).val();
+		if(mailadres.length == 0) {
+			resultaat = "Gelieve <mark>een mailadres</mark> in te vullen";
+		} else if (mailadres.search('@') == -1) {
+			resultaat = "Dit is <mark>geen geldig mailadres</mark>";	
+		} else {
+			mailadres = mailadres.replace('@', ' AT ');
+			//mailadres = mailadres.replace('@', ' AT ').replace('.', ' DOT ');
+			resultaat = 'Gecodeerd adres: ' + mailadres;	
+		}
+		$('#resultaat').html(resultaat)
+	});
+	
+	// Voorbeeld 2
+	$('#vervang').click(function(){
+		var jq = $('#section2').html();
+		jq = jq.replace('JavaScript', 'jQuery');
+		//jq = jq.replace(/JavaScript/, 'jQuery');
+		//jq = jq.replace(/JavaScript/g, 'jQuery');
+		$('#section3').html(jq);
+	});
+
+	// Kleur de woorden JavaScript en jQuery.
+	// Deze code behoort niet tot de oefening!
+	$('#section2, #section3').addClass('drop-shadow');
+	$('#section2').bind('blur focus',highLight);
+	$('#vervang').bind('click',highLight);
+	highLight();
+	function highLight(){
+		var str = "JavaScript";
+		$('section:contains(' + str + ')').each(function(){
+			var regex = new RegExp(str, "g");
+			$(this).html($(this).html().replace( regex ,"<span class='highlightYellow'>"+str+"</span>"));
+		});
+		str = "jQuery";
+		$('section:contains(' + str + ')').each(function(){
+			var regex = new RegExp(str, "g");
+			$(this).html($(this).html().replace( regex ,"<span class='highlightRed'>"+str+"</span>"));
+		});
+	};
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>String object</h1>
+    <section>
+      <h2>Gecodeerd mailadres</h2>
+      <p>
+        <label for="email">Mailadres: </label>
+        <input name="email" type="text" id="email" placeholder="mailadres" size="30">
+      </p>
+      <p id="resultaat"></p>
+    </section>
+    <h2>String replace met regex</h2>
+    <h3>Originele tekst:</h3>
+    <section id="section2" contenteditable title="Bewerk deze tekst">
+      <p>JavaScript is een scripttaal die veel gebruikt wordt om webpagina's interactief te maken en webapplicaties te ontwikkelen. De syntaxis van JavaScript vertoont overeenkomsten met de programmeertaal Java. </p>
+      <p>Events vormen het hart van een JavaScript-pagina. Event-handling staat   toe dat de JavaScript opdrachten op het juiste moment worden uitgevoerd,   wanneer de juiste gebreurtenis heeft plaatsgevonden: <br>
+        Een berekening wordt uitgevoerd wanneer een gebruiker op een knop   klikt, een figuur verandert wanneer de gebruiker er met de muis over   beweegt, een animatie wordt gestart wanneer de pagina geladen is ... </p>
+      <p>Een functie kan je in JavaScript gebruiken om een groep opdrachten te kunnen uitvoeren met een aangegeven naam. De opdrachten of statements die binnen de functie staan worden uitgevoerd wanneer de functie wordt aangeroepen.Een functie kan waarden ontvangen en retourneren naar de plaats van aanroep. </p>
+    </section>
+    <p style="padding-top:10px;">
+      <input name="vervang" type="button" id="vervang" value="Vervang 'JavaScritp' door 'jQuery'">
+    </p>
+    <h3>Aangepaste tekst:</h3>
+    <section id="section3"> </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

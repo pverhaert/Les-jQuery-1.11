@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Tabbladen</title>
+<!-- InstanceEndEditable -->
+<link href="../../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../../_jQuery/jquery.min.js"></script>
+<script src="../../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#tabNav ul {
+	border-bottom: 1px solid #51606F;
+	float: left;
+	width: 100%;
+}
+#tabNav li {
+	display: inline;
+}
+#tabNav a {
+	background-color: #97A5B3;
+	color: #FFF;
+	text-decoration: none;
+	border: 1px solid #51606F;
+	border-bottom: 0;
+	padding: .5em 1.5em .2em 1.5em;
+	margin-right: .5em;
+	float: left;
+	border-radius: 7px 7px 0 0;
+	box-shadow: inset 3px 3px 2px rgba(0,0,0,.5);
+}
+#tabNav a:hover {
+	background-color: #872651;
+}
+#tabNav a.tabActive {
+	background-color: #51606F;
+}
+</style>
+<script>
+$(function() {
+	$('section:not(:first)').hide();
+	$('#tabNav a:first').addClass('tabActive');
+	$('#tabNav a').click(function(){
+		var index = $('#tabNav a').index(this);
+		$('#tabNav a').removeClass('tabActive');
+		$(this).addClass('tabActive');
+		// Versie 1 zonder animatie
+//		$('section:visible').hide();
+//		$('section:eq(' + index + ')').show();
+		// Versie 2 met animatie
+		if ($('section:eq(' + index + ')').is(':hidden')) {
+			$('section:visible').slideUp(function(){
+				$('section:eq(' + index + ')').slideDown();
+			});
+		}
+	});
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../../index.html" id="h">Homepage</a> | <a href="../../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Tabbladen</h1>
+    <nav id="tabNav">
+      <ul>
+        <li><a href="#">section 1</a></li>
+        <li><a href="#">section 2</a></li>
+        <li><a href="#">section 3</a></li>
+        <li><a href="#">section 4</a></li>
+      </ul>
+    </nav>
+    <div class="reset">&nbsp;</div>
+    <section>
+      <h2>Section 1</h2>
+      <div>
+        <p>Velit esse cillum dolore excepteur sint occaecat ut labore et dolore magna aliqua. Quis nostrud exercitation consectetur adipisicing elit, eu fugiat nulla pariatur. Sunt in culpa qui officia deserunt ullamco laboris nisi. Ut labore et dolore magna aliqua. Cupidatat non proident, quis nostrud exercitation eu fugiat nulla pariatur.</p>
+        <p>Ut enim ad minim veniam, consectetur adipisicing elit, ut labore et dolore magna aliqua. Ullamco laboris nisi. Sed do eiusmod tempor incididunt lorem ipsum dolor sit amet, velit esse cillum dolore.</p>
+        <p>Eu fugiat nulla pariatur. Cupidatat non proident, qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat ut enim ad minim veniam, sed do eiusmod tempor incididunt.Quis nostrud exercitation duis aute irure dolor mollit anim id est laborum. </p>
+        <p>Sunt in culpa sed do eiusmod tempor incididunt cupidatat non proident. Excepteur sint occaecat qui officia deserunt. Ullamco laboris nisi duis aute irure dolor ut enim ad minim veniam. Ut aliquip ex ea commodo consequat.</p>
+        <p>In reprehenderit in voluptate cupidatat non proident, ut labore et dolore magna aliqua. Sed do eiusmod tempor incididunt lorem ipsum dolor sit amet, qui officia deserunt. Consectetur adipisicing elit, excepteur sint occaecat ullamco laboris nisi.</p>
+      </div>
+    </section>
+    <section>
+      <h2>Section 2</h2>
+      <div>
+        <p>In reprehenderit in voluptate lorem ipsum dolor sit amet, ut enim ad minim veniam. Velit esse cillum dolore sunt in culpa ut aliquip ex ea commodo consequat. Cupidatat non proident, ullamco laboris nisi qui officia deserunt.</p>
+        <p>Quis nostrud exercitation duis aute irure dolor mollit anim id est laborum. Sunt in culpa sed do eiusmod tempor incididunt cupidatat non proident. Excepteur sint occaecat qui officia deserunt. Ullamco laboris nisi duis aute irure dolor ut enim ad minim veniam. Ut aliquip ex ea commodo consequat.</p>
+        <p>In reprehenderit in voluptate cupidatat non proident, ut labore et dolore magna aliqua. Sed do eiusmod tempor incididunt lorem ipsum dolor sit amet, qui officia deserunt. Consectetur adipisicing elit, excepteur sint occaecat ullamco laboris nisi.</p>
+        <p>Consectetur adipisicing elit, in reprehenderit in voluptate sed do eiusmod tempor incididunt. Mollit anim id est laborum. Ut enim ad minim veniam, excepteur sint occaecat eu fugiat nulla pariatur.</p>
+        <p>Duis aute irure dolor ut labore et dolore magna aliqua. Velit esse cillum dolore quis nostrud exercitation eu fugiat nulla pariatur. Consectetur adipisicing elit, qui officia deserunt cupidatat non proident.</p>
+        <p>In reprehenderit in voluptate ut enim ad minim veniam, ullamco laboris nisi. Velit esse cillum dolore eu fugiat nulla pariatur. Quis nostrud exercitation qui officia deserunt sunt in culpa. Excepteur sint occaecat ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
+        <p>Sunt in culpa ut aliquip ex ea commodo consequat. Qui officia deserunt ut enim ad minim veniam. In reprehenderit in voluptate excepteur sint occaecat sed do eiusmod tempor incididunt. Eu fugiat nulla pariatur.</p>
+        <p>Lorem ipsum dolor sit amet, ut aliquip ex ea commodo consequat. Qui officia deserunt duis aute irure dolor ullamco laboris nisi. Consectetur adipisicing elit, lorem ipsum dolor sit amet, eu fugiat nulla pariatur.</p>
+      </div>
+    </section>
+    <section>
+      <h2>Section 3</h2>
+      <div>
+        <p>Quis nostrud exercitation in reprehenderit in voluptate sed do eiusmod tempor incididunt. Ullamco laboris nisi ut aliquip ex ea commodo consequat. Velit esse cillum dolore qui officia deserunt lorem ipsum dolor sit amet.</p>
+        <p>Quis nostrud exercitation duis aute irure dolor mollit anim id est laborum. Sunt in culpa sed do eiusmod tempor incididunt cupidatat non proident. Excepteur sint occaecat qui officia deserunt. Ullamco laboris nisi duis aute irure dolor ut enim ad minim veniam. Ut aliquip ex ea commodo consequat.</p>
+        <p>In reprehenderit in voluptate cupidatat non proident, ut labore et dolore magna aliqua. Sed do eiusmod tempor incididunt lorem ipsum dolor sit amet, qui officia deserunt. Consectetur adipisicing elit, excepteur sint occaecat ullamco laboris nisi.</p>
+      </div>
+    </section>
+    <section>
+      <h2>Section 4</h2>
+      <div>
+        <p>Ut aliquip ex ea commodo consequat. Sed do eiusmod tempor incididunt quis nostrud exercitation in reprehenderit in voluptate. Sunt in culpa excepteur sint occaecat ullamco laboris nisi. Ut labore et dolore magna aliqua.</p>
+        <p>Consectetur adipisicing elit, in reprehenderit in voluptate sed do eiusmod tempor incididunt. Mollit anim id est laborum. Ut enim ad minim veniam, excepteur sint occaecat eu fugiat nulla pariatur.</p>
+        <p>Duis aute irure dolor ut labore et dolore magna aliqua. Velit esse cillum dolore quis nostrud exercitation eu fugiat nulla pariatur. Consectetur adipisicing elit, qui officia deserunt cupidatat non proident.</p>
+        <p>In reprehenderit in voluptate ut enim ad minim veniam, ullamco laboris nisi. Velit esse cillum dolore eu fugiat nulla pariatur. Quis nostrud exercitation qui officia deserunt sunt in culpa. Excepteur sint occaecat ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
+        <p>Quis nostrud exercitation duis aute irure dolor mollit anim id est laborum. Sunt in culpa sed do eiusmod tempor incididunt cupidatat non proident. Excepteur sint occaecat qui officia deserunt. Ullamco laboris nisi duis aute irure dolor ut enim ad minim veniam. Ut aliquip ex ea commodo consequat.</p>
+        <p>In reprehenderit in voluptate cupidatat non proident, ut labore et dolore magna aliqua. Sed do eiusmod tempor incididunt lorem ipsum dolor sit amet, qui officia deserunt. Consectetur adipisicing elit, excepteur sint occaecat ullamco laboris nisi.</p>
+        <p>Ut labore et dolore magna aliqua. Velit esse cillum dolore consectetur adipisicing elit, lorem ipsum dolor sit amet. Ullamco laboris nisi mollit anim id est laborum. Qui officia deserunt ut labore et dolore magna aliqua. Velit esse cillum dolore consectetur adipisicing elit, in reprehenderit in voluptate.</p>
+      </div>
+    </section>
+    <!-- end .content --> <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

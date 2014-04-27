@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Elementen vervangen</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+.groen {
+	color: green;
+}
+</style>
+<script>
+$(function() {
+	//replaceWith()
+	$('#replace1').click(function() {
+        $('#lijst1 li.groen').replaceWith('<li><strong>Cras augue</strong></li>');
+    });
+	//replaceAll()
+	$('#replace2').click(function() {
+        $('<li><strong>Cras augue</strong></li>').replaceAll('#lijst2 li.groen');
+    });
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Elementen vervangen</h1>
+    <section id="sect1">
+      <h2>replaceWith() methode</h2>
+      <p>
+        <input type="button" name="replace1" id="replace1" value="replaceWith()">
+      </p>
+      <ul id="lijst1">
+        <li class="groen">Donec luctus rutrum pellentesque. Duis ullamcorper placerat quam eu dictum.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </li>
+        <li class="groen">Fusce porttitor consequat lacus, et malesuada massa fermentum nec.</li>
+      </ul>
+    </section>
+    <section id="sect2">
+      <h2>replaceAll() methode</h2>
+      <p>
+        <input type="button" name="replace2" id="replace2" value="replaceAll()">
+      </p>
+      <ul id="lijst2">
+        <li class="groen">Donec luctus rutrum pellentesque. Duis ullamcorper placerat quam eu dictum.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </li>
+        <li class="groen">Fusce porttitor consequat lacus, et malesuada massa fermentum nec.</li>
+      </ul>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

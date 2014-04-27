@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>jQuery: Contactformulier</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+.foto {
+	float: right;
+	margin: 0 10px;
+	border: solid 1px lightGrey;
+	padding: 3px;
+	box-shadow: 3px 3px 3px rgba(51,51,51,1);
+}
+label {
+	width: 100px;
+}
+</style>
+<script>
+$(function() {
+	// Foutafhandeling
+	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
+		alert('Er is een fout opgetreden!\n' + thrownError);
+    });
+
+	// Wijzig selector van $('#_') naar $('#form')
+	$('#_').submit(function(e) {
+        e.preventDefault();
+		var str = $(this).serialize();
+		$(this).hide();
+		$.post('contactSend.php', str, function(data){
+			$('#detail').html($(data).find('#message'));
+		}, 'html');
+    });	
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Contactformulier<span></span></h1>
+    <section>
+      <form name="form" id="form" method="post" action="contactSend.php">
+        <p>
+          <label for="naam">Naam:</label>
+          <input type="text" name="naam" id="naam" placeholder="Naam (verplicht)" required value="demo">
+        </p>
+        <p>
+          <label for="email">E-mail:</label>
+          <input type="email" name="email" id="email" placeholder="E-mail (verplicht)" required value="demo@example.com">
+        </p>
+        <p>
+          <label for="onderwerp">Onderwerp:</label>
+          <input type="text" name="onderwerp" id="onderwerp" placeholder="Onderwerp (verplicht)" required value="Het onderwerp">
+        </p>
+        <p>
+          <label for="bericht">Bericht:</label>
+          <textarea name="bericht" id="bericht" cols="120" rows="8" placeholder="Bericht (verplicht)" required>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur condimentum ante id tellus ultrices faucibus. Integer ornare tortor quis neque rutrum accumsan. Pellentesque massa quam, iaculis at auctor interdum, sollicitudin nec dolor. 
+Maecenas suscipit sodales vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. 
+Quisque vel eros nec orci consequat feugiat at non nibh. Quisque vel ligula ac nisi ultricies mollis. Maecenas tortor sem, dignissim ac posuere non, feugiat eget augue. Sed eget ante magna.
+          </textarea>
+        </p>
+        <p>
+          <label for="submit">&nbsp;</label>
+          <input type="submit" name="submit" id="submit" value="Verzenden">
+        </p>
+      </form>
+    </section>
+    <section id="detail"></section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

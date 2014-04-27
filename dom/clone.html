@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Elementen klonen</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+.temp {
+	color: orange;
+}
+</style>
+<script>
+$(function() {
+	var uur = tijd();
+	$('.tijd').text(uur);
+	 
+	// Dupliceer li-tag en verwijder .temp
+	$('#clone').click(function() {
+		uur = tijd();
+        $('li.temp').clone().removeClass('temp').insertBefore('li:first');
+        //$('li.temp').clone(true).removeClass('temp').insertBefore('li:first');
+        //$('li.temp').clone(true).removeClass('temp').find('.tijd').text(uur).end().insertBefore('li:first');
+    });
+	
+	// Klik op een li-tag
+	$('li').click(function() {
+		alert($(this).text());
+	});
+	
+	// Bereken huidige tijd
+	function tijd(){
+		d = new Date();
+		uur = d.getHours() + 'h ' + d.getMinutes() + 'min ' + d.getSeconds() + 'sec';
+		return uur;
+	}
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Elementen klonen</h1>
+    <section id="sect1">
+      <h2>clone() methode</h2>
+    <p>
+        <input type="button" name="clone" id="clone" value="nieuwe tijd">
+    </p>
+      <ul>
+        <li class="temp">Het is nu: <span class="tijd"></span></li>
+      </ul>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

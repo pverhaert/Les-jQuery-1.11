@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Volg de cursor</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#outline {
+	position: relative;
+}
+#eye {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAArCAMAAAA9tDrxAAAAA3NCSVQICAjb4U/gAAAB8lBMVEX///8AAABWstgAAAAAAABSrdIAAAAEAABFkrEAAAAAAABRsdlCjawHDA4AAABQrtUDBAQAAABTs9sVKjIIDhAAAAAuZHoFCAkAAAA/ja0IAgEAAAAUKDEKExcJEhUKBAIAAAAEAABRtt9Rtd5ClLU4e5YdPEkFBwgAAAAZND8RIyoGCgwAAABd1/9c1f9b1P9a0f9az/9Yzf1YzPtYyfdXyfdXyvlWx/VWx/dVxvVUxfNWxfBWxfNVxPFXw+9Uw/FSw/FTwu5Uwu9Vwe1Wwe5SwO1Uv+tSv+tSvelSvehYu+JUvOZSu+dSu+ZQu+VSueNUueJRt+JRtt9Ps91Os9tOsdpOr9dMsNlMr9hQrdNMrdVMrNNLqdBKp81LpctJpMpRoMBKosdIn8JHoMRHn8RGncFNm7xFm75ImLlDl7lClLVBkrNCkbFAj68/jKs9iag7hqU9hqM8hqU6gZ45f5w3epY3epU2dpE3dY80c400coszcYsyb4g0a4EwaoIvZ34wZnwuZXwuZHopWm4pWGwoVmokTl8iSVghR1YgRFMeQU8eQE0bOEQaNUEZNUAaND4XMTwYMTsYMTwXLzkVKzQUKDESJi4SIyoQICYPHiUNGh8NGiAMGBwKExcOEREJERQIDxIFDA8GCgwFCAkDBAQAAABw9JYcAAAApnRSTlMAESIiM0RERFVVZnd3d3eIiIiZmZmZqqqqu7u7zMzMzMzM3d3d3d3d3e7u7u7/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////CmY5UwAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAxMS8yMy8xMutgQKkAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzbovLKMAAACp0lEQVQ4jY2U6VvTQBDGNyZGEzUaNRoNaryjRqRtSqRaaqs0GwERURSwHigeCF7gfSDeF94HeKIw/6ebJr3olsf3S/bZ/Pad2d3ZQahIsmGqLCoRp+gqh6bMaUBkSkVTjGJ6U3IJx5qgCSwraCqTX6qrAsfLAGoxqEPgxYu5pbIflNVBKHA85AMwgWU+XcY0CqBiosriiywNaRoQ6XoB9AMxoshSQAnyafgb4wxyGkI5yBdAyc8a4BdAsFnF0PngN1sInZ1S4fWxvb3fs7Ocd9YQkIyIisXCe2t7Q6h9nPfOf+zBvVEwEE3yZMZ2sRu6RRLWXtTX1KQ/5yxLZTwLuRhjJ70ZCe+slOvWdk8qFI6FXht7Cg9zKzpj3prIR50CCj/SThaMndZuZ71x+L7JlIPSq0iWw07L2wMN2ZHdDxRQGQ5AnL6Z9geJzCTlorTBaADGB9v8JJLtf2lgv50DLx7xLZOH/1DA1ediObCvPee4hZLjqhO7AjDVfdAHU5mNlONZfiaWB9v80HUXNAqo9tW5ccsiXsmTrTjhraq9TrsZ+aptnxp5HHew09FkZ7oJGX5EKU4k3omkRgFu1GK3I9o7AQNRHH1Dq3fuSfV5UoIfLNy0Pz4G8GVnsnMlhUNoU/gKAUf3OM31PWTwuzV8jf7kFnd5jp9sp9G6TAbf0pGXtMjkOdy1xgEeRnBjnbfieXXPUiqHUNWOSz9HmpNr1jbs/goTx6uf0g2J5dDWllTKnTkHx48On93Wv6ACh9C8ATuxbyGa0YgTkdChqoocQrOWLJtNPvOb4tGuDWWBlfKnNnfd+kVT64bRYNoGlRNrAK1CyiSaYMLUdk4Tb+isaVDKuEykEfOg/w9JJACIPsrylS7DF6uahipLkkzttyXiVNJrlcq7+gdmrbPL2dfFAwAAAABJRU5ErkJggg==);
+	position: absolute;
+	top: 170px;
+	left: 20px;
+	width: 40px;
+	height: 43px;
+	z-index: 100;
+}
+</style>
+<script>
+$(function() {
+	$('#outline').click(function(e){
+		// Breedte en hoogte van #eye
+		var bX = 40;	//Of bereken via $('#eye').width()
+		var bY = 43;	//Of bereken via $('#eye').height()
+		
+		// Positie van #outline
+		var vX = ;
+		var vY = ;
+		
+		// Positie van de cursor
+		var cX = ;
+		var cY = ;
+		
+		// Verplaats #eye
+	});
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Volg de cursor</h1>
+    <p>Klik op een willekeurige plaats binnen <strong>#outline</strong> en het middelpunt van de div-tag<strong> #eye</strong> verplaatst zich naar de geklikte positie.</p>
+    <p>&nbsp;</p>
+    <section style="height:300px">
+      <div id="eye"></div>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

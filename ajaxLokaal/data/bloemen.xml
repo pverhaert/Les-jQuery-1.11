@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bloemen>
+  <bloem id="1">
+    <titel>Anjer</titel>
+    <foto>thumb_anjer.jpg</foto>
+    <url>http://nl.wikipedia.org/wiki/Anjer</url>
+    <omschrijving>
+      <![CDATA[<p>Lorem ipsum dolor sit amet, ullamco laboris nisi consectetur adipisicing elit. Sed do eiusmod tempor incididunt quis nostrud exercitation ut labore et dolore magna aliqua. Velit esse cillum dolore cupidatat non proident, qui officia deserunt.</p>
+        <p>Duis aute irure dolor mollit anim id est laborum. Eu fugiat nulla pariatur. Ut aliquip ex ea commodo consequat.</p>]]>
+    </omschrijving>
+  </bloem>
+  <bloem id="2">
+    <titel>Lelie</titel>
+    <foto>thumb_lelie.jpg</foto>
+    <url>http://nl.wikipedia.org/wiki/Lelie</url>
+    <omschrijving>
+      <![CDATA[<p>Ut aliquip ex ea commodo consequat. Quis nostrud exercitation velit esse cillum dolore duis aute irure dolor. Excepteur sint occaecat eu fugiat nulla pariatur. Ut enim ad minim veniam, in reprehenderit in voluptate sunt in culpa.</p>
+        <p>Ullamco laboris nisi quis nostrud exercitation ut labore et dolore magna aliqua. Velit esse cillum dolore sed do eiusmod tempor incididunt in reprehenderit in voluptate. Ullamco laboris nisi mollit anim id est laborum. 
+        </p>
+        <p>Lorem ipsum dolor sit amet, ullamco laboris nisi consectetur adipisicing elit. Sed do eiusmod tempor incididunt quis nostrud exercitation ut labore et dolore magna aliqua. Velit esse cillum dolore cupidatat non proident, qui officia deserunt.Duis aute irure dolor mollit anim id est laborum. Eu fugiat nulla pariatur. Ut aliquip ex ea commodo consequat.</p>]]>
+    </omschrijving>
+  </bloem>
+  <bloem id="3">
+    <titel>Narcis</titel>
+    <foto>thumb_narcis.jpg</foto>
+    <url>http://nl.wikipedia.org/wiki/Narcis</url>
+    <omschrijving>
+      <![CDATA[<p>Ullamco laboris nisi quis nostrud exercitation ut labore et dolore magna aliqua. Velit esse cillum dolore sed do eiusmod tempor incididunt in reprehenderit in voluptate. Ullamco laboris nisi mollit anim id est laborum.</p>
+        <p>Ut aliquip ex ea commodo consequat. Qui officia deserunt sunt in culpa in reprehenderit in voluptate. Duis aute irure dolor sed do eiusmod tempor incididunt ut enim ad minim veniam. Quis nostrud exercitation cupidatat non proident, sunt in culpa. </p>]]>
+    </omschrijving>
+  </bloem>
+  <bloem id="4">
+    <titel>Roos</titel>
+    <foto>thumb_roos.jpg</foto>
+    <url>http://nl.wikipedia.org/wiki/Rozen</url>
+    <omschrijving>
+      <![CDATA[<p>Sed do eiusmod tempor incididunt ut enim ad minim veniam, ut aliquip ex ea commodo consequat. Sunt in culpa consectetur adipisicing elit, excepteur sint occaecat. Eu fugiat nulla pariatur.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate quis nostrud exercitation. Qui officia deserunt ut enim ad minim veniam, velit esse cillum dolore. Sunt in culpa ut labore et dolore magna aliqua. Cupidatat non proident, mollit anim id est laborum. Quis nostrud exercitation eu fugiat nulla pariatur.</p>
+        <p>Ut labore et dolore magna aliqua. Duis aute irure dolor ut enim ad minim veniam, velit esse cillum dolore. In reprehenderit in voluptate eu fugiat nulla pariatur. Mollit anim id est laborum.</p>]]>
+    </omschrijving>
+  </bloem>
+  <bloem id="5">
+    <titel>Tulp</titel>
+    <foto>thumb_tulp.jpg</foto>
+    <url>http://nl.wikipedia.org/wiki/Tulp</url>
+    <omschrijving>
+      <![CDATA[<p>Ut aliquip ex ea commodo consequat. Qui officia deserunt sunt in culpa in reprehenderit in voluptate. Duis aute irure dolor sed do eiusmod tempor incididunt ut enim ad minim veniam. Quis nostrud exercitation cupidatat non proident, sunt in culpa. </p>
+        <p>.Lorem ipsum dolor sit amet, ullamco laboris nisi consectetur adipisicing elit. Sed do eiusmod tempor incididunt quis nostrud exercitation ut labore et dolore magna aliqua. Velit esse cillum dolore cupidatat non proident, qui officia deserunt.Duis aute irure dolor mollit anim id est laborum. Eu fugiat nulla pariatur. Ut aliquip ex ea commodo consequat.</p>
+        <p>Ullamco laboris nisi quis nostrud exercitation ut labore et dolore magna aliqua. Velit esse cillum dolore sed do eiusmod tempor incididunt in reprehenderit in voluptate. Ullamco laboris nisi mollit anim id est laborum.</p>]]>
+    </omschrijving>
+  </bloem>
+</bloemen>

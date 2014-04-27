@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>HTML attributen</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+.orange {
+	background-color: orange;
+}
+</style>
+<script>
+$(function() {
+	// Voeg title-attribuut toe aan links
+	$('#attr1').click(function() {
+	  $('#sect1 a').each(function(index, element) {
+		  $(this).attr('title', $(this).attr('href'));
+		  //$(this).filter('a[href^="http://"]').attr('title', 'Externe link naar: ' + $(this).attr('href') );
+	  });
+    });
+	$('#attr2').click(function() {
+		$('#sect1 a').removeAttr('title');
+    });
+
+
+	$('#sect2 a').css('text-decoration', 'none').css('color', 'green');
+	//$('#sect2 a').css({'text-decoration': 'none', 'color': 'green'});
+
+
+	$('#orange1').click(function() {
+        $('#sect3 ul').addClass('orange');
+    });
+	$('#orange2').click(function() {
+        $('#sect3 ul').removeClass('orange');
+    });
+	$('#orange3').click(function() {
+        $('#sect3 ul').toggleClass('orange');
+    });
+	$('#orange4').click(function() {
+        if ($('#sect3 ul').hasClass('orange')) {
+			alert('De lijst heeft een oranje achtergrond');
+		} else {
+			alert('De lijst heeft een witte achtergrond');
+		}
+    });
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>HTML attributen</h1>
+    <section id="sect1">
+      <h2>HTML attribuut: attr() en removeAttr() methodes</h2>
+      <p>
+        <input type="button" name="attr1" id="attr1" value="attr('title, ...')">
+        <input type="button" name="attr2" id="attr2" value="removeAttr('title')">
+      </p>
+      <ul>
+        <li><a href="http://www.jquery.com/">http://www.jquery.com/</a></li>
+        <li><a href="http://www.jquerymobile.com/">http://www.jquerymobile.com/</a></li>
+        <li><a href="http://api.jquery.com/">http://api.jquery.com/</a></li>
+        <li><a href="../index.html">homepage</a></li>
+      </ul>
+    </section>
+    <section id="sect2">
+      <h2>CSS attribuut: css() methode</h2>
+      <ul>
+        <li><a href="http://www.jquery.com/">http://www.jquery.com/</a></li>
+        <li><a href="http://www.jquerymobile.com/">http://www.jquerymobile.com/</a></li>
+        <li><a href="http://api.jquery.com/">http://api.jquery.com/</a></li>
+        <li><a href="../index.html">homepage</a></li>
+      </ul>
+    </section>
+    <section id="sect3">
+      <h2>Class attribuut: addClass(), removeClass(), toggleClass() en hasClass() methodes</h2>
+      <p>
+        <input type="button" name="orange1" id="orange1" value="addClass('orange')">
+        <input type="button" name="orange2" id="orange2" value="removeClass('orange')">
+        <input type="button" name="orange3" id="orange3" value="toggleClass('orange')">
+        <input type="button" name="orange4" id="orange4" value="hasClass('orange')">
+      </p>
+      <ul>
+        <li><a href="http://www.jquery.com/">http://www.jquery.com/</a></li>
+        <li><a href="http://www.jquerymobile.com/">http://www.jquerymobile.com/</a></li>
+        <li><a href="http://api.jquery.com/">http://api.jquery.com/</a></li>
+        <li><a href="../index.html">homepage</a></li>
+      </ul>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

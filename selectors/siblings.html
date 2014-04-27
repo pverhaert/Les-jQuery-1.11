@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>siblings() methode</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+.grey {
+	color: blue;
+	background-color: lightGrey;
+}
+#theItem {
+	color: red;
+	background-color: lightGrey;
+}
+</style>
+<script>
+$(function() {	
+	// Knop1
+	$('#siblings1').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').siblings().addClass('highLight');
+	});
+	// Knop2
+	$('#siblings2').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').siblings('.grey').addClass('highLight');
+	});
+	// Knop3
+	$('#siblings3').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').siblings().not('.grey').addClass('highLight');
+	});
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>siblings() methode</h1>
+    <section>
+      <p>
+        <input type="button" name="siblings1" id="siblings1" value="siblings()">
+        <input type="button" name="siblings2" id="siblings2" value="siblings('.grey')">
+        <input type="button" name="siblings3" id="siblings3" value="siblings().not('.grey')">
+      </p>
+    </section>
+    <section>
+      <h2>Lijst 1</h2>
+      <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        <li>Sed tincidunt vestibulum felis, eget iaculis tellus gravida at.</li>
+        <li>Mauris sit amet lectus nulla, vel rhoncus est.</li>
+        <li>Curabitur pulvinar eros ut enim aliquam sed imperdiet sapien ullamcorper.
+          <ul>
+            <li>Fusce imperdiet tempor ligula, sed eleifend lorem mattis sit amet.</li>
+            <li class="grey"> --- li met class=&quot;grey&quot; ---</li>
+            <li>Fusce nec risus vitae massa eleifend rutrum.</li>
+            <li class="grey">--- li met class=&quot;grey&quot; ---</li>
+            <li>Vestibulum ac odio nibh, aliquam consequat lectus.</li>
+            <li>--- li met id=&quot;theItem&quot; ---</li>
+            <li>Sed vehicula metus et tellus sagittis semper.</li>
+            <li id="theItem">Praesent quis nunc ante, vitae iaculis risus.
+              <ul>
+                <li>Pellentesque interdum magna nec mauris congue volutpat.</li>
+                <li>Vivamus varius nulla vel lorem tempus nec lacinia nulla dapibus.</li>
+              </ul>
+            </li>
+            <li>Namscelerisque magna dolor, nec mollis magna.</li>
+            <li>Morbi placerat leo ac turpis egestas ut lobortis nisl congue. </li>
+            <li class="grey">-- -li met class=&quot;grey&quot; ---</li>
+            <li>Aliquam ut tellus pretium tellus iaculis sagittis vel vehicula lacus.</li>
+            <li>Sed tincidunt vestibulum felis, eget iaculis tellus gravida at.</li>
+            <li>Mauris sit amet lectus nulla, vel rhoncus est.</li>
+          </ul>
+        </li>
+        <li>Phasellus ut ante eget eros tempor laoreet.</li>
+        <li>Maecenas porttitor sem non nulla pulvinar a mattis urna pharetra. </li>
+        <li>Phasellus at erat dolor, eu dignissim ante.</li>
+      </ul>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

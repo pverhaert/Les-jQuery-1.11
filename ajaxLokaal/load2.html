@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>AJAX: load (met callback functie)</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#subNav {
+	margin: 20px 0;
+}
+.foto {
+	float: right;
+	margin: 0 10px;
+	border: solid 1px lightGrey;
+	padding: 3px;
+	box-shadow: 3px 3px 3px rgba(51,51,51,1);
+}
+</style>
+<script>
+$(function() {
+	// Foutafhandeling
+	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
+		alert('Er is een fout opgetreden!\n' + thrownError);
+    });
+
+	$('#data').load('bloemen.html', function(){
+		$('#data article:not(:first)').hide();
+	});
+	$('#subNav a').click(function(e) {
+		var id = '#' + $(this).text();
+		// versie 1
+		$('#data article').hide().filter(id).show();
+		// versie 2
+//		if ($(id).is(':hidden')) {
+//			$('#data article:visible').slideUp('slow', function(){
+//				$(id).slideDown('slow');
+//			});
+//		}
+	});
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Load <span>(met callback functie)</span></h1>
+    <nav id="subNav" class="drop-shadow"><a href="javascript:;">Anjer</a> | <a href="javascript:;">Lelie</a> | <a href="javascript:;">Narcis</a> | <a href="javascript:;">Roos</a> | <a href="javascript:;">Tulp</a></nav>
+    <section id="data">
+      <p>data</p>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

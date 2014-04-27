@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Accordeon navigatie</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#subNav {
+	margin: 20px 0;
+}
+.foto {
+	float: right;
+	margin: 0 10px;
+	border: solid 1px lightGrey;
+	padding: 3px;
+	box-shadow: 3px 3px 3px rgba(51,51,51,1);
+}
+.active {
+	text-decoration: none;
+	color: darkSlateGray;
+}
+</style>
+<script>
+$(function() {
+	// Gebruik #accordeon > article om descendant elementen uit te sluiten.
+
+	$('#accordeon h2').click(function(){
+		//
+	});
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Accordeon navigatie</h1>
+    <section>
+      <ul>
+        
+        <li>Plaats op elke <strong>eerste</strong> article-tag binnen<strong> #accordeon</strong> de class <strong>drop-shadow</strong>.</li>
+        <li>Elke article-tag heeft als child-element een div-tag en een h2-tag.<br>
+          De h2-tag 
+          opent/sluit de bijhorende div-tag.</li>
+        <li>Toon bij opstart enkel de div-tag<strong> binnen de eerste</strong> article-tag. De overige div-tags zijn gesloten.</li>
+        <li>Klik op een<strong> h2-tag</strong> om de <strong>bijhorende div-tag</strong> te tonen/verbergen.</li>
+        <li>Binnen de h2-tag staat een span-tag met  een icoon.<br>
+          Een <strong>open</strong> article-tag krijgt een min-icoon (class <strong>icoon-minus)</strong>. <br>
+          Een <strong>gesloten</strong> article-tag krijgt een plus-icoon (class <strong>icoon-plus)</strong>.</li>
+        <li>Gebruik  de  <a href="http://api.jquery.com/slidetoggle/">slideToggle()</a> animatie.</li>
+      </ul>
+    </section>
+    <section id="accordeon">
+      <article>
+        <h2><span class="icoon-plus"></span>Anjer</h2>
+        <div class="data">
+          <p><img src="../assets/fotos/thumb_anjer.jpg" width="100" height="100" alt="" class="foto">Lorem ipsum dolor sit amet, ullamco laboris nisi consectetur adipisicing elit. Sed do eiusmod tempor incididunt quis nostrud exercitation ut labore et dolore magna aliqua. Velit esse cillum dolore cupidatat non proident, qui officia deserunt.</p>
+          <p>Lorem ipsum dolor sit amet, ullamco laboris nisi consectetur adipisicing elit. Sed do eiusmod tempor incididunt quis nostrud exercitation ut labore et dolore magna aliqua. Velit esse cillum dolore cupidatat non proident, qui officia deserunt.Duis aute irure dolor mollit anim id est laborum. Eu fugiat nulla pariatur. Ut aliquip ex ea commodo consequat.</p>
+        </div>
+      </article>
+      <article>
+        <h2><span class="icoon-plus"></span>Lelie</h2>
+        <div class="data">
+          <p><img src="../assets/fotos/thumb_lelie.jpg" width="100" height="100" alt="" class="foto">Ut aliquip ex ea commodo consequat. Quis nostrud exercitation velit esse cillum dolore duis aute irure dolor. Excepteur sint occaecat eu fugiat nulla pariatur. Ut enim ad minim veniam, in reprehenderit in voluptate sunt in culpa.</p>
+          <p>Ullamco laboris nisi quis nostrud exercitation ut labore et dolore magna aliqua. Velit esse cillum dolore sed do eiusmod tempor incididunt in reprehenderit in voluptate. Ullamco laboris nisi mollit anim id est laborum.<!-- end .content --> </p>
+          <p>Lorem ipsum dolor sit amet, ullamco laboris nisi consectetur adipisicing elit. Sed do eiusmod tempor incididunt quis nostrud exercitation ut labore et dolore magna aliqua. Velit esse cillum dolore cupidatat non proident, qui officia deserunt.Duis aute irure dolor mollit anim id est laborum. Eu fugiat nulla pariatur. Ut aliquip ex ea commodo consequat.</p>
+        </div>
+      </article>
+      <article>
+        <h2><span class="icoon-plus"></span>Narcis</h2>
+        <div class="data">
+          <p><img src="../assets/fotos/thumb_narcis.jpg" width="100" height="100" alt="" class="foto">Ullamco laboris nisi quis nostrud exercitation ut labore et dolore magna aliqua. Velit esse cillum dolore sed do eiusmod tempor incididunt in reprehenderit in voluptate. Ullamco laboris nisi mollit anim id est laborum.</p>
+          <p>Ut aliquip ex ea commodo consequat. Qui officia deserunt sunt in culpa in reprehenderit in voluptate. Duis aute irure dolor sed do eiusmod tempor incididunt ut enim ad minim veniam. Quis nostrud exercitation cupidatat non proident, sunt in culpa. </p>
+        </div>
+      </article>
+      <article>
+        <h2><span class="icoon-plus"></span>Roos</h2>
+        <div class="data">
+          <p><img src="../assets/fotos/thumb_roos.jpg" width="100" height="100" alt="" class="foto">Sed do eiusmod tempor incididunt ut enim ad minim veniam, ut aliquip ex ea commodo consequat. Sunt in culpa consectetur adipisicing elit, excepteur sint occaecat. Eu fugiat nulla pariatur.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate quis nostrud exercitation. Qui officia deserunt ut enim ad minim veniam, velit esse cillum dolore. Sunt in culpa ut labore et dolore magna aliqua. Cupidatat non proident, mollit anim id est laborum. Quis nostrud exercitation eu fugiat nulla pariatur.</p>
+          <p>Ut labore et dolore magna aliqua. Duis aute irure dolor ut enim ad minim veniam, velit esse cillum dolore. In reprehenderit in voluptate eu fugiat nulla pariatur. Mollit anim id est laborum.</p>
+        </div>
+      </article>
+    </section>
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

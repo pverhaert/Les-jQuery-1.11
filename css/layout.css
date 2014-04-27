@@ -1,0 +1,125 @@
+@charset "UTF-8";
+/* CSS Document */
+#outline {
+	width: 960px;
+	background-color: #FFF;
+	position: relative;
+	margin: 10px auto;
+	padding: 5px;
+	border-radius: 10px;
+	text-align: left;
+}
+#mainNav {
+	position:absolute;
+	top: 25px;
+	left: 183px;
+	color: #CCC;
+}
+#mainNav a {
+	color: #FFF;
+}
+nav ul {
+	/* [disabled]border: solid 1px red;
+*/
+	padding: 0;
+	margin: 0;
+}
+nav ul li {
+	display: inline;
+}
+nav ul a, nav ul a:visited {
+	display: block;
+	text-decoration: none;
+}
+nav ul a:hover, nav ul a:active, nav ul a:focus {
+	color: #000;
+}
+.drop-shadow {
+	padding:0.5em;
+	margin: 0 10px;
+	background:#fff;
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.layoutTabel {
+	border: 1px solid #51606F;
+}
+.layoutTabel td, .layoutTabel th {
+	vertical-align: top;
+	padding: 5px 8px;
+	border-top: 1px dotted #51606F;
+	border-right: 1px none #51606F;
+	border-bottom: 1px dotted #51606F;
+	border-left: 1px none #51606F;
+}
+.layoutTabel th {
+	background-color:#51606F;
+	text-align:left;
+	color:#FFF;
+}
+.layoutTabel tr:hover {
+	background-color: #E1E3CA;
+}
+.bgCodeBlok {
+	background-color: rgba(231,211,220,.8);
+}
+.columns_2 {
+	text-align: justify;
+	column-count: 2;
+	column-gap: 1.5em;
+	column-rule: 1px solid #CCC;
+	-moz-column-count: 2;
+	-moz-column-gap: 1.5em;
+	-moz-column-rule: 1px solid #CCC;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 1.5em;
+	-webkit-column-rule: 1px solid #CCC;
+}
+.columns_3 {
+	text-align: justify;
+	column-count: 3;
+	column-gap: 1.5em;
+	column-rule: 1px solid #CCC;
+	-moz-column-count: 3;
+	-moz-column-gap: 1.5em;
+	-moz-column-rule: 1px solid #CCC;
+	-webkit-column-count: 3;
+	-webkit-column-gap: 1.5em;
+	-webkit-column-rule: 1px solid #CCC;
+}
+.columns_5 {
+	text-align: justify;
+	column-count: 5;
+	column-gap: 1.5em;
+	column-rule: 1px solid #CCC;
+	-moz-column-count: 5;
+	-moz-column-gap: 1.5em;
+	-moz-column-rule: 1px solid #CCC;
+	-webkit-column-count: 5;
+	-webkit-column-gap: 1.5em;
+	-webkit-column-rule: 1px solid #CCC;
+}
+
+.reset {
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+	clear:both;
+}
+h1 span {
+	font-size: 50%;
+	color: grey;
+}
+.highLight {
+	border: solid 1px green !important;
+	margin: 2px;
+	background-color:#FF6 !important;
+	background-image: none !important;
+	color: red !important;
+}
+.error {
+	font-weight: bold;
+	color: #900;
+	font-style: italic;
+}

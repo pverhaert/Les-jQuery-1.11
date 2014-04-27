@@ -1,0 +1,20 @@
+{
+    "adres": [
+        {
+            "id": "1",
+            "naam": "Naam1",
+            "email": {
+                "email1": "naam1@example.com",
+                "email2": "naam2@example.com"
+            }
+        },
+        {
+            "id": "2",
+            "naam": "Naam2",
+            "email": {
+                "email1": "naam3@example.com",
+                "email2": "naam4@example.com"
+            }
+        }
+    ]
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>jQuery</title>
+<!-- InstanceEndEditable -->
+<link href="css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="_jQuery/jquery.min.js"></script>
+<script src="_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<script>
+$(function() {	
+	$('#mainNav').remove();
+});
+</script>
+
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="index.html" id="h">Homepage</a> | <a href="opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Overzicht</h1>
+    <section id="overzicht">
+      <h2><a id="jsIntro"></a>Hoofdstuk 2: inleiding tot JavaScript</h2>
+      <ul>
+        <li><a href="jsIntro/error.html">JavaScript console</a></li>
+        <li><a href="jsIntro/variabelen.html">Variabelen en operatoren</a></li>
+        <li><a href="jsIntro/if_else_1.html">If-Else</a> (met vaste waarde in code)</li>
+        <li><a href="jsIntro/if_else_2.html">If-Else</a> (met formulier)</li>
+        <li><a href="jsIntro/switch.html">Switch</a></li>
+        <li><a href="jsIntro/for.html">For lus</a></li>
+        <li><a href="jsIntro/while.html">While en Do-While lus</a></li>
+        <li><a href="jsIntro/functies.html">Functies</a></li>
+        <li><a href="jsIntro/functies_jQuery.html">Functies jQuery</a></li>
+        <li><a href="jsIntro/scopeVars.html">Scope variabelen</a></li>
+        <li>Object: <a href="jsIntro/constructorFunctie.html">Constructor functie</a></li>
+        <li>Object: <a href="jsIntro/constructorFunctieDefault.html">Constructor functie met default eigenschappen</a></li>
+        <li>Object: <a href="jsIntro/date.html">Date</a></li>
+        <li>Object: <a href="jsIntro/math.html">Math</a></li>
+        <li>Object: <a href="jsIntro/string.html">String</a></li>
+        <li>Object: <a href="jsIntro/window.html">Window</a></li>
+        <li>Object: <a href="jsIntro/history.html">History</a></li>
+      </ul>
+      <h2><a id="jqIntegratie"></a>Hoofdstuk 3: jQuery intergratie</h2>
+      <ul>
+        <li>window.onload: <a href="jqIntegratie/youTube_1.html">youTube_1</a></li>
+        <li>$(document).ready(): <a href="jqIntegratie/youTube_2.html">youTube_2</a></li>
+        <li>jQuery documentatie: <a href="jqIntegratie/api.html">methode css()</a></li>
+      </ul>
+      <h2><a id="selectors"></a>Hoofdstuk 4: elementen selecteren</h2>
+      <ul>
+        <li><a href="selectors/selectorTest.html">Selector testpagina</a></li>
+        <li>Toepassing 1: <a href="selectors/toep_gemeentelijst_1.html">gemeentelijst filteren</a> (basis versie)</li>
+        <li>Toepassing 1: <a href="selectors/toep_openingsuren.html">openingsuren</a></li>
+      </ul>
+      <h2>Hoofdstuk 5: selectie verfijnen (traversing)</h2>
+      <ul>
+        <li><a href="selectors/first.html">First, last en eq</a></li>
+        <li><a href="selectors/slice.html">Slice</a></li>
+        <li><a href="selectors/filter.html">Filter</a></li>
+        <li><a href="selectors/not.html">Not</a></li>
+        <li><a href="selectors/has.html">Has</a></li>
+        <li><a href="selectors/is.html">Is</a></li>
+        <li><a href="selectors/each.html">Each</a></li>
+        <li><a href="selectors/end.html">End</a></li>
+        <li><a href="selectors/parent.html">Parent, parents,  children en find</a></li>
+        <li><a href="selectors/next.html">Next, nextaAll en nextUntil</a></li>
+        <li><a href="selectors/prev.html">Prev, prevAll en prevUntil</a></li>
+        <li><a href="selectors/siblings.html">Siblings</a></li>
+        <li><a href="selectors/closest.html">closest</a></li>
+        <li><a href="selectors/addBack.html">AddBack</a></li>
+        <li><a href="selectors/speedTest.html">Speedtest</a></li>
+        <li>Toepassing 1: <a href="selectors/toep_gemeentelijst_2.html">gemeentelijst filteren</a> (uitgebreide versie)</li>
+        <li>Toepassing 2: <a href="selectors/toep_rating.html">rating</a></li>
+      </ul>
+      <h2><a id="events"></a>Hoofdstuk 6: events</h2>
+      <ul>
+        <li><a href="events/documentEvents.html">Documentevents</a></li>
+        <li><a href="events/mouseOverEnter.html">Mouseenter vs. mousever</a></li>
+        <li><a href="events/evenBubbling.html">Event bubbling</a></li>
+        <li><a href="events/evenMethodes.html">Event methodes</a></li>
+        <li><a href="events/evenProperties.html">Event properties</a></li>
+        <li><a href="events/hover.html">Hover</a></li>
+        <li>On: <a href="events/on_1.html">één selector, meerdere events met dezelfde functie</a></li>
+        <li>On: <a href="events/on_2.html">één selector, meerdere events met verschillende functies</a></li>
+        <li>On: <a href="events/on_3.html">live data</a></li>
+        <li>Toepassing 1: <a href="events/toep_reactieTest.html">reactietest</a></li>
+      </ul>
+      <h2><a id="animaties"></a>Hoofdstuk 7: animaties en effecten</h2>
+      <ul>
+        <li><a href="animaties/basisEffecten.html">Basiseffecten</a></li>
+        <li><a href="animaties/aangepasteAnimaties.html">Aangepaste animaties</a></li>
+        <li><a href="animaties/vernellingsfunctie.html">Versnellingsfunctie</a></li>
+        <li>Toepassing 1: <a href="animaties/toep_scroll.html">vloeiend scrollen</a></li>
+        <li>Toepassing 2: <a href="animaties/toep_tabs.html">tabbladen</a></li>
+      </ul>
+      <h2><a id="dom"></a>Hoofdstuk 8: DOM manipulatie</h2>
+      <ul>
+        <li><a href="dom/htmlAttributen.html">HTML attributen</a></li>
+        <li><a href="dom/dimensies.html"> Object dimensies</a></li>
+        <li>Elementen toevoegen: <a href="dom/inside.html">binnen de selector</a></li>
+        <li>Elementen toevoegen: <a href="dom/outside.html">buiten de selector</a></li>
+        <li>Elementen toevoegen: <a href="dom/around.html">rond de selector</a></li>
+        <li>Elementen toevoegen: <a href="dom/before_insertBefore.html">before() vs insertBefore()</a></li>
+        <li><a href="dom/remove.html">Elementen verwijderen</a></li>
+        <li><a href="dom/replace.html">Elementen vervangen</a></li>
+        <li><a href="dom/clone.html">Elementen klonen</a></li>
+        <li>Toepassing 1: <a href="dom/toep_lightbox.html">lightbox</a></li>
+      </ul>
+      <h2><a id="ajaxLokaal"></a>Hoofdstuk 10: AJAX zonder server-side scripting</h2>
+      <ul>
+        <li>Load: <a href="ajaxLokaal/load1.html">HTML zonder callback</a></li>
+        <li>Load: <a href="ajaxLokaal/load2.html">HTML met callback</a></li>
+        <li>$.getScript: <a href="ajaxLokaal/script.html">script met callback</a></li>
+        <li>$.getJson: <a href="ajaxLokaal/json1.html">JSON met literal array</a></li>
+        <li>$.getJson: <a href="ajaxLokaal/json2.html">JSON met één object</a></li>
+        <li>$.getJson: <a href="ajaxLokaal/json3.html">JSON met meerdere objecten</a></li>
+        <li>$.get: <a href="ajaxLokaal/getHTML.html">HTML</a></li>
+        <li>$.get: <a href="ajaxLokaal/getJSON.html">JSON met één object</a></li>
+        <li>$.get: <a href="ajaxLokaal/getXML.html">XML</a></li>
+        <li>$.get: <a href="ajaxLokaal/get_JSON_XML.html">JSON vs XML</a></li>
+        <li>$.ajax: <a href="ajaxLokaal/ajax.html">JSON met één object</a></li>
+        <li>$.getJson: <a href="ajaxLokaal/JSONP_imdb.html">IMDB</a> (JSONP)</li>
+        <li>$.getJson: <a href="ajaxLokaal/JSONP_stadsInfo.html">stadsinfo</a> (JSONP)</li>
+      </ul>
+      <h2><a id="ajaxServer"></a>Hoofdstuk 11: AJAX met server-side scripting</h2>
+      <ul>
+        <li>Load: <a href="ajaxServer/bloemenMaster1.html">master/detailpagina</a></li>
+        <li>$.get: <a href="ajaxServer/bloemenMaster2.html">master/detailpagina</a></li>
+        <li>$.post: <a href="ajaxServer/contactForm.html">contactformulier</a></li>
+        <li>Cross-site scripting: <a href="ajaxServer/XSS/curl.php">test PHP-functie cURL</a></li>
+        <li>Cross-site scripting (HTML): <a href="ajaxServer/XSS/boeken.html"> boeken CM</a></li>
+        <li>Cross-site scripting (JSON): <a href="ajaxServer/XSS/googleGeo.html">Google Geocoding</a></li>
+        <li>Cross-site scripting (XML): <a href="ajaxServer/XSS/itunes.html">iTunes</a></li>
+      </ul>
+      <h2><a id="opdrachten"></a>Extra opdrachten</h2>
+      <p>Zie map <a href="opdrachten/index.html">opdrachten</a></p>
+    </section>
+    <!-- end .content --> <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

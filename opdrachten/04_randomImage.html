@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Random image</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+section {
+	padding: 5px;
+	margin: 5px 0;
+}
+.fotoKader {
+	margin: 0 10px;
+	border: solid 1px lightGrey;
+	padding: 3px;
+	box-shadow: 3px 3px 3px rgba(51,51,51,1);
+}
+#foto {
+	text-align: center;
+	height: 520px;
+	vertical-align:text-top;
+}
+#debug {
+	text-align: center;
+}
+</style>
+<script>
+$(function() {
+	function randomMinMax(a,b){
+		// Genereer random nummer tussen min (a) en max (b)
+	}
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Random image</h1>
+    <section>
+      <ul>
+        <li>Vervang elke 5 sec de src van onderstaande afbeelding.</li>
+        <li>Bereken een random  breedte (100px - 900px),  hoogte (100px - 500px) met stapgrootte van 10px.</li>
+        <li>Toon het pad van de foto telkens in <em>section#debug</em>.</li>
+        <li>Alle afbeeldingen zijn afkomstig van <a href="http://lorempixel.com">http://lorempixel.com</a></li>
+        <li>Gebruik hiervoor de
+        JavaScript  <a href="http://www.w3schools.com/jsref/jsref_obj_math.asp">Math</a> methodes en <a href="http://www.elated.com/articles/javascript-timers-with-settimeout-and-setinterval/">timing-events</a></li>
+      </ul>
+    </section>
+    <section id="debug" class="error">http://lorempixel.com/200/300</section>
+    <section id="foto">
+      <img src="http://lorempixel.com/200/300" id="theImage" alt="Random image" class="fotoKader">
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

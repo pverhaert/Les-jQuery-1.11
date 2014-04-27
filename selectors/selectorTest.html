@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Selector testpagina</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<link  href="../_jQuery/prettify/prettify.css" rel="stylesheet">
+<script src="../_jQuery/prettify/prettify.js"></script>
+<style type="text/css">
+label {
+	width: 60px;
+}
+.checkBox label {
+	width:90%;
+}
+#domCode {
+	font-size: 80%;
+	border: solid 1px #666;
+	padding: 5px;
+	background-color: #EDEEF0;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+}
+.highLight {
+	border: solid 2px green !important;
+	margin: 2px;
+	background-color:#FF6 !important;
+	background-image: none !important;
+	color: red !important;
+}
+img {
+	padding: 3px;
+	margin: 3px;
+}
+</style>
+<script>
+$(window).on('load', function() {
+	prettyPrint();
+});
+$(function() {
+	var domCode = $('#domCode').html();
+	$('#deCode').html(domCode.replace(/</g,'&lt;').replace(/>/g,'&gt;'));
+	$('#keuze').blur(function(){
+		var teller = 0;
+		$('*').removeClass('highLight');
+		var deSelector = $.trim($('#keuze').val());
+		if (deSelector.length != 0) {
+			deSelector.replace(/,/g,', #domCode ');
+			$('#domCode ' + deSelector).each(function(){
+				teller += 1;
+			}).addClass('highLight');
+			$('#resultaat').html("$('" + deSelector.replace(/\'/g,'\"') + "').addClass('highLight');");
+		}
+		$('#teller').html('&nbsp;&nbsp;' + teller + '&nbsp;&nbsp;');
+		return false;
+	});
+	$('#form1').submit(function(){
+		return false;
+	});
+	// Toon/verberg code: voeg tekst toe
+	$('pre').each(function() {
+   		$(this).addClass('prettyprint lang-html drop-shadow lifted');
+    	$(this).find('code').before('<p><a class="toonVerbergCode" href="javascript:;">toon code</a></p>');
+	});
+	// Toon/verberg code: pas tekst aan
+	$('pre code').hide();
+	$('body').on('click','.toonVerbergCode', function(){
+		$(this).parents('pre').find('code').toggle();
+		if ($(this).text() == "toon code") {
+			$(this).text('verberg code');
+		} else {
+			$(this).text('toon code');
+		}
+	});	
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <article class="content" id="content">
+      <h1>Selector testpagina</h1>
+      <section>
+        <h2>Selector</h2>
+        <p>Onderstaand tekstveld selecteert enkel binnen de section-tag met id=&quot;domCode&quot; en voegt vervolgens de class &quot;highLight&quot; toe.</p>
+        <p>
+          <label for="keuze">Selector: </label>
+          <input type="text" name="keuze" id="keuze">
+          <input type="submit" name="submit2" id="submit2" value="test selector">
+        </p>
+        <p> jQuery statement: <code id="resultaat" class="prettyprint lang-html bgCodeBlok">....</code> &nbsp;&nbsp;&nbsp;&nbsp;Aantal geselecteerde elementen: <span id="teller" class="bgCodeBlok">....</span> </p>
+      </section>
+      <section id="domCode">
+        <h2>Dit is een Section-tag met id=&quot;domCode&quot;</h2>
+        <div style="float:right; width:40%;">
+          <h3>Bloemen</h3>
+          <p>
+          	<a href="http://nl.wikipedia.org/wiki/Anjer">
+            	<img src="../assets/fotos/thumb_anjer.jpg" width="100" height="100" alt="anjer"> 
+            </a>
+            <a href="http://nl.wikipedia.org/wiki/Lelie">
+            	<img src="../assets/fotos/thumb_lelie.jpg" width="100" height="100" alt="lelie" title="Dit is een lelie"> 
+            </a>
+            	<img src="../assets/fotos/thumb_narcis.jpg" width="100" height="100" alt="narcis"> 
+                <img src="../assets/fotos/thumb_roos.jpg" width="100" height="100" alt="roos" title="Dit is een roos"> 
+            <a href="http://nl.wikipedia.org/wiki/Tulp">
+            	<img src="../assets/fotos/thumb_tulp.jpg" width="100" height="100" alt="tulp" title="Dit is een tulp">
+            </a> 
+          </p>
+          <h3>Formulier</h3>
+          <form name="form1" id="form1" method="post" action="javascript:;">
+            <p>
+              <label for="naam">Naam:</label>
+              <input type="text" name="naam" id="naam">
+            </p>
+            <p>
+              <label for="dis">Disabled:</label>
+              <input type="text" name="dis" id="dis" disabled>
+            </p>
+            <p>
+              <label for="land">Land:</label>
+              <select name="land" id="land">
+                <option>Kies een land</option>
+                <option value="België">België</option>
+                <option value="Nederland">Nederland</option>
+              </select>
+            </p>
+            <div class="checkBox">
+              <p>
+                <label for="OS_0">Android</label>
+                <input type="checkbox" name="OS" value="Android" id="OS_0">
+              </p>
+              <p>
+                <label for="OS_1">iOS</label>
+                <input name="OS" type="checkbox" id="OS_1" value="iOS" checked>
+              </p>
+              <p>
+                <label for="OS_2">Windows</label>
+                <input type="checkbox" name="OS" value="Windows" id="OS_2">
+                <br>
+              </p>
+            </div>
+            <p>
+              <label for="submit">&nbsp;</label>
+              <input type="submit" name="submit" id="submit" value="Submit">
+              <input type="reset" name="reset" id="reset" value="Reset">
+              <input type="button" name="knop1" id="knop1" value="Button 1">
+              <input type="button" name="knop2" id="knop2" value="Button 2" disabled>
+            </p>
+          </form>
+          <p>&nbsp;</p>
+        </div>
+        <div>
+          <h3>Heading 3 tekst</h3>
+          <p id="paragraaf1"><strong>paragraaf 1</strong>: Lorem <strong>ipsum</strong> dolor sit amet, <strong>consectetur</strong> adipiscing elit. In <strong>commodo</strong> elit at enim rhoncus nec accumsan quam tempus. Donec <strong>porttitor</strong> nibh ac arcu varius <strong>ullamcorper</strong>.</p>
+          <ul>
+            <li>Links (<a href="http://www.adobe.com" title="Link naar Adobe website">http://www.adobe.com</a>)
+              <ul class="sublist">
+                <li><a href="http://jquery.com/" target="abc" title="Link naar jQuery website">http://jquery.com/</a></li>
+                <li><a href="http://jquerymobile.com/" target="abc">http://jquerymobile.com/</a></li>
+                <li><a href="http://www.khk.be">http://www.khk.be</a></li>
+                <li><a href="../index.html" title="Link naar homepage">homepage</a> </li>
+              </ul>
+            </li>
+            <li>Fusce dapibus consectetur convallis.  euismod a tortor.
+              <ol class="sublist">
+                <li>Donec aliquam magna quis tellus eleifend vehicula. </li>
+                <li>Duis volutpat auctor lacus quis suscipit. </li>
+              </ol>
+            </li>
+            <li>Nulla interdum aliquet libero</li>
+          </ul>
+          <p><strong>Paragraaf 2</strong>: Quisque orci nibh, porttitor quis sagittis at, <strong>bibendum</strong> non ante. Praesent a massa in massa scelerisque rutrum sed a leo. Cras pulvinar, felis in elementum <strong>consectetur</strong>, ante ipsum consectetur felis, vitae tincidunt.</p>
+          <p><strong>Paragraaf 3</strong>: Donec vehicula sem vitae arcu malesuada ac ullamcorper mauris posuere. Integer tellus metus, volutpat id imperdiet quis, bibendum sed leo. </p>
+          <h3>Tabel</h3>
+          <p>Tabel met class layoutTabel</p>
+          <table class="layoutTabel">
+            <caption>
+            Opleidingen webdesign
+            </caption>
+            <thead>
+              <tr>
+                <th>Opleiding:</th>
+                <th>Datum:</th>
+                <th>Lokaal:</th>
+                <th>Opm:</th>
+                <th>URL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Dreamweaver</td>
+                <td>15 december</td>
+                <td>PC1</td>
+                <td>Twee dagen</td>
+                <td><a href="http://www.dreamweaver.com/">http://www.dreamweaver.com/</a></td>
+              </tr>
+              <tr>
+                <td>Dreamweaver</td>
+                <td>16 december</td>
+                <td>PC1</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>PHP</td>
+                <td>11 december</td>
+                <td>PC2</td>
+                <td>Twee dagen</td>
+                <td><a href="http://www.php.net/">http://www.php.net/</a></td>
+              </tr>
+              <tr>
+                <td>PHP</td>
+                <td>12 december</td>
+                <td>PC2</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Fireworks</td>
+                <td>17 december</td>
+                <td>Mac1</td>
+                <td>één dag</td>
+                <td>&nbsp;</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>&nbsp;</p>
+        </div>
+      </section>
+      <section class="reset"></section>
+      <section>
+        <h2>Broncode &lt;section id=&quot;domCode&quot;&gt;</h2>
+        <pre><code id="deCode">&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&lt;head&gt;<br>  &lt;style&gt;<br>  h3 { margin: 0; }<br>  div,span,p {<br>    width: 80px;<br>    height: 40px;<br>    float:left;<br>    padding: 10px;<br>    margin: 10px;<br>    background-color: #EEEEEE;<br>  }<br>  &lt;/style&gt;<br>  &lt;script src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>  &lt;div&gt;DIV&lt;/div&gt;<br><br>  &lt;span&gt;SPAN&lt;/span&gt;<br>  &lt;p&gt;P &lt;button&gt;Button&lt;/button&gt;&lt;/p&gt;<br>&lt;script&gt;var elementCount = $("*").css("border","3px solid red").length;<br>$("body").prepend("&lt;h3&gt;" + elementCount + " elements found&lt;/h3&gt;");&lt;/script&gt;<br><br>&lt;/body&gt;<br>&lt;/html&gt;</code></pre>
+        <p>&nbsp;</p>
+      </section>
+      <!-- end .content --> 
+    </article>
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

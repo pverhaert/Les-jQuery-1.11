@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Gordijntje (vertikaal)</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<link href='http://fonts.googleapis.com/css?family=Nosifer' rel='stylesheet' type='text/css'>
+<style type="text/css">
+#gordijn {
+	background-image: url(data:image/png;base64,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);
+}
+#venster {
+	width: 100%;
+	text-align: center;
+	color: darkred;
+	border: solid 1px #333;
+	border-top: solid 10px #333;
+	position: relative;
+	border-radius: 0 0 5px 5px;
+}
+#venster p {
+	margin: 0;
+	padding: 0;
+	word-wrap: break-word;
+	font-family: 'Nosifer', sans-serif;
+}
+#gordijn {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	border-bottom: solid 1px black;
+	box-shadow: 0 10px 10px rgba(51,51,51,.7);
+}
+</style>
+<script>
+$(function() {
+	// Code hier
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Gordijntje <span>(vertikaal)</span></h1>
+    <section>
+      <ul>
+        <li>De section-tag <strong>#venster</strong> bevat een p-tag en een div-tag <strong>#gordijn</strong>.</li>
+        <li>Kopieer de tekst van <strong>#deTekst</strong> in de p-tag binnen <strong>#venster</strong>.</li>
+        <li>De div-tag <strong>#gordijn</strong> heeft een breedte en hoogte van 100% en staat absoluut gepositioneerd binnen<strong> #venster</strong>.</li>
+        <li>Met de slider <strong>#font</strong> regel je de lettergrootte van de tekst.</li>
+        <li>Met de slider<strong> #rol</strong> bepaal je hoe ver het gordijn openstaat.</li>
+      </ul>
+    </section>
+    <section>
+      <p>
+        <label for="deTekst">Tekst in venster:</label>
+        <input type="text" required id="deTekst" name="deTekst" value="LOREM IPSUM">
+      </p>
+      <p>
+        <label for="font">Lettergrootte:</label>
+        <input type="range"  min="50" max="300" id="font" name="font" value="125">
+        <span id="fontTxt"></span>px</p>
+      <p>
+        <label for="rol">Sluit gordijn:</label>
+        <input type="range"  min="0" max="100" id="rol" name="rol" value="80">
+        <span id="rolTxt"></span>%</p>
+    </section>
+    <section id="venster">
+      <div id="gordijn"></div>
+      <p>...</p>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

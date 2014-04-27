@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>parent(), parents(), children() en find() methodes</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#theItem {
+	color: red;
+	background-color: lightGrey;
+}
+</style>
+<script>
+$(function() {	
+	// Knop1
+	$('#parent1').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').parent().addClass('highLight');
+	});
+	// Knop2
+	$('#parent2').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').parent().parent().addClass('highLight');
+	});
+	// Knop3
+	$('#parents1').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').parents().addClass('highLight');
+	});
+	// Knop4
+	$('#parents2').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').parents('ul').addClass('highLight');
+	});
+	// Knop5
+	$('#children1').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').children().addClass('highLight');
+	});
+	// Knop6
+	$('#children2').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').children('li').addClass('highLight');
+	});
+	// Knop7
+	$('#find').click(function(){
+		$('*').removeClass('highLight');
+		$('#theItem').find('li').addClass('highLight');
+	});
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>parent(), parents(),  children() en find() methodes</h1>
+    <section>
+      <p>
+        <input type="button" name="parent1" id="parent1" value="parent()">
+        <input type="button" name="parent2" id="parent2" value="parent().parent()">
+        <input type="button" name="parents1" id="parents1" value="parents()">
+        <input type="button" name="parents2" id="parents2" value="parents('ul')">
+        <input type="button" name="children1" id="children1" value="children()">
+        <input type="button" name="children2" id="children2" value="children('li')">
+        <input type="button" name="find" id="find" value="find('li')">
+      </p>
+    </section>
+    <section>
+      <h2>Lijst 1</h2>
+      <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        <li>Sed tincidunt vestibulum felis, eget iaculis tellus gravida at.</li>
+        <li>Mauris sit amet lectus nulla, vel rhoncus est.</li>
+        <li>Curabitur pulvinar eros ut enim aliquam <strong>sed imperdiet</strong> sapien ullamcorper.
+          <ul>
+            <li>Fusce imperdiet tempor ligula, sed eleifend lorem mattis sit amet.</li>
+            <li>In ut felis non velit tristique bibendum.</li>
+            <li id="theItem">li met id=&quot;theItem&quot;
+              <ul>
+                <li>Sed <strong>vehicula metus</strong> et tellus sagittis semper.</li>
+                <li>Praesent quis nunc ante, vitae iaculis risus.
+                  <ul>
+                    <li>Pellentesque interdum<strong> magna nec mauris</strong> congue volutpat.</li>
+                    <li>Vivamus varius nulla vel lorem tempus nec lacinia nulla dapibus.</li>
+                  </ul>
+                </li>
+                <li>Nam scelerisque magna dolor, nec mollis magna.</li>
+              </ul>
+            </li>
+            <li>Morbi placerat leo ac turpis egestas ut lobortis nisl congue.
+              <ul>
+                <li>Donec nec tortor pellentesque erat auctor vulputate nec a massa.</li>
+                <li>Aliquam ut tellus pretium tellus iaculis sagittis vel vehicula lacus.</li>
+                <li>Sed tincidunt vestibulum felis, eget iaculis tellus gravida at.</li>
+                <li>Mauris sit amet lectus nulla, vel rhoncus est.</li>
+              </ul>
+            </li>
+            <li>Curabitur ac quam eget metus posuere euismod sit amet quis ligula.</li>
+            <li>Sed porta ipsum vehicula tellus rutrum eleifend.</li>
+            <li>Donec ac dolor non lectus mollis bibendum.</li>
+          </ul>
+        </li>
+        <li>Phasellus ut ante eget eros tempor laoreet.</li>
+        <li>Maecenas porttitor sem non nulla pulvinar a mattis urna pharetra.
+          <ul>
+            <li>Sed vehicula metus et tellus sagittis semper.</li>
+            <li>Praesent quis nunc ante, vitae iaculis risus.</li>
+            <li>Pellentesque interdum magna nec mauris congue volutpat.</li>
+            <li>Vivamus varius nulla vel lorem tempus nec lacinia nulla dapibus.</li>
+            <li>Nam scelerisque magna dolor, nec mollis magna.</li>
+          </ul>
+        </li>
+        <li>Phasellus at erat dolor, eu dignissim ante.</li>
+        <li>Fusce nec risus vitae massa eleifend rutrum.</li>
+        <li>Vestibulum ac odio nibh, aliquam consequat lectus.</li>
+        <li>Nunc et turpis orci, sit amet imperdiet risus.</li>
+      </ul>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

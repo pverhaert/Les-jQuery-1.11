@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Rating</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+section {
+	margin: 5px 0;
+	clear: both;
+}
+.bloem {
+	width: 150px;
+	float: left;
+	text-align:center;
+	border-radius: 5px;
+}
+.bloemBg {
+	background-color: lightGrey;
+}
+.bloem img {
+	padding: 5px;
+	margin: 5px;
+	cursor: pointer;
+}
+.rating {
+	float: left;
+	padding-top: 40px;
+}
+.rating span {
+	width: 39px;
+	height: 37px;
+	display: block;
+	float: left;
+	cursor: pointer;
+}
+.noRate {
+	background: url(../assets/star_grey.png) no-repeat;
+}
+.rateThis {
+	background: url(../assets/star_gold.png) no-repeat;
+}
+.
+</style>
+<script>
+$(function() {	
+	$('.rating span').addClass('noRate');
+
+	$('.rating span').click(function(){
+		// Klik op een ster
+	});
+	
+	$('#wisRating').click(function() {
+    });
+	
+	$('.bloem img').click(function(){
+		// Wis de individuele score
+	});
+	
+	function berekenRating(){
+		// Bereken de totale score
+	}
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Rating</h1>
+    <h2>Totale score: <span id="teller">0</span></h2>
+    <p>
+      <input name="wisRating" type="button" id="wisRating" value="Wis totale score">
+    </p>
+    <section class="columns_2">
+      <section>
+        <div class="bloem"><img src="../assets/fotos/thumb_anjer.jpg" width="100" height="100" alt="Anjer" title="Wis rating anjer"></div>
+        <div class="rating"><span></span><span></span><span></span><span></span><span></span> </div>
+        <div class="reset">&nbsp;</div>
+      </section>
+      <section>
+        <div class="bloem"><img src="../assets/fotos/thumb_lelie.jpg" width="100" height="100" alt="Lelie" title="Wis rating lelie"></div>
+        <div class="rating"><span></span><span></span><span></span><span></span><span></span> </div>
+        <div class="reset">&nbsp;</div>
+      </section>
+      <section>
+        <div class="bloem"> <img src="../assets/fotos/thumb_narcis.jpg" width="100" height="100" alt="Narcis" title="Wis rating narcis"></div>
+        <div class="rating"><span></span><span></span><span></span><span></span><span></span> </div>
+        <div class="reset">&nbsp;</div>
+      </section>
+      <section>
+        <div class="bloem"><img src="../assets/fotos/thumb_roos.jpg" width="100" height="100" alt="Roos" title="Wis rating roos"></div>
+        <div class="rating"><span></span><span></span><span></span><span></span><span></span> </div>
+        <div class="reset">&nbsp;</div>
+      </section>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Rapport</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+.naam {
+	font-weight: bold;
+	color: darkGreen;
+	text-align: right;
+}
+.score {
+	font-weight: bold;
+	color: white;
+	background-color: grey;
+}
+.red {
+	background-color: #F88174;
+}
+.orange {
+	background-color: #FFCF9F;
+}
+#rapport {
+	border: solid 1px grey;
+	border-collapse: collapse;
+}
+#rapport td {
+	padding: 10px;
+	border-right: dotted 1px grey;
+}
+#rapport tbody tr {
+	border-top: solid 1px grey;
+}
+#rapport tbody td {
+	text-align: center;
+}
+#rapport thead {
+	background-color: grey;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+}
+#rapport th {
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	transform: rotate(90deg);
+	line-height: 4em;
+}
+</style>
+<script>
+$(function() {
+	// Voeg aan de eerste kolom de class .naam toe
+
+	// Voeg aan de laatste kolom de class .score toe
+	
+	// Kleur getallen 
+	
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Rapport</h1>
+    <section>
+      <ul>
+        <li>Voeg aan <strong>elke eerste</strong> rij binnen <strong>tbody</strong> de class <strong>naam</strong> toe (tekst wordt groen).</li>
+        <li>Voeg aan <strong>elke laatste</strong> rij binnen <strong>tbody</strong> de class <strong>score</strong> toe (achtergrond wordt lichtgrijs).</li>
+        <li>Geef  het cijfer<strong> 8/20 en  9/20</strong> een oranje achtergrond (class <strong>orange</strong>).<br>
+          Geef  elk cijfer <strong>kleiner dan 8/20</strong> een rode achtergrond (class <strong>red</strong>).</li>
+        <li>Bereken voor elke rij de <strong>totaalscore</strong> en plaats deze in de <strong> laatste kolom</strong>.<br>
+          <strong>Tip</strong>: de waarde die je uit een  cel ophaalt, is altijd van het type string! <br>
+          Zet deze string via de  methode <a href="http://www.w3schools.com/jsref/jsref_parsefloat.asp">parseFloat()</a> om naar een getal.<br>
+          Indien de string <strong>geen cijfer bevat</strong>, is de waarde van parseFloat() gelijk aan <strong>NaN</strong> (Not a Number).<br>
+          Bereken de eindscore enkel voor waardes die<strong> niet NaN</strong> zijn. Test de waarde met de  methode<a href="http://www.w3schools.com/jsref/jsref_isnan.asp"> isNaN()</a>.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Rapport</h2>
+      <table id="rapport">
+        <thead>
+          <tr>
+            <th scope="col">Naam</th>
+            <th scope="col">Vak 1</th>
+            <th scope="col">Vak 2</th>
+            <th scope="col">Vak 3</th>
+            <th scope="col">Vak 4</th>
+            <th scope="col">Vak 5</th>
+            <th scope="col">Vak 6</th>
+            <th scope="col">Totaal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Naam 1</td>
+            <td contenteditable="true">12</td>
+            <td contenteditable="true">14</td>
+            <td contenteditable="true">8</td>
+            <td contenteditable="true">5</td>
+            <td contenteditable="true">16</td>
+            <td contenteditable="true">9.5</td>
+            <td>???</td>
+          </tr>
+          <tr>
+            <td>Naam 2</td>
+            <td contenteditable="true">13.5</td>
+            <td contenteditable="true">18</td>
+            <td contenteditable="true">10</td>
+            <td contenteditable="true">9</td>
+            <td contenteditable="true">13</td>
+            <td contenteditable="true">5</td>
+            <td>???</td>
+          </tr>
+          <tr>
+            <td>Naam 3</td>
+            <td contenteditable="true">16</td>
+            <td contenteditable="true">8</td>
+            <td contenteditable="true">12</td>
+            <td contenteditable="true">14</td>
+            <td contenteditable="true">15</td>
+            <td contenteditable="true">8</td>
+            <td>???</td>
+          </tr>
+          <tr>
+            <td>Naam 4</td>
+            <td contenteditable="true">7</td>
+            <td contenteditable="true">8</td>
+            <td contenteditable="true">9.5</td>
+            <td contenteditable="true">12</td>
+            <td contenteditable="true">7</td>
+            <td contenteditable="true">15</td>
+            <td>???</td>
+          </tr>
+          <tr>
+            <td>Naam 5</td>
+            <td contenteditable="true">5</td>
+            <td contenteditable="true">10</td>
+            <td contenteditable="true">5</td>
+            <td contenteditable="true">10</td>
+            <td contenteditable="true">5</td>
+            <td contenteditable="true">5</td>
+            <td>???</td>
+          </tr>
+          <tr>
+            <td>Naam 6</td>
+            <td contenteditable="true">8</td>
+            <td contenteditable="true">6</td>
+            <td contenteditable="true">10</td>
+            <td contenteditable="true">9</td>
+            <td contenteditable="true">14</td>
+            <td contenteditable="true">16</td>
+            <td contenteditable="true">???</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>&nbsp;</p>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

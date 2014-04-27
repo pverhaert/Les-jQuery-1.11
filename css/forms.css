@@ -1,0 +1,28 @@
+/* Zie ook formalize.css */
+label:first-child {
+	width: 150px;
+	display: inline-block;
+	text-align: right;
+	padding-right: 5px;
+	vertical-align:top;
+}
+.checkBox label {
+	width:95%;
+	float:right;
+	text-align: left;
+	padding-right:10px;
+}
+.radioButtons label {
+	display: inline;
+	float:none;
+}
+textarea {
+	width: 70%;
+}
+optgroup {
+	color:#872651;
+	font-style: normal;
+}
+optgroup option {
+	color: black;
+}

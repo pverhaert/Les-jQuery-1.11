@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>The Movie DB</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+label {
+	width: 100px;
+}
+section {
+	padding: 5px;
+	margin: 5px 0;
+}
+#cover {
+	border: solid 1px black;
+	box-shadow: 3px 3px 3px rgba(51,51,51,1);
+	float: left;
+	margin: 0 20px 20px 0;
+}
+</style>
+<script>
+$(function() {
+	// Foutafhandeling
+	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
+		alert('Er is een fout opgetreden!\n' + thrownError);
+    });
+
+	var key = '23afca60ebf72f8d88cdcae2c4f31866';
+	$('#keuzelijst, #detail').hide();
+	
+	$('#movieForm').submit(function(e) {
+        e.preventDefault();
+		var pars = $(this).serialize();
+		$.getJSON('http://api.themoviedb.org/3/search/movie?api_key='+ key + '&' + pars + '&jsoncallback=' + key , function(data){
+			$('#movieID option').remove();
+			var titels = data.results;
+			var items = data.results.length;
+			if (items == 0) {
+				alert('Geen films gevonden'); 
+				$('#keuzelijst').hide()
+			} else {
+				$('#keuzelijst').show();
+			}
+			$.each(titels, function(index, value) {
+				$('#movieID').append('<option value="' + titels[index].id + '">' + titels[index].title + '</option>');				
+			});
+			$('#movieID').change();
+		});
+    });
+	
+	$('#movieID').change(function(e) {
+        var id = $(this).val();
+		$.getJSON('http://api.themoviedb.org/3/movie/' + id + '?api_key='+ key + '&jsoncallback=' + key , function(data){
+			var img = data.poster_path;
+			$('#cover').attr('src', 'http://cf2.imgobject.com/t/p/w185/' + img);
+			$('#title').text(data.title);
+			$('#overview').text(data.overview);
+			$('#homepage').html('<a href="'+ data.homepage + '">' + data.homepage + '</a>');
+			$('#detail').show();
+		});
+    });
+	$('#movieForm').submit();
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>The Movie DB <span>(JSONP)</span></h1>
+    <section>
+      <ul>
+        <li>Zoek een film op titel.</li>
+        <li>Van alle gevonden titels, verschijnt de <strong>titel</strong> en het <strong>id</strong> in keuzelijst.<br>
+          De code: &lt;option value=&quot;<strong>id</strong>&quot;&gt;<strong>title</strong>&lt;/option&gt;</li>
+        <li>De keuzelijst haalt de detailgegevens op (<strong>poster_path</strong>, <strong>title</strong>,<strong> homepage</strong> en <strong>overview</strong>)</li>
+        <li>Toon deze gegevens in<strong> #detail</strong>.</li>
+        <li><strong>LET OP</strong>: voor deze API heb je een key nodig (<strong>23afca60ebf72f8d88cdcae2c4f31866</strong>).</li>
+        <li>themoviedb API: <br>
+          <a href="http://docs.themoviedb.apiary.io/">http://docs.themoviedb.apiary.io/</a></li>
+        <li>Voorbeeld:<br>
+          Zoek titel <a href="http://api.themoviedb.org/3/search/movie?query=Harry+potter&api_key=23afca60ebf72f8d88cdcae2c4f31866&jsoncallback=23afca60ebf72f8d88cdcae2c4f31866">"Harry Potter"</a><br>
+          Details van ID <a href="http://api.themoviedb.org/3/movie/12445?api_key=23afca60ebf72f8d88cdcae2c4f31866&jsoncallback=?">12445</a> </li>
+        <li><strong>LET OP</strong>: gebruik in $.getJSON() niet <strong>callback=?</strong> maar wel <strong>callback=23afca60ebf72f8d88cdcae2c4f31866</strong>;</li>
+      </ul>
+    </section>
+    <form name="movieForm" id="movieForm" method="post" action="http://www.themoeviedb.com/">
+      <p>
+        <label for="query">Titel:</label>
+        <input type="text" name="query" id="query" value="Harry potter">
+        <input type="submit" name="submit" id="submit" value="Submit">
+      </p>
+    </form>
+    <p id="keuzelijst">
+      <label for="movieID">Movies:</label>
+      <select name="movieID" id="movieID">
+        <option value="a">a</option>
+      </select>
+    </p>
+    <section id="detail">
+      <h2 id="title"><strong>Title</strong></h2>
+      <img src="http://www.lorempixel.com/180/250" id="cover">
+      <p id="overview">overview</p>
+      <p id="homepage">homepage</p>
+    </section>
+    <p class="reset"></p>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

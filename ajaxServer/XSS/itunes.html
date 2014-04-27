@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>jQuery iTunes</title>
+<!-- InstanceEndEditable -->
+<link href="../../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../../_jQuery/jquery.min.js"></script>
+<script src="../../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+h2 {
+	text-align:center;
+}
+#preloader {
+	text-align:center;
+}
+#thumbs img {
+	float: left;
+	margin: 10px;
+	border: solid 1px lightGrey;
+	padding: 3px;
+	box-shadow: 3px 3px 3px rgba(51,51,51,1);
+	cursor: pointer;
+}
+#detail {
+	clear: both;
+}
+#detail td {
+	vertical-align:top;
+}
+</style>
+<script>
+$(function() {
+	// Foutafhandeling
+	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
+		alert('Er is een fout opgetreden!\n' + thrownError);
+    });
+
+	$('#thumbs, #detail').hide();
+	$('#url').change(function(e) {
+		$('#preloader').show();
+		$('#thumbs, #detail').empty();
+		var url = $(this).val();
+		$.get('proxy.php?url=' + url, function(data){
+			$('#preloader').hide();
+			$('#thumbs, #detail').show();
+			$('h2').text($(data).find('title:first').text());
+			var entry = $(data).find('entry');
+			$.each(entry, function(index, value) {
+				//Eerste selector (im\\:image:first)  voor FF en IE, tweede (image:first) voor Chrome en Safari
+				var img = $(this).find('im\\:image:first, image:first').text();
+				var title = $(this).find('title').text();
+				var content = $(this).find('content').text();
+				$('#thumbs').append('<img src="' + img + '" data-id="' + index +'">');
+				$('#detail').append('<div id="entry' + index + '"><h3>' + title + '</h3>' + content + '</div>');
+			});
+			$('#detail div').addClass('drop-shadow').not(':first').hide();
+		}, 'xml');
+    });
+	$('#url').change();
+	
+	$('#thumbs').on('click', 'img', function(){
+		var id = $(this).data('id');
+		$('#detail div:visible').hide();
+		$('#entry' + id).show();
+	});
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../../index.html" id="h">Homepage</a> | <a href="../../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>iTunes <span>(http://itunes.apple.com/rss)</span></h1>
+      <label for="url">iTunes Feed: </label>
+      <select name="url" id="url">
+        <option value="http://itunes.apple.com/be/rss/topalbums/limit=22/xml">Top Albums</option>
+        <option value="http://itunes.apple.com/be/rss/topsongs/limit=22/xml">Top Songs</option>
+        <option value="http://itunes.apple.com/be/rss/topmacapps/limit=22/xml">Top Mac Apps</option>
+      </select>
+    <p>&nbsp;</p>
+    <section id="preloader"><img src="../../assets/preloader.gif" width="160" height="24" alt="Even geduld..."></section>
+    <h2>iTunes RRS feed</h2>
+    <section id="thumbs"></section>
+    <section id="detail"></section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Valuta omrekenen</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<link href='http://fonts.googleapis.com/css?family=Molle' rel='stylesheet' type='text/css'>
+<style type="text/css">
+form {
+	margin: 20px 40px;
+}
+#resultaat p {
+	color: darkred;
+	font-family: 'Molle', sans-serif;
+	font-size: 50px;
+	text-shadow: 3px 3px 5px rgba(0,0,0,.5);
+	padding-top: 21px;
+}
+#q {
+	width: 60px;
+}
+</style>
+<script>
+$(function() {
+	// Foutafhandeling
+	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
+		alert('Er is een fout opgetreden!\n' + thrownError);
+    });
+
+	// Valuta omrekenen
+	$('#valutaForm').submit(function(e) {
+        //
+    }).submit();
+	
+	$('input, select').change(function(e) {
+        $('#valutaForm').submit();
+    });;
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Valuta omrekenen <span>(JSONP)</span></h1>
+    <section>
+      <ul>
+        <li>Met behulp van deze  calculator kan u 11 verschillende valuta omrekenen. De  wisselkoersen worden dagelijks vernieuwd. Bijvoorbeeld:<br>
+          <a href="http://rate-exchange.appspot.com/currency?from=USD&to=EUR&q=1">http://rate-exchange.appspot.com/currency?from=USD&amp;to=EUR&amp;q=1</a><br>
+          <a href="http://rate-exchange.appspot.com/currency?from=EUR&to=USD&q=50">http://rate-exchange.appspot.com/currency?from=EUR&amp;to=USD&amp;q=50</a></li>
+        <li>Rond het resultaat tot op drie cijfers na de komma af.</li>
+        <li>Voor een volledige lijst van valuta namen, zie: <a href="http://www.xe.com/iso4217.php">http://www.xe.com/iso4217.php</a></li>
+      </ul>
+    </section>
+    <form name="valutaForm" id="valutaForm" method="get" action="http://rate-exchange.appspot.com/currency?">
+      <input type="text" name="q" id="q" value="1">
+      <label for="from">&nbsp;</label>
+      <select name="from" id="from">
+        <option value="EUR" selected>EUR - Euro</option>
+        <option value="USD">USD - US Dollar</option>
+        <option value="GBP">GBP - British Pound</option>
+        <option value="INR">INR - Indian Rupee</option>
+        <option value="AUD">AUD - Australian Dollar</option>
+        <option value="CAD">CAD - Canadian Dollar</option>
+        <option value="AED">AED - Emirati Dirham</option>
+        <option value="MYR">MYR - Malaysian Ringgit</option>
+        <option value="CHF">CHF - Swiss Franc</option>
+        <option value="CNY">CNY - Chinese Yuan Renminbi</option>
+        <option value="THB">THB - Thai Baht</option>
+      </select>
+      <label for="to">is</label>
+      <select name="to" id="to">
+        <option value="EUR">EUR - Euro</option>
+        <option value="USD" selected>USD - US Dollar</option>
+        <option value="GBP">GBP - British Pound</option>
+        <option value="INR">INR - Indian Rupee</option>
+        <option value="AUD">AUD - Australian Dollar</option>
+        <option value="CAD">CAD - Canadian Dollar</option>
+        <option value="AED">AED - Emirati Dirham</option>
+        <option value="MYR">MYR - Malaysian Ringgit</option>
+        <option value="CHF">CHF - Swiss Franc</option>
+        <option value="CNY">CNY - Chinese Yuan Renminbi</option>
+        <option value="THB">THB - Thai Baht</option>
+      </select>
+      <input type="submit" name="submit" id="submit" value="Submit">
+    </form>
+    <section id="resultaat">
+      <p>Valuta</p>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd -->
+</html>

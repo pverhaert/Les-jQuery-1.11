@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>While en Do-While  lus</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+p {
+	margin: 0 20px;
+}
+label {
+	width: 60px;
+}
+span {
+	padding-left: 15px;
+	color: red;
+}
+</style>
+<script>
+$(function() {
+	$('#getal').blur(function(){
+		var van = 0;
+		var tot = $(this).val();
+		var txt= '';
+		var i = van;
+		while(i <= tot) {
+			txt += i + ', ';
+			i++;
+		}
+		$('#resultaatWhile').html(txt);
+		
+		// zelfde bewerking met do - while lus
+		var txt= '';
+		var i = van;
+		do {
+			txt += i + ', ';
+			i++;
+		} while (i <= tot);
+		$('#resultaatDoWhile').html(txt);
+
+		// zelfde bewerking met for lus
+		var txt= '';
+		var i = van;
+		for(i=van; i<= tot ; i++) {
+			txt += i + ', ';
+		}
+		$('#resultaatFor').html(txt);
+	});
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>While en Do-While lus</h1>
+    <section>
+      <p>
+        <label for="getal">Getal: </label>
+        <input name="getal" type="text" id="getal" size="15">
+      <p>
+      <h2>While lus:</h2>
+      <p id="resultaatWhile"></p>
+      <h2>Do-While lus:</h2>
+      <p id="resultaatDoWhile"></p>
+      <h2>For lus:</h2>
+      <p id="resultaatFor"></p>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

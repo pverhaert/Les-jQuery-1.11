@@ -1,0 +1,58 @@
+/* CSS Document */
+.icoon:hover, .icoon-plus,.icoon-minus, .icoon-close, .icoon-triangle-e, .icoon-triangle-s, .icoon-triangle-w, .icoon-triangle-n, .icoon-arrow-e, .icoon-arrow-s, .icoon-arrow-w, .icoon-arrow-n, .icoon-zoomin, .icoon-zoomout, .icoon-check {
+	display:block;
+	float:left;
+	min-height: 16px;
+	height: 1.2em;
+	width:16px;
+	overflow: hidden;
+	background: url(../assets/icons.png) no-repeat 0 50%;
+	margin-right: 6px;
+	margin-top: auto;
+	opacity: .6;
+}
+.icoon:hover {
+	opacity: 1;
+}
+.icoon-plus {
+	background-position: 0 50%;
+}
+.icoon-minus {
+	background-position: -16px 50%;
+}
+.icoon-close {
+	background-position: -32px 50%;
+}
+.icoon-triangle-e {
+	background-position: -48px 50%;
+}
+.icoon-triangle-s {
+	background-position: -64px 50%;
+}
+.icoon-triangle-w {
+	background-position: -80px 50%;
+}
+.icoon-triangle-n {
+	background-position: -96px 50%;
+}
+.icoon-arrow-e {
+	background-position: -112px 50%;
+}
+.icoon-arrow-s {
+	background-position: -128px 50%;
+}
+.icoon-arrow-w {
+	background-position: -144px 50%;
+}
+.icoon-arrow-n {
+	background-position: -160px 50%;
+}
+.icoon-zoomin {
+	background-position: -176px 50%;
+}
+.icoon-zoomout {
+	background-position: -192px 50%;
+}
+.icoon-check {
+	background-position: -208px 50%;
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Basiseffecten</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+article div {
+	background-color:#FF9;
+	border: solid 1px red;
+	position: relative;
+}
+</style>
+<script>
+$(function() {
+	var snelheid = 1000;
+	// show/hide effect op div1
+	$('#verbergDiv1').click(function(){
+		$('#div1').hide(snelheid);
+	});
+	$('#toonDiv1').click(function(){
+		$('#div1').show(snelheid);
+	});
+	$('#toggleDiv1').click(function(){
+		$('#div1').toggle(snelheid);
+	});
+	$('#toggleDiv1Callback').click(function(){
+		$('#div1').toggle(snelheid, function(){
+			if ($('#div1').is(':visible')) {
+				alert('Div1 is zichtbaar');
+			} else {
+				alert('Div1 is onzichtbaar');
+			}
+		});
+	});
+	// slide-effect op div2
+	$('#verbergDiv2').click(function(){
+		$('#div2').slideUp(snelheid);
+	});
+	$('#toonDiv2').click(function(){
+		$('#div2').slideDown(snelheid);
+	});
+	$('#toggleDiv2').click(function(){
+		$('#div2').slideToggle(snelheid);
+	});
+	$('#toggleDiv2Callback').click(function(){
+		$('#div2').slideToggle(snelheid, function(){
+			if ($('#div2').is(':visible')) {
+				alert('Div2 is zichtbaar');
+			} else {
+				alert('Div2 is onzichtbaar');
+			}
+		});
+	});
+	// fade-effect op div3
+	$('#verbergDiv3').click(function(){
+		$('#div3').fadeIn(snelheid);
+	});
+	$('#toonDiv3').click(function(){
+		$('#div3').fadeOut(snelheid);
+	});
+	$('#toggleDiv3').click(function(){
+		$('#div3').fadeToggle(snelheid);
+	});
+	$('#toggleDiv3Callback').click(function(){
+		$('#div3').fadeToggle(snelheid, function(){
+			if ($('#div3').is(':visible')) {
+				alert('Div3 is zichtbaar');
+			} else {
+				alert('Div3 is onzichtbaar');
+			}
+		});
+	});
+	// fade-effect op div4
+	$('#fadeDiv4_50').click(function(){
+		$('#div4').fadeTo(snelheid, .5);
+	});
+	$('#fadeDiv4_0').click(function(){
+		$('#div4').fadeTo(snelheid, 0);
+	});
+	$('#fadeDiv4_100').click(function(){
+		$('#div4').fadeTo(snelheid, 1);
+	});
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Basiseffecten</h1>
+    <section>
+      <h2>Div1: show, hide en toggle</h2>
+      <p>
+        <input type="button" name="verbergDiv1" id="verbergDiv1" value="hide div1">
+        <input type="button" name="toonDiv1" id="toonDiv1" value="show div1">
+        <input type="button" name="toggleDiv1" id="toggleDiv1" value="toggle div1">
+        <input type="button" name="toggleDiv1Callback" id="toggleDiv1Callback" value="toggle div1 met callback">
+      </p>
+      <div id="div1">
+        <h3>&lt;div id=&quot;div1&quot;&gt;</h3>
+        <p>Ut enim ad minim veniam, duis aute irure dolor velit esse cillum dolore. In reprehenderit in voluptate sed do eiusmod tempor incididunt excepteur sint occaecat. Cupidatat non proident, consectetur adipisicing elit, lorem ipsum dolor sit amet. Ut enim ad minim veniam, eu fugiat nulla pariatur. Mollit anim id est laborum.</p>
+        <p>Sed do eiusmod tempor incididunt qui officia deserunt quis nostrud exercitation. In reprehenderit in voluptate ut labore et dolore magna aliqua. Eu fugiat nulla pariatur.</p>
+        <p>Lorem ipsum dolor sit amet, ut enim ad minim veniam, ullamco laboris nisi. Ut aliquip ex ea commodo consequat. Cupidatat non proident, qui officia deserunt sed do eiusmod tempor incididunt. Duis aute irure dolor sunt in culpa consectetur adipisicing elit. Mollit anim id est laborum.</p>
+      </div>
+    </section>
+    <section>
+      <h2>Div2: slideUp, slideDown en slideToggle</h2>
+      <p>
+        <input type="button" name="verbergDiv2" id="verbergDiv2" value="slideUp div2">
+        <input type="button" name="toonDiv2" id="toonDiv2" value="slideDown div2">
+        <input type="button" name="toggleDiv2" id="toggleDiv2" value="slideToggle div2">
+        <input type="button" name="toggleDiv2Callback" id="toggleDiv2Callback" value="slideToggle div2 met callback">
+      </p>
+      <div id="div2">
+        <h3>&lt;div id=&quot;div2&quot;&gt;</h3>
+        <p>Lorem ipsum dolor sit amet, velit esse cillum dolore consectetur adipisicing elit. Duis aute irure dolor ut enim ad minim veniam, mollit anim id est laborum. Ut aliquip ex ea commodo consequat. Velit esse cillum dolore sunt in culpa quis nostrud exercitation.</p>
+        <p>In reprehenderit in voluptate excepteur sint occaecat duis aute irure dolor. Ut enim ad minim veniam, ut labore et dolore magna aliqua. Cupidatat non proident, sed do eiusmod tempor incididunt. Consectetur adipisicing elit, lorem ipsum dolor sit amet, ut labore et dolore magna aliqua. In reprehenderit in voluptate cupidatat non proident, excepteur sint occaecat.</p>
+        <p>Ullamco laboris nisi velit esse cillum dolore eu fugiat nulla pariatur. Ut aliquip ex ea commodo consequat. Sed do eiusmod tempor incididunt quis nostrud exercitation qui officia deserunt. Cupidatat non proident, consectetur adipisicing elit, in reprehenderit in voluptate. Ut labore et dolore magna aliqua.</p>
+      </div>
+    </section>
+    <section>
+      <h2>Div3: fadeIn, fadeOut en fadeToggle</h2>
+      <p>
+        <input type="button" name="toonDiv3" id="toonDiv3" value="fadeOut div3">
+        <input type="button" name="verbergDiv3" id="verbergDiv3" value="fadeIn div3">
+        <input type="button" name="toggleDiv3" id="toggleDiv3" value="fadeToggle div3">
+        <input type="button" name="toggleDiv3Callback" id="toggleDiv3Callback" value="fadeToggle div3 met callback">
+      </p>
+      <div id="div3">
+        <h3>&lt;div id=&quot;div3&quot;&gt;</h3>
+        <p>Ut aliquip ex ea commodo consequat. Ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, lorem ipsum dolor sit amet.</p>
+        <p>Consectetur adipisicing elit, ut aliquip ex ea commodo consequat. Qui officia deserunt ut labore et dolore magna aliqua. Duis aute irure dolor excepteur sint occaecat ullamco laboris nisi.</p>
+        <p>Ut aliquip ex ea commodo consequat. Sed do eiusmod tempor incididunt velit esse cillum dolore ut enim ad minim veniam. Ut labore et dolore magna aliqua.</p>
+      </div>
+    </section>
+    <section>
+      <h2>Div4: fadeTo</h2>
+      <p>
+        <input type="button" name="fadeDiv4_50" id="fadeDiv4_50" value="fadeTo 50% div4">
+        <input type="button" name="fadeDiv4_0" id="fadeDiv4_0" value="fadeTo 0% div4">
+        <input type="button" name="fadeDiv4_100" id="fadeDiv4_100" value="fadeTo 100% div4">
+      </p>
+      <div id="div4">
+        <h3>&lt;div id=&quot;div4&quot;&gt;</h3>
+        <p>In reprehenderit in voluptate excepteur sint occaecat duis aute irure dolor. Ut enim ad minim veniam, ut labore et dolore magna aliqua. Cupidatat non proident, sed do eiusmod tempor incididunt. Consectetur adipisicing elit, lorem ipsum dolor sit amet, ut labore et dolore magna aliqua. In reprehenderit in voluptate cupidatat non proident, excepteur sint occaecat.</p>
+        <p>Ullamco laboris nisi velit esse cillum dolore eu fugiat nulla pariatur. Ut aliquip ex ea commodo consequat. Sed do eiusmod tempor incididunt quis nostrud exercitation qui officia deserunt. Cupidatat non proident, consectetur adipisicing elit, in reprehenderit in voluptate. Ut labore et dolore magna aliqua.</p>
+      </div>
+    </section>
+    <section>
+      <p>Lorem ipsum dolor sit amet, velit esse cillum dolore consectetur adipisicing elit. Duis aute irure dolor ut enim ad minim veniam, mollit anim id est laborum. Ut aliquip ex ea commodo consequat. Velit esse cillum dolore sunt in culpa quis nostrud exercitation.</p>
+      <p>In reprehenderit in voluptate excepteur sint occaecat duis aute irure dolor. Ut enim ad minim veniam, ut labore et dolore magna aliqua. Cupidatat non proident, sed do eiusmod tempor incididunt. Consectetur adipisicing elit, lorem ipsum dolor sit amet, ut labore et dolore magna aliqua. In reprehenderit in voluptate cupidatat non proident, excepteur sint occaecat.</p>
+    </section>
+    <!-- end .content --> <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

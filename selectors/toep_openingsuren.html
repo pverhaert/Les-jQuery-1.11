@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+<!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Openingsuren</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+.nu {
+	background-color: greenYellow;
+}
+</style>
+<script>
+$(function() {
+	var vandaag = new Date();
+	var dag = vandaag.getDay();
+	$('tbody tr:nth-child(' + (dag + 1) + ')').addClass('nu');
+//	$('tbody').each(function(index, element) {
+//		$(this).find('tr:eq(' + dag + ')').addClass('nu');
+//	});
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Openingsuren stadhuis Geel</h1>
+    <section>
+      <p>Geef in elke tabel de rij van vandaag een  opvallende achtergrondkleur.<br>
+        Zie voorbeeld: <a href="http://www.openingsuren.com/detail.php?edit=5031593">http://www.openingsuren.com/detail.php?edit=5031593</a></p>
+    </section>
+    <section class="columns_2">
+      <p><strong>Van september t.e.m. juni</strong></p>
+      <table class="layoutTabel">
+        <thead>
+          <tr>
+            <th scope="col">Dag</th>
+            <th scope="col">Voormiddag</th>
+            <th scope="col">Namiddag</th>
+            <th scope="col">Avond</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Zondag</strong></td>
+            <td>Gesloten</td>
+            <td>Gesloten</td>
+            <td>Gesloten</td>
+          </tr>
+          <tr>
+            <td><strong>Maandag</strong></td>
+            <td>9u – 12u</td>
+            <td>13.30u – 16u</td>
+            <td>Gesloten</td>
+          </tr>
+          <tr>
+            <td><strong>Dinsdag</strong></td>
+            <td>9u – 12u</td>
+            <td>13.30u – 16u</td>
+            <td>17.30u – 19.30u</td>
+          </tr>
+          <tr>
+            <td><strong>Woensdag</strong></td>
+            <td>9u – 12u</td>
+            <td>13.30u – 16u</td>
+            <td>Gesloten</td>
+          </tr>
+          <tr>
+            <td><strong>Donderdag</strong></td>
+            <td>9u – 12u</td>
+            <td>13.30u – 16u</td>
+            <td>Gesloten</td>
+          </tr>
+          <tr>
+            <td><strong>Vrijdag</strong></td>
+            <td>9u – 12u</td>
+            <td>Gesloten</td>
+            <td>Gesloten</td>
+          </tr>
+          <tr>
+            <td><strong>Zaterdag</strong></td>
+            <td>Gesloten</td>
+            <td>Gesloten</td>
+            <td>Gesloten</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong><strong>In juli en augustus</strong></strong></p>
+      <table class="layoutTabel">
+        <thead>
+          <tr>
+            <th scope="col">Dag</th>
+            <th scope="col">Voormiddag</th>
+            <th scope="col">Namiddag</th>
+            <th scope="col">Avond</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Zondag</strong></td>
+            <td>Gesloten</td>
+            <td>Gesloten</td>
+            <td>Gesloten</td>
+          </tr>
+          <tr>
+            <td><strong>Maandag</strong></td>
+            <td>9u – 12u</td>
+            <td>Gesloten</td>
+            <td>Gesloten</td>
+          </tr>
+          <tr>
+            <td><strong>Dinsdag</strong></td>
+            <td>9u – 12u</td>
+            <td>Gesloten</td>
+            <td>17.30u – 19.30u</td>
+          </tr>
+          <tr>
+            <td><strong>Woensdag</strong></td>
+            <td>9u – 12u</td>
+            <td>Gesloten</td>
+            <td>Gesloten</td>
+          </tr>
+          <tr>
+            <td><strong>Donderdag</strong></td>
+            <td>9u – 12u</td>
+            <td>Gesloten</td>
+            <td>Gesloten</td>
+          </tr>
+          <tr>
+            <td><strong>Vrijdag</strong></td>
+            <td>9u – 12u</td>
+            <td>Gesloten</td>
+            <td>Gesloten</td>
+          </tr>
+          <tr>
+            <td><strong>Zaterdag</strong></td>
+            <td>Gesloten</td>
+            <td>Gesloten</td>
+            <td>Gesloten</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd -->
+</html>

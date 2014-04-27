@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>slice() methode</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<script>
+$(function() {	
+	// Knop1
+	$('#slice1').click(function(){
+		$('*').removeClass('highLight');
+		$('li').slice(3).addClass('highLight');
+	});
+	// Knop2
+	$('#slice2').click(function(){
+		$('*').removeClass('highLight');
+		$('li').slice(0,3).addClass('highLight');
+	});
+	// Knop3
+	$('#slice3').click(function(){
+		$('*').removeClass('highLight');
+		$('li').slice(3,6).addClass('highLight');
+	});
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>slice() methode</h1>
+    <section>
+      <p>
+        <input type="button" name="slice1" id="slice1" value="slice(3)">
+        <input type="button" name="slice2" id="slice2" value="slice(0,3)">
+        <input type="button" name="slice3" id="slice3" value="slice(3,6)">
+      </p>
+    </section>
+    <section>
+      <h2>Lijst 1</h2>
+      <ul>
+        <li>item 0: Ullamco laboris nisi quis nostrud exercitation</li>
+        <li>item 1: ut aliquip ex ea commodo consequat</li>
+        <li>item 2: Sunt in culpa cupidatat non proident, eu fugiat nulla pariatur</li>
+        <li>item 3: Lorem ipsum dolor sit amet, in reprehenderit in voluptate ut enim ad minim veniam</li>
+        <li>item 4: Ut aliquip ex ea commodo consequat.</li>
+        <li>item 5: Phasellus ut ante eget eros tempor laoreet.</li>
+        <li>item 6: Maecenas porttitor sem non nulla pulvinar a mattis urna pharetra. </li>
+        <li>item 7: Phasellus at erat dolor, eu dignissim ante.</li>
+      </ul>
+    </section>
+    <!-- end .content -->
+    <section> </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

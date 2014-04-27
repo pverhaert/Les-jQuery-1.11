@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Email encoder</title>
+<!-- InstanceEndEditable -->
+<link href="../../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../../_jQuery/jquery.min.js"></script>
+<script src="../../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+p {
+	margin: 0 20px;
+}
+label {
+	width: 60px;
+}
+span {
+	padding-left: 15px;
+	color: red;
+}
+</style>
+<script>
+eval(function(p,a,c,k,e,r){e=function(c){return c.toString(a)};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('$(2(){$(\'a[0^="3:"]\').6(2(){7 a=$(4).5(\'0\').8(\'\').9().b(\'\');a=a.1(\'//\',\'@\').1(/\\//c,\'.\').1(/:d/,\'\');$(4).5(\'0\',\'3:\'+a)})});',14,14,'href|replace|function|mailto|this|attr|each|var|split|reverse||join|g|otliam'.split('|'),0,{}))
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../../index.html" id="h">Homepage</a> | <a href="../index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Email encoder</h1>
+    <ul>
+      <li>Op deze pagina zijn alle mailadressen zodanig gecodeerd dat ze niet door spambots herkend worden.</li>
+      <li>De codering gebeurt als volgt:<br>
+        Inverteer alle letters  (<strong>abc</strong> wordt <strong>cba</strong>).<br>
+        Vervang een punt door  /<br>
+        Vervang @ door //</li>
+      <li>Bijvoorbeeld: <strong>mailto:demo@example.com</strong> wordt: <strong>mailto:moc/elpmaxe//omed</strong></li>
+      <li>Ontwerp een functie die het gecodeerde mailadres op het href-attribuut terug omzet naar een gelding mailadres.</li>
+      <li>Doorloop elke a-tag met   de jQuery methode <a target="_blank" href="http://api.jquery.com/each/">each()</a></li>
+    </ul>
+    <h2>Gecodeerde mailadressen:</h2>
+    <ul>
+      <li>Contacteer <a href="mailto:moc/elpmaxe//omed">demo</a></li>
+      <li>Contacteer <a href="mailto:moc/elpmaxe//elpmaxe">example</a></li>
+      <li>Contacteer <a href="mailto:moc/elpmaxe//tset">test</a></li>
+    </ul>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,48 @@
+{
+	"bloemzaden": [
+	{
+		"titel": "Abutilon hybridum gemengd",
+		"omschrijving": "Een zeer attractieve potplant met decoratief blad en fraaie klokvormige bloemen."
+	},
+	{
+		"titel": "Gaillardia aristata Goblin",
+		"omschrijving": "Zonnig, laag en compact, kan het eerste jaar al bloeien."
+	},
+	{
+		"titel": "Oenothera caespitosa",
+		"omschrijving": "Een lage witte met een zacht roze schaduw."
+	}
+	],
+	"bloem": [
+	{
+        "titel": "Anjer",
+        "foto": "thumb_anjer.jpg",
+        "url": "http://nl.wikipedia.org/wiki/Anjer",
+        "omschrijving": "<p>Lorem ipsum dolor sit amet, ullamco laboris nisi consectetur adipisicing elit. Sed do eiusmod tempor incididunt quis nostrud exercitation ut labore et dolore magna aliqua. Velit esse cillum dolore cupidatat non proident, qui officia deserunt.<\/p><p>Duis aute irure dolor mollit anim id est laborum. Eu fugiat nulla pariatur. Ut aliquip ex ea commodo consequat.<\/p>"
+      },
+      {
+        "titel": "Lelie",
+        "foto": "thumb_lelie.jpg",
+        "url": "http://nl.wikipedia.org/wiki/Lelie",
+        "omschrijving": "<p>Ut aliquip ex ea commodo consequat. Quis nostrud exercitation velit esse cillum dolore duis aute irure dolor. Excepteur sint occaecat eu fugiat nulla pariatur. Ut enim ad minim veniam, in reprehenderit in voluptate sunt in culpa.<\/p><p>Ullamco laboris nisi quis nostrud exercitation ut labore et dolore magna aliqua. Velit esse cillum dolore sed do eiusmod tempor incididunt in reprehenderit in voluptate. Ullamco laboris nisi mollit anim id est laborum.<\/p><p>Lorem ipsum dolor sit amet, ullamco laboris nisi consectetur adipisicing elit. Sed do eiusmod tempor incididunt quis nostrud exercitation ut labore et dolore magna aliqua. Velit esse cillum dolore cupidatat non proident, qui officia deserunt.Duis aute irure dolor mollit anim id est laborum. Eu fugiat nulla pariatur. Ut aliquip ex ea commodo consequat.<\/p>"
+      },
+      {
+        "titel": "Narcis",
+        "foto": "thumb_narcis.jpg",
+        "url": "http://nl.wikipedia.org/wiki/Narcis",
+        "omschrijving": "<p>Ullamco laboris nisi quis nostrud exercitation ut labore et dolore magna aliqua. Velit esse cillum dolore sed do eiusmod tempor incididunt in reprehenderit in voluptate. Ullamco laboris nisi mollit anim id est laborum.<\/p><p>Ut aliquip ex ea commodo consequat. Qui officia deserunt sunt in culpa in reprehenderit in voluptate. Duis aute irure dolor sed do eiusmod tempor incididunt ut enim ad minim veniam. Quis nostrud exercitation cupidatat non proident, sunt in culpa. <\/p>"
+      },
+      {
+        "titel": "Roos",
+        "foto": "thumb_roos.jpg",
+        "url": "http://nl.wikipedia.org/wiki/Rozen",
+        "omschrijving": "<p>Sed do eiusmod tempor incididunt ut enim ad minim veniam, ut aliquip ex ea commodo consequat. Sunt in culpa consectetur adipisicing elit, excepteur sint occaecat. Eu fugiat nulla pariatur.<\/p><p>Duis aute irure dolor in reprehenderit in voluptate quis nostrud exercitation. Qui officia deserunt ut enim ad minim veniam, velit esse cillum dolore. Sunt in culpa ut labore et dolore magna aliqua. Cupidatat non proident, mollit anim id est laborum. Quis nostrud exercitation eu fugiat nulla pariatur.<\/p><p>Ut labore et dolore magna aliqua. Duis aute irure dolor ut enim ad minim veniam, velit esse cillum dolore. In reprehenderit in voluptate eu fugiat nulla pariatur. Mollit anim id est laborum.<\/p>"
+      },
+      {
+        "titel": "Tulp",
+        "foto": "thumb_tulp.jpg",
+        "url": "http://nl.wikipedia.org/wiki/Tulp",
+        "omschrijving": "<p>Ut aliquip ex ea commodo consequat. Qui officia deserunt sunt in culpa in reprehenderit in voluptate. Duis aute irure dolor sed do eiusmod tempor incididunt ut enim ad minim veniam. Quis nostrud exercitation cupidatat non proident, sunt in culpa. <\/p><p>.Lorem ipsum dolor sit amet, ullamco laboris nisi consectetur adipisicing elit. Sed do eiusmod tempor incididunt quis nostrud exercitation ut labore et dolore magna aliqua. Velit esse cillum dolore cupidatat non proident, qui officia deserunt.Duis aute irure dolor mollit anim id est laborum. Eu fugiat nulla pariatur. Ut aliquip ex ea commodo consequat.<\/p><p>Ullamco laboris nisi quis nostrud exercitation ut labore et dolore magna aliqua. Velit esse cillum dolore sed do eiusmod tempor incididunt in reprehenderit in voluptate. Ullamco laboris nisi mollit anim id est laborum.<\/p>"
+      }
+    ]
+}

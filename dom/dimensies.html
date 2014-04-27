@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Object dimensies</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#sect1 {
+	width: 500px;
+	float:left;
+	border: solid 4px lightGrey;
+	padding: 10px;
+	margin: 5px 5px 10px 5px;
+	margin-bottom: 10px;
+	cursor: text;
+}
+#sect2 {
+	width: 300px;
+	float:right;
+}
+article {
+	/*position:relative;*/
+}
+</style>
+<script>
+$(function() {
+	$('#sect1').on('mouseleave keyup', function(){
+		toonEigenschappen();
+	});
+	$('#sect1').mouseleave();
+
+	$('#width').click(function() {
+        $('#sect1').width('400px');
+		toonEigenschappen();
+    });
+	$('#innerWidth').click(function() {
+        $('#sect1').innerWidth('400px');
+		toonEigenschappen();
+    });
+	$('#outerWidth').click(function() {
+        $('#sect1').outerWidth('400px');
+		toonEigenschappen();
+    });
+	$('#outerWidthTrue').click(function() {
+        $('#sect1').outerWidth('400px', true);
+		toonEigenschappen();
+    });
+	$('#height').click(function() {
+        $('#sect1').height('400px').css('overflow', 'auto');
+		toonEigenschappen();
+    });
+	$('#offset').click(function() {
+		$('#sect1').offset({top:150, left:30});
+		toonEigenschappen();
+    });
+	function toonEigenschappen(){
+		sec = $('#sect1');
+		eigenschappen = 'width(): ' + sec.width() + '<br>';
+		eigenschappen += 'innerWidth(): ' + sec.innerWidth() + '<br>';
+		eigenschappen += 'outerWidth(): ' + sec.outerWidth() + '<br>';
+		eigenschappen += 'outerWidth(true): ' + sec.outerWidth(true) + '<br><br>';
+		eigenschappen += 'height(): ' + sec.height() + '<br>';
+		eigenschappen += 'innerHeight(): ' + sec.innerHeight() + '<br>';
+		eigenschappen += 'outerHeight(): ' + sec.outerHeight() + '<br>';
+		eigenschappen += 'outerHeight(true): ' + sec.outerHeight(true) + '<br><br>';
+		eigenschappen += 'offset().left: ' + sec.offset().left + '<br>';
+		eigenschappen += 'offset().top : ' + sec.offset().top  + '<br>';
+		eigenschappen += 'position().left: ' + sec.position().left + '<br>';
+		eigenschappen += 'position().top: ' + sec.position().top + '<br>';
+		$('#sect2 p:first').html(eigenschappen);
+	}
+
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Object dimensies</h1>
+    <section id="sect1" contenteditable="true" title="Bewerk deze tekst">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porttitor   consequat lacus, et malesuada massa fermentum nec. Quisque at eros in   enim semper tincidunt. Nunc sit amet turpis metus. Cum sociis natoque   penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam   tristique adipiscing elit eu scelerisque. Integer fringilla condimentum   nulla ullamcorper suscipit. Proin tincidunt risus nec lectus varius quis   bibendum quam sodales. Donec luctus rutrum pellentesque. Duis   ullamcorper placerat quam eu dictum. Nullam placerat commodo leo vitae   molestie. Aenean sit amet sollicitudin erat. Duis vel lorem non nulla   ornare eleifend. Mauris vehicula felis ac metus tincidunt laoreet. Nunc   condimentum tellus quis elit pretium tincidunt. Vivamus sed fermentum   turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    </section>
+    <section id="sect2">
+      <h2>Getter</h2>
+      <p></p>
+      <h2>Setter</h2>
+      <p>
+        <input type="button" name="width" id="width" value="width('400px')"><br>
+        <input type="button" name="innerWidth" id="innerWidth" value="innerWidth('400px')"><br>
+        <input type="button" name="outerWidth" id="outerWidth" value="outerWidth('400px')"><br>
+        <input type="button" name="outerWidthTrue" id="outerWidthTrue" value="outerWidth('400px', true)">
+      </p>
+      <p>
+        <input type="button" name="height" id="height" value="height('400px')">
+      </p>
+      <p>
+        <input type="button" name="offset" id="offset" value="offset({top:150, left:30}">
+      </p>
+    </section>
+    <div class="reset">&nbsp;</div>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

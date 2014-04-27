@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>jQuery: Bloemen masterpage</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#master {
+	text-align:center;
+}
+#master img {
+	margin: 0 10px;
+	border: solid 1px black;
+	box-shadow: 5px 5px 5px rgba(0,0,0,.7);
+}
+.foto {
+	float: right;
+	margin: 0 10px;
+	border: solid 1px lightGrey;
+	padding: 3px;
+	box-shadow: 3px 3px 3px rgba(51,51,51,1);
+}
+</style>
+<script>
+$(function() {
+	// Foutafhandeling
+	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
+		alert('Er is een fout opgetreden!\n' + thrownError);
+    });
+
+	// Wijzig selector van $('#_ a') naar $('#master a')
+	$('#_ a').click(function(e) {
+        e.preventDefault();
+		var url = $(this).attr('href');
+		$('#detail').load(url + ' #bloemInfo', function(){
+			// $('#bloemInfo p:first').remove();  // Verwijder link 'vorige pagina'
+		});
+    });
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Bloemen <span>(masterpage)</span></h1>
+    <section id="master"><a href="bloemenDetail.php?id=1"><img src="../assets/fotos/thumb_anjer.jpg" width="100" height="100" alt="Anjer"></a><a href="bloemenDetail.php?id=2"><img src="../assets/fotos/thumb_lelie.jpg" width="100" height="100" alt="Lelie"></a><a href="bloemenDetail.php?id=3"><img src="../assets/fotos/thumb_narcis.jpg" width="100" height="100" alt="Narcis"></a><a href="bloemenDetail.php?id=4"><img src="../assets/fotos/thumb_roos.jpg" width="100" height="100" alt="Roos"></a><a href="bloemenDetail.php?id=5"><img src="../assets/fotos/thumb_tulp.jpg" width="100" height="100" alt="Tulp"></a><a href="bloemenDetail.php?id=100"><img src="http://placekitten.com/g/100/100" width="100" height="100" alt="Foutief id"></a></section>
+    <p>&nbsp;</p>
+    <section id="detail"></section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

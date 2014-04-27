@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Variabelen en operatoren</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+p {
+	margin: 0 20px;
+}
+</style>
+<script>
+$(function() {
+	// variabelen declareren
+	var getal1 = 17;
+	var getal2 = 3;
+	var string1 = 'dag';
+	var string2 = 'Jan';
+	var string3 = '17';
+	var string4 = '3';
+	var bool1 = true;
+	var bool2 = false;
+	var ar1 = ['ma','di','wo'];
+	var obj1 = new Object;
+	var var1;
+	var var2 = null;
+	
+	// Dit (jQuery) script hoeft u voorlopig nog niet te begrijpen.
+	$('section p').each(function(index, element) {
+		var $functie = $.trim($(this).text());
+		var $info = $.trim($(this).data('info'));
+		if ($functie.length > 0) {
+			var resultaat = eval($functie);
+			if ($info.length > 0) {
+				$info = '&nbsp;&nbsp;&nbsp;<span style="color:grey">//' + $info + '</span>';
+			}
+			if (typeof(resultaat) == 'string') {
+				$(this).append(' = <span style="color:red">"' + resultaat + '"</span>' + $info);
+			} else {
+				$(this).append(' = <span style="color:red">' + resultaat + '</span>' + $info);
+			}
+		} else {
+			$(this).append('<br>');
+		}
+    });
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Variabelen en operatoren in JavaScript</h1>
+    <section>
+      <h2>Variabelen</h2>
+      <p>getal1</p>
+      <p>getal2</p>
+      <p>string1</p>
+      <p>string2</p>
+      <p data-info="de string 17">string3</p>
+      <p data-info="de string 3">string4</p>
+      <p>bool1</p>
+      <p>bool2</p>
+      <p>ar1</p>
+      <p>obj1</p>
+      <p>var1</p>
+      <p>var2</p>
+    </section>
+    <section>
+      <h2>Datatype controleren</h2>
+      <p>typeof(getal1)</p>
+      <p>typeof(getal2)</p>
+      <p>typeof(string1)</p>
+      <p>typeof(string2)</p>
+      <p>typeof(string3)</p>
+      <p>typeof(string4)</p>
+      <p data-info="een array is een object!">typeof(ar1)</p>
+      <p>typeof(obj1)</p>
+      <p>typeof(bool1)</p>
+      <p>typeof(bool2)</p>
+      <p>typeof(var1)</p>
+    </section>
+    <section>
+      <h2>Rekenkundige operatoren</h2>
+      <p>getal1</p>
+      <p>getal2</p>
+      <p>string3</p>
+      <p>string4</p>
+      <p>&nbsp;</p>
+      <p>getal1 + getal2</p>
+      <p>getal1 - getal2</p>
+      <p>getal1 * getal2</p>
+      <p>getal1 / getal2</p>
+      <p>getal1 % getal2</p>
+      <p></p>
+      <p style="color:blue" data-info="getal * string = getal!!!">getal2 * string3</p>
+      <p style="color:blue" data-info="getal + string = string!!!">getal2 + string3</p>
+      <p style="color:blue" data-info="string + string = string!!!">string3 + string4</p>
+      <p style="color:blue">getal1 / 0</p>
+      <p></p>
+      <p data-info="pre-increment: eerst + één, dan tonen">++getal2</p>
+      <p data-info="post-increment: eerst tonen, dan + één">getal2++</p>
+      <p data-info="vorige increment nu pas zichtbaar">getal2</p>
+      <p data-info="pre-decrement: eerst - één, dan tonen">--getal2</p>
+      <p data-info="post-decrement: eerst tonen, dan - één">getal2--</p>
+      <p data-info="vorige decrement nu pas zichtbaar">getal2</p>
+    </section>
+    <section>
+      <h2>Vergelijkende operatoren</h2>
+      <p>getal1</p>
+      <p>getal2</p>
+      <p>string3</p>
+      <p>string4</p>
+      <p>&nbsp;</p>
+      <p>(getal1 == getal2)</p>
+      <p>!(getal1 == getal2)</p>
+      <p>(getal1 &lt; getal2)</p>
+      <p>(getal1 &gt; getal2)</p>
+      <p>(getal1 &lt;= getal2)</p>
+      <p>(getal1 >= getal2)</p>
+      <p>(getal1 != getal2)</p>
+      <p></p>
+      <p style="color:blue" data-info="gelijk aan">(getal1 == string3)</p>
+      <p style="color:blue" data-info="gelijk aan EN van hetzelfde datatype">(getal1 === string3)</p>
+      <p style="color:blue" data-info="string '17' < string '3' !!!">(string3 < string4)</p>
+      <p style="color:blue" data-info="getal 17 > gatal 3">(parseInt(string3) < parseInt(string4))</p>
+    </section>
+    <section>
+    <h2>parseInt() en parseFloat()</h2>
+    <p>parseInt('3')</p>
+    <p>parseInt('54.74')</p>
+    <p>parseInt('14a7')</p>
+    <p data-info="Not A Number">parseInt('de78')</p>
+    <p>parseFloat('3')</p>
+    <p>parseFloat('54.74')</p>
+    <p>parseFloat(' 30 40 50 ')</p>
+    </section>
+    <section>
+      </section><section><h2>Logische operatoren</h2>
+      <p>getal1</p>
+      <p>getal2</p>
+      <p>&nbsp;</p>
+      <p>(getal1 == getal2)</p>
+      <p>!(getal1 == getal2)</p>
+      <p>(getal1 == 17 &amp;&amp; getal2 &lt; 2)</p>
+      <p>(getal1 == 17 || getal2 &lt; 2)</p>
+    </section>
+    <section>
+      <h2>String operatoren</h2>
+      <p>string1</p>
+      <p>string2</p>
+      <p>&nbsp;</p>
+      <p>string1 + string2</p>
+      <p>string1 + &quot; &quot; + string2</p>
+      <p data-info="string1 = string1 + string2">string1 += string2</p>
+      <p>string1</p>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

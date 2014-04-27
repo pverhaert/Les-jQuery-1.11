@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Constructor functie</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<script>
+var auto = function(kleur){
+	this.kleur = kleur;
+};
+$(function() {
+	// constructor functie voor het banner object
+	var Banner =  function(tag, kleur){
+		this.tag = tag;
+		this.bgKleur = kleur;
+		this.tekenBanner = function(){
+			$(this.tag).css('background-color', this.bgKleur);
+		}
+	};
+	// banner 1
+	var banner1 = new Banner('h1', 'lightGreen');
+	banner1.tekenBanner();
+	// banner 2
+	var banner2 = new Banner('p strong', 'yellow');
+	banner2.tekenBanner();
+	// banner 3
+	var banner3 = new Banner();
+	banner3.tag = 'h2';
+	banner3.bgKleur = 'orange';
+	banner3.tekenBanner();
+
+	// Datatype controleren
+	// Dit script hoeft u voorlopig nog niet te begrijpen.
+	$('#typeTest p').each(function(index, element) {
+		var $txt = $.trim($(this).text());
+		if ($txt.length > 0) {
+			var $res = eval($txt);
+			$(this).append(' = ' + $res);
+		}
+    });
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Constructor functie</h1>
+    <section>
+      <h2>Lorem</h2>
+      <p>Velit esse cillum dolore excepteur sint occaecat ut labore et dolore magna aliqua. Quis nostrud exercitation consectetur adipisicing elit, eu fugiat nulla pariatur. Sunt in culpa qui officia deserunt ullamco laboris nisi. <strong>Ut labore et dolore magna aliqua</strong>. Cupidatat non proident, quis nostrud exercitation eu fugiat nulla pariatur.</p>
+      <p>Ut enim ad minim veniam, <strong>consectetur</strong> adipisicing elit, ut labore et dolore magna aliqua. Ullamco laboris nisi. Sed do eiusmod tempor incididunt lorem ipsum dolor sit amet, velit esse cillum dolore.</p>
+    </section>
+    <section>
+      <h2>Ipsum</h2>
+      <p>Eu fugiat nulla pariatur. Cupidatat non proident, qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat ut enim ad minim veniam, sed do eiusmod tempor incididunt.Quis nostrud exercitation duis aute irure dolor mollit anim id est laborum. </p>
+      <p>Sunt in culpa sed do<strong> eiusmod tempor incididunt cupidatat </strong>non proident. Excepteur sint occaecat qui officia deserunt. Ullamco laboris nisi duis aute irure dolor ut enim ad minim veniam. Ut aliquip ex ea commodo consequat.</p>
+    </section>
+    <hr>
+    <section id="typeTest">
+      <h3>Datatype controleren met typeof()</h3>
+      <p>typeof(Banner)</p>
+      <p>typeof(banner1)</p>
+      <p>typeof(banner2)</p>
+      <p>typeof(banner3)</p>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

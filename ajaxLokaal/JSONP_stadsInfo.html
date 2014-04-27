@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/jQuery.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>jQuery: stadsinfo</title>
+<!-- InstanceEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+label {
+	width: 80px;
+}
+#stadslijst {
+	float:left;
+	width: 200px;
+	border: dotted 1px grey;
+	border-bottom: none;
+	font-size: 80%;
+	margin-bottom: 10px;
+}
+#stadslijst ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#stadslijst li {
+	color: #872651;
+	padding: 5px;
+	border-bottom: dotted 1px grey;
+	cursor: pointer;
+}
+#stadslijst li:hover {
+	background-color: #51606F;
+	color: white;
+}
+#stadInfo {
+	padding-left: 220px;
+}
+#stadInfo span {
+	color: #872651;
+	font-style: italic;	
+}
+#gMap {
+	float:right;
+}
+</style>
+<script>
+$(function() {
+	// Foutafhandeling
+	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
+		alert('Er is een fout opgetreden!\n' + thrownError);
+    });
+
+	$('#stadslijst, #stadInfo').hide();
+	
+	$('#geoForm').submit(function(e) {
+       e.preventDefault();
+    });
+	
+	// stadslijst
+	$('#q').keyup(function(e) {
+		if ($('#q').val().length > 2) {
+		var pars = $('#geoForm').serialize();
+		$.getJSON('http://gd.geobytes.com/AutoCompleteCity?callback=?&' + pars, function(data){
+			$('#stadslijst li').remove();
+			$.each(data, function(index, value) {
+				$('#stadslijst ul').append('<li>' + this + '</li>');
+			});
+			$('#stadslijst li:first').text() == '' ? $('#stadslijst, #stadInfo').hide() : $('#stadslijst, #stadInfo').show();
+		});
+		}
+    });
+	// detail van de stad
+	$('#stadslijst ul').on('mouseenter', 'li', function(){
+		var stad = $(this).text();
+        $.getJSON('http://gd.geobytes.com/GetCityDetails?callback=?&fqcn=' + stad, function(data){
+			$('#stadInfo h2').text(data.geobytescity);
+			$('#land').text(data.geobytescountry);
+			$('#inwoners').text(data.geobytespopulation);
+			$('#hoofdstad').text(data.geobytescapital);
+			$('#tijdzone').text(data.geobytestimezone);
+			$('#munt').text(data.geobytescurrency);
+			var lat = data.geobyteslatitude;
+			$('#lat').text(lat);
+			var lng = data.geobyteslongitude;
+			$('#lng').text(lng);
+			var mapURL = 'https://maps.googleapis.com/maps/api/staticmap?zoom=11&size=400x200&sensor=false&center=' + lat +',' +lng;
+			$('#gMap').attr('src', mapURL );
+		});
+	});
+});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- InstanceBeginEditable name="data" -->
+    <h1>Stadsinfo <span>(http://geobytes.com/)</span></h1>
+    <p><strong>API GeoBytes</strong>: <a href="http://www.geobytes.com/free-ajax-cities-jsonp-api.htm">http://www.geobytes.com/free-ajax-cities-jsonp-api.htm</a><br>
+      Voorbeeld stadslijst: 
+        <a href="http://gd.geobytes.com/AutoCompleteCity?q=antw">http://gd.geobytes.com/AutoCompleteCity?q=<strong>antw</strong></a><br>
+        Voorbeeld detail:
+        <a href="http://gd.geobytes.com/GetCityDetails?fqcn=Antwerp,+AN,+Belgium">http://gd.geobytes.com/GetCityDetails?fqcn=<strong>Antwerp,+AN,+Belgium</strong></a><br>
+      <strong>API static Google maps</strong>: <a href="https://developers.google.com/maps/documentation/staticmaps/">https://developers.google.com/maps/documentation/staticmaps/</a><br>
+        Voorbeeld Antwerpen: 
+        <a href="https://maps.googleapis.com/maps/api/staticmap?zoom=11&size=400x200&sensor=false&center=51.217,4.417">https://maps.googleapis.com/maps/api/staticmap?zoom=11&amp;size=400x200&amp;sensor=false&amp;center=<strong>51.217,4.417</strong></a><br>
+    <strong>Formatteer JSON</strong>:: <a href="http://jsonlint.com/">http://jsonlint.com/</a></p>
+    <h2>Filter</h2>
+    <form name="geoForm" id="geoForm" method="get" action="http://www.geobytes.com/">
+    <p>
+      <label for="q">Zoek stad:</label>
+      <input type="text" name="q" id="q">
+    </p>
+    </form>
+    <aside id="stadslijst">
+      <ul>
+      </ul>
+    </aside>
+    <section id="stadInfo">
+      <img id="gMap" src="http://lorempixum.com/400/200" alt="Google map" class="drop-shadow">
+      <h2>Stad</h2>
+      <p>Land: <span id="land">...</span><br>
+        Aantal inwoners: <span id="inwoners">...</span><br>
+        Hoofdstad: <span id="hoofdstad">...</span> </p>
+      <p>Latitude: <span id="lat">...</span><br>
+        Longitude: <span id="lng">...</span>
+      </p>
+      <p>Munteenheid: <span id="munt">...</span></p>
+      <p>Tijdzone: <span id="tijdzone">...</span></p>
+    </section>
+    <!-- end .content --> 
+    <!-- InstanceEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+<!-- InstanceEnd --></html>

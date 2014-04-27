@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>jQuery</title>
+<!-- TemplateEndEditable -->
+<link href="../css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="../_jQuery/jquery.min.js"></script>
+<script src="../_jQuery/les.js"></script>
+<!-- TemplateBeginEditable name="head" -->
+<script>
+$(function() {
+	// script hier
+});
+</script>
+<!-- TemplateEndEditable -->
+</head>
+<body>
+<div id="outline">
+  <header>
+    <nav id="mainNav"><a href="../index.html" id="h">Homepage</a> | <a href="../opdrachten/index.html" id="o">Opdrachten</a></nav>
+  </header>
+  <article> <!-- TemplateBeginEditable name="data" -->
+    <h1>Heading1</h1>
+    <section>
+      <h2>Heading2</h2>
+      <p>Ullamco laboris nisi quis nostrud exercitation ut aliquip ex ea commodo consequat. Sunt in culpa cupidatat non proident, eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, in reprehenderit in voluptate ut enim ad minim veniam. Ut aliquip ex ea commodo consequat.</p>
+      <p>Consectetur adipisicing elit, duis aute irure dolor ut labore et dolore magna aliqua. Qui officia deserunt in reprehenderit in voluptate quis nostrud exercitation. Excepteur sint occaecat. Ut aliquip ex ea commodo consequat.</p>
+      <p>Duis aute irure dolor excepteur sint occaecat in reprehenderit in voluptate. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Qui officia deserunt ut aliquip ex ea commodo consequat. Cupidatat non proident, velit esse cillum dolore ullamco laboris nisi.</p>
+    </section>
+    <!-- end .content --> 
+    <!-- TemplateEndEditable --> </article>
+  <footer>
+    <p>&nbsp;</p>
+  </footer>
+  <!-- end .container --> 
+</div>
+</body>
+</html>
