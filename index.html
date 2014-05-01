@@ -13,6 +13,16 @@
 <script src="_jQuery/jquery.min.js"></script>
 <script src="_jQuery/les.js"></script>
 <!-- InstanceBeginEditable name="head" -->
+<style>
+aside {
+	width: 300px;
+	border: solid 1px grey;
+	float: right;
+	clear: both;
+	padding: 20px;
+	margin-bottom: 20px !important;
+}
+</style>
 <script>
 $(function() {	
 	$('#mainNav').remove();
@@ -29,6 +39,14 @@ $(function() {
   <article> <!-- InstanceBeginEditable name="data" -->
     <h1>Overzicht</h1>
     <section id="overzicht">
+      <aside class="drop-shadow">
+        <h3>jQuery sheet cheat</h3>
+        <p>Zie map <a href="http://oscarotero.com/jquery/">http://oscarotero.com/jquery/</a></p>
+      </aside>
+      <aside class="drop-shadow">
+        <h3><a id="opdrachten"></a>Extra opdrachten</h3>
+        <p>Zie map <a href="opdrachten/index.html">opdrachten</a></p>
+      </aside>
       <h2><a id="jsIntro"></a>Hoofdstuk 2: inleiding tot JavaScript</h2>
       <ul>
         <li><a href="jsIntro/error.html">JavaScript console</a></li>
@@ -141,8 +159,6 @@ $(function() {
         <li>Cross-site scripting (JSON): <a href="ajaxServer/XSS/googleGeo.html">Google Geocoding</a></li>
         <li>Cross-site scripting (XML): <a href="ajaxServer/XSS/itunes.html">iTunes</a></li>
       </ul>
-      <h2><a id="opdrachten"></a>Extra opdrachten</h2>
-      <p>Zie map <a href="opdrachten/index.html">opdrachten</a></p>
     </section>
     <!-- end .content --> <!-- InstanceEndEditable --> </article>
   <footer>
