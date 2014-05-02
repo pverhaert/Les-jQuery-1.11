@@ -28,3 +28,6 @@ Volgende onderwerpen komen aan bod.
 - Voldoende kennis van HTML en CSS nodig.
 - Alle oefeningen in dit boek zijn geschreven in HTML5 en CSS3.
 
+##Update:
+
+- 02-05-2014: **jquery.min.js** aangepast naar **versie 1.11.1**.
