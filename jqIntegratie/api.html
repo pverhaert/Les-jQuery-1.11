@@ -34,9 +34,11 @@ $(function() {
 		//$('#sect2').css({boxShadow: '5px 5px 3px grey', color: 'green', width: '700px'});
 	});
 	$('#setter3').click(function(){
-		$('#sect2').css({fontSize: function(i, v){
-			return parseFloat(v) * 1.2;
-		}});
+		$('#sect2').css({
+			fontSize: function(){
+				return parseFloat($('#sect2').css('font-size')) * 1.2;
+			}
+		});
 	});
 });
 </script>
@@ -58,7 +60,7 @@ $(function() {
       <ul>
         <li><a href="javascript:;" id="setter1">$('#sect2').css('width', '400px');</a></li>
         <li><a href="javascript:;" id="setter2">$('#sect2').css({'box-shadow': '5px 5px 3px grey', 'color': 'green', 'width': '700px'});</a></li>
-        <li><a href="javascript:;" id="setter3">$('#sect2').css({fontSize: function(i, v){ return parseFloat(v) * 1.2; }});</a></li>
+        <li><a href="javascript:;" id="setter3">$('#sect2').css({fontSize: function(){ return parseFloat($('#sect2').css('font-size')) * 1.2; }});</a></li>
       </ul>
     </section>
     <section id="sect2">

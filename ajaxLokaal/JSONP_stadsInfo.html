@@ -73,7 +73,7 @@ $(function() {
 			$.each(data, function(index, value) {
 				$('#stadslijst ul').append('<li>' + this + '</li>');
 			});
-			$('#stadslijst li:first').text() == '' ? $('#stadslijst, #stadInfo').hide() : $('#stadslijst, #stadInfo').show();
+			$('#stadslijst li:first').text() == '' ? $('#stadslijst, #stadInfo').hide() : $('#stadslijst').show();
 		});
 		}
     });
@@ -94,6 +94,7 @@ $(function() {
 			var mapURL = 'https://maps.googleapis.com/maps/api/staticmap?zoom=11&size=400x200&sensor=false&center=' + lat +',' +lng;
 			$('#gMap').attr('src', mapURL );
 		});
+		$('#stadInfo').show();
 	});
 });
 </script>
