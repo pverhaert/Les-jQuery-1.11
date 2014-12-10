@@ -26,16 +26,10 @@ label {
 </style>
 <script>
 $(function() {
-	// Foutafhandeling
-	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
-		alert('Er is een fout opgetreden!\n' + thrownError);
-    });
-
 	$('#year').change(function(e) {
-		var url = decodeURIComponent('http://www.informazout.be/nl/mazoutprijs?year=' + $(this).val());
+		var url = encodeURIComponent('http://www.informazout.be/nl/mazoutprijs?year=' + $(this).val());
 		url = 'proxy.php?url=' + url;	// Apache webserver
 		//url = 'proxy.asp?url=' + url;	// IIS webserver
-	
 		$('#mazout').load(url + ' table', function(e) {
 			//
 		});  

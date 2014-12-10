@@ -27,11 +27,6 @@ label {
 </style>
 <script>
 $(function() {
-	// Foutafhandeling
-	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
-		alert('Er is een fout opgetreden!\n' + thrownError);
-    });
-
 	// Wijzig selector van $('#_') naar $('#form')
 	$('#_').submit(function(e) {
         e.preventDefault();

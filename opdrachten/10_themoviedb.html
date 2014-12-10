@@ -30,11 +30,6 @@ section {
 </style>
 <script>
 $(function() {
-	// Foutafhandeling
-	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
-		alert('Er is een fout opgetreden!\n' + thrownError);
-    });
-
 	var key = '23afca60ebf72f8d88cdcae2c4f31866';
 	$('#keuzelijst, #detail').hide();
 	

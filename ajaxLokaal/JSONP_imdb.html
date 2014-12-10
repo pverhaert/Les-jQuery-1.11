@@ -26,11 +26,6 @@ label {
 </style>
 <script>
 $(function() {
-	// Foutafhandeling
-	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
-		alert('Er is een fout opgetreden!\n' + thrownError);
-    });
-
 	$('#imdbInfo, #preloader').hide();
 	
 	$('#imdbForm').submit(function(e) {

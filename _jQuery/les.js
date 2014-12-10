@@ -21,11 +21,16 @@ $(function() {
 		$('#mainNav').html('<a href="javascript:;" id="closeWindow">Sluit venster</a>');
 	}
 
-
 	$('#mainNav').on('click', '#hisBack', function(){
 		history.back();
 	});
 	$('#mainNav').on('click', '#closeWindow', function(){
 		window.close();
 	});
+	
+	// Ajax foutafhandeling
+	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
+		alert('Er is een fout opgetreden!\n' + thrownError);
+    });
+
 });

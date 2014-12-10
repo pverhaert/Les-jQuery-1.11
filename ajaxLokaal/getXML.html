@@ -27,11 +27,6 @@
 
 <script>
 $(function() {
-	// Foutafhandeling
-	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
-		alert('Er is een fout opgetreden!\n' + thrownError);
-    });
-
 	$.get('data/bloemen.xml', function(data) {
 		var bloem = $(data).find('bloem');
  		$.each(bloem, function(index, value) {

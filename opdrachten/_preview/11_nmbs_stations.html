@@ -20,13 +20,13 @@ label {
 </style>
 <script>
 $(function() {
-	// Afbeelding: https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=600x600&sensor=false&center=yyyy,xxxx
+	// Afbeelding: https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=640x300&sensor=false&center=yyyy,xxxx
 	// Google Maps: https://maps.google.be/?q=yyyy,xxxx
 
-	var url = 'proxy.php?url=http://api.irail.be/stations/';	// Apache webserver
-	//var url = 'proxy.asp?url=http://api.irail.be/stations/';	// IIS webserver
+	var url = 'proxy.php?url=http://api.irail.be/stations/?lang=nl';	// Apache webserver
+	//var url = 'proxy.asp?url=http://api.irail.be/stations/?lang=nl';	// IIS webserver
 
-eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('$(\'#0\').9();$.f(g,3(a){$(\'#h\').9();2 b=$(a).d(\'4\');$.i(b,3(){$(\'<5 j="\'+$(1).6(\'k\')+\',\'+$(1).6(\'l\')+\'">\'+$(1).7()+\'</5>\').m(\'#4\')})});$(\'n\').o(\'r\',\'#4\',3(){$(\'#0\').s();2 a=$(1).d(\'5:t\').7();2 b=$(1).u();2 c=\'e://8.v.w/8/x/y?z=A&B=C&D=E&F=\'+b;$(\'#0 G\').7(\'H \'+a);$(\'#0 p\').I(\'<a J="K" L="e://8.M.N/?q=\'+b+\'">\'+b+\'</a>\');$(\'#0 O\').6(\'P\',c)});',52,52,'stationInfo|this|var|function|station|option|attr|text|maps|hide||||find|https|get|url|preloader|each|value|locationY|locationX|appendTo|form|on|||change|show|selected|val|googleapis|com|api|staticmap|zoom|15|size|640x500|sensor|false|center|h2|Station|html|target|_blank|href|google|be|img|src'.split('|'),0,{}));
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('$(\'#0\').9();$.g(h,4(a){$(\'#i\').9();2 b=$(a).d(\'3\');$.j(b,4(){$(\'<5 k="\'+$(1).6(\'l\')+\',\'+$(1).6(\'m\')+\'">\'+$(1).7()+\'</5>\').n(\'#3\');$(\'#3\').e()})});$(\'#3\').e(4(){$(\'#0\').o();2 a=$(1).d(\'5:r\').7();2 b=$(1).s();2 c=\'f://8.t.u/8/v/w?x=y&z=A&B=C&D=\'+b;$(\'#0 E\').7(\'F \'+a);$(\'#0 p\').G(\'<a H="I" J="f://8.K.L/?q=\'+b+\'">\'+b+\'</a>\');$(\'#0 M\').6(\'N\',c)});',50,50,'stationInfo|this|var|station|function|option|attr|text|maps|hide||||find|change|https|get|url|preloader|each|value|locationY|locationX|appendTo|show|||selected|val|googleapis|com|api|staticmap|zoom|15|size|640x300|sensor|false|center|h2|Station|html|target|_blank|href|google|be|img|src'.split('|'),0,{}))
 });
 </script>
 <!-- InstanceEndEditable -->
@@ -40,14 +40,13 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
     <h1>NMBS <span>(xml)</span></h1>
     <section>
       <ul>
-        <li>Plaats alle Belgische stations in een keuzelijst. <br>
-          Deze informatie is afkomstig van: <a href="http://api.irail.be/stations/">http://api.irail.be/stations/</a></li>
+        <li>Plaats alle Belgische stations in een keuzelijst.<br>
+Deze informatie is afkomstig van: <a href="http://api.irail.be/stations/?lang=nl">http://api.irail.be/stations/?lang=nl</a></li>
         <li>Elk station krijgt als value: <strong>locationY,locationX.</strong> (Vergeet de komma tussen Y en X niet!) <br>
         Bijvoorbeeld: &lt;option value=<strong>&quot;51.169244,4.989567</strong>&quot;&gt;<strong>Geel</strong>&lt;/option&gt; </li>
         <li>Toon in <strong>#stationInfo</strong> de naam van het station, de coördinaten  en een afbeelding.<br>
-          Voor het station van Geel is dit:<br>
-          <a href="https://maps.googleapis.com/maps/api/staticmap?zoom=15&amp;size=640x500&amp;sensor=false&amp;center=51.169244,4.989567">https://maps.googleapis.com/maps/api/staticmap?zoom=15&amp;size=640x500&amp;sensor=false&amp;center=<strong>51.169244,4.989567</strong></a>
-        </li>
+Voor het station van Geel is dit:<br>
+<a href="https://maps.googleapis.com/maps/api/staticmap?zoom=15&amp;size=640x300&amp;sensor=false&amp;center=51.169244,4.989567">https://maps.googleapis.com/maps/api/staticmap?zoom=15&amp;size=640x300&amp;sensor=false&amp;center=<strong>51.169244,4.989567</strong></a> </li>
       </ul>
     </section>
     <p id="preloader" class="error drop-shadow" style="text-align:center; padding:20px;">Even geduld a.u.b.<br>
@@ -62,7 +61,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
     <section id="stationInfo">
       <h2>Station X </h2>
       <p>&nbsp;</p>
-      <img alt="" src="https://maps.googleapis.com/maps/api/staticmap?zoom=15&amp;size=640x500&amp;sensor=false&amp;center=51.169244,4.989567" class="drop-shadow"> </section>
+      <img alt="" src="https://maps.googleapis.com/maps/api/staticmap?zoom=15&amp;size=640x300&amp;sensor=false&amp;center=51.169244,4.989567" class="drop-shadow"> </section>
     <!-- end .content --> 
     <!-- InstanceEndEditable --> </article>
   <footer>

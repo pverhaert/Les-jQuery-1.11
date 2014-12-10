@@ -20,11 +20,6 @@ section span {
 </style>
 <script>
 $(function() {
-	// Foutafhandeling
-	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
-		alert('Er is een fout opgetreden!\n' + thrownError);
-    });
-
 	// XML
 	$.get('data/adres.xml', function(data) {
 		$('#xmlData h2').text($(data).find('naam:first').text());

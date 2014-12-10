@@ -21,11 +21,6 @@
 </style>
 <script>
 $(function() {
-	// Foutafhandeling
-	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
-		alert('Er is een fout opgetreden!\n' + thrownError);
-    });
-
 	// Bepaal geolocatie met de HTML5 Geolocation API
 	var lat = 0;
 	var lng = 0;

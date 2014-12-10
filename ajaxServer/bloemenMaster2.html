@@ -24,11 +24,6 @@
 </style>
 <script>
 $(function() {
-	// Foutafhandeling
-	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
-		alert('Er is een fout opgetreden!\n' + thrownError);
-    });
-
 	$('#form').submit(function(e) {
         e.preventDefault();
 		var str = $('#id').serialize();

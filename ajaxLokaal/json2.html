@@ -15,11 +15,6 @@
 <!-- InstanceBeginEditable name="head" -->
 <script>
 $(function() {
-	// Foutafhandeling
-	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
-		alert('Er is een fout opgetreden!\n' + thrownError);
-    });
-
 	$.getJSON('data/bloemen2.json', function(data) {
 		//alert('data:\n' + data + '\n\ndata[0].titel:\n' + data[0].titel);
 		$('#aantal').text(data.length);

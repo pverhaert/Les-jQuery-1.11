@@ -28,11 +28,6 @@
 
 <script>
 $(function() {
-	// Foutafhandeling
-	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
-		alert('Er is een fout opgetreden!\n' + thrownError);
-    });
-
 	$.get('data/bloemen3.json', function(data) {
 		//alert('data:\n' + data + '\n\ndata.bloemzaden:\n' + data.bloemzaden + '\n\ndata.bloem:\n' + data.bloem  + '\n\ndata.bloem[0].titel:\n' + data.bloem[0].titel);
 		// bloemzaden
