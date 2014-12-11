@@ -40,11 +40,6 @@
 
 <script>
 $(function() {
-	// Foutafhandeling
-	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
-		alert('Er is een fout opgetreden!\n' + thrownError);
-    });
-
 	$('#preloader, #boekDetail').hide();
 	$('#isbn').change(function(e) {
 		$('#preloader').show();

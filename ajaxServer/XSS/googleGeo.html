@@ -30,11 +30,6 @@
 
 <script>
 $(function() {
-	// Foutafhandeling
-	$(document).ajaxError(function(event, jqXHR, settings, thrownError) {
-		alert('Er is een fout opgetreden!\n' + thrownError);
-    });
-
 	$('#preloader, #map').hide();
 	$('#mapsForm').submit(function(e) {
 		e.preventDefault();
