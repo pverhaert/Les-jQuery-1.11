@@ -34,35 +34,11 @@ $(function() {
 	$('#keuzelijst, #detail').hide();
 	
 	$('#movieForm').submit(function(e) {
-        e.preventDefault();
-		var pars = $(this).serialize();
-		$.getJSON('http://api.themoviedb.org/3/search/movie?api_key='+ key + '&' + pars + '&jsoncallback=' + key , function(data){
-			$('#movieID option').remove();
-			var titels = data.results;
-			var items = data.results.length;
-			if (items == 0) {
-				alert('Geen films gevonden'); 
-				$('#keuzelijst').hide()
-			} else {
-				$('#keuzelijst').show();
-			}
-			$.each(titels, function(index, value) {
-				$('#movieID').append('<option value="' + titels[index].id + '">' + titels[index].title + '</option>');				
-			});
-			$('#movieID').change();
-		});
+        
     });
 	
 	$('#movieID').change(function(e) {
-        var id = $(this).val();
-		$.getJSON('http://api.themoviedb.org/3/movie/' + id + '?api_key='+ key + '&jsoncallback=' + key , function(data){
-			var img = data.poster_path;
-			$('#cover').attr('src', 'http://cf2.imgobject.com/t/p/w185/' + img);
-			$('#title').text(data.title);
-			$('#overview').text(data.overview);
-			$('#homepage').html('<a href="'+ data.homepage + '">' + data.homepage + '</a>');
-			$('#detail').show();
-		});
+        
     });
 	$('#movieForm').submit();
 });

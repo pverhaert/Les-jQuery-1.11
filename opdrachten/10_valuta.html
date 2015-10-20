@@ -34,13 +34,6 @@ form {
 <script>
 $(function() {
 	// Valuta omrekenen
-	$('#valutaForm').submit(function(e) {
-        //
-    }).submit();
-	
-	$('input, select').change(function(e) {
-        $('#valutaForm').submit();
-    });;
 });
 </script>
 <!-- InstanceEndEditable -->
@@ -54,15 +47,18 @@ $(function() {
     <h1>Valuta omrekenen <span>(JSONP)</span></h1>
     <section>
       <ul>
-        <li>Met behulp van deze  calculator kan u 11 verschillende valuta omrekenen. De  wisselkoersen worden dagelijks vernieuwd. Bijvoorbeeld:<br>
-          <a href="http://rate-exchange.appspot.com/currency?from=USD&to=EUR&q=1">http://rate-exchange.appspot.com/currency?from=USD&amp;to=EUR&amp;q=1</a><br>
-          <a href="http://rate-exchange.appspot.com/currency?from=EUR&to=USD&q=50">http://rate-exchange.appspot.com/currency?from=EUR&amp;to=USD&amp;q=50</a></li>
-        <li>Rond het resultaat tot op drie cijfers na de komma af.</li>
+        <li>Met behulp van <a href="https://currency-api.appspot.com/" target="_blank">deze  calculator</a> kan u een dertigtal verschillende valuta omrekenen. De  wisselkoersen worden dagelijks vernieuwd. Bijvoorbeeld:<br>
+			<a href="https://currency-api.appspot.com/api/USD/EUR.json?amount=1">https://currency-api.appspot.com/api/USD/EUR.json?amount=1</a><br>
+        	<a href="https://currency-api.appspot.com/api/USD/EUR.json?amount=25">https://currency-api.appspot.com/api/USD/EUR.json?amount=25</a></li>
+        <li><strong>LET OP</strong>: gebruik in de code<em> <br>
+          https://currency-api.appspot.com/api/EUR/USD.json<strong>p</strong>?<strong>callback=?&amp;</strong>amount=1<br>
+          </em>i.p.v.<em><br>
+        https://currency-api.appspot.com/api/EUR/USD.json?amount=1</em></li>
         <li>Voor een volledige lijst van valuta namen, zie: <a href="http://www.xe.com/iso4217.php">http://www.xe.com/iso4217.php</a></li>
       </ul>
     </section>
-    <form name="valutaForm" id="valutaForm" method="get" action="http://rate-exchange.appspot.com/currency?">
-      <input type="text" name="q" id="q" value="1">
+    <form name="valutaForm" id="valutaForm" method="get" action="https://currency-api.appspot.com/">
+      <input type="text" name="amount" id="amount" value="1">
       <label for="from">&nbsp;</label>
       <select name="from" id="from">
         <option value="EUR" selected>EUR - Euro</option>
@@ -71,7 +67,7 @@ $(function() {
         <option value="INR">INR - Indian Rupee</option>
         <option value="AUD">AUD - Australian Dollar</option>
         <option value="CAD">CAD - Canadian Dollar</option>
-        <option value="AED">AED - Emirati Dirham</option>
+        <option value="FJD">FJD - Fiji Dollar</option>
         <option value="MYR">MYR - Malaysian Ringgit</option>
         <option value="CHF">CHF - Swiss Franc</option>
         <option value="CNY">CNY - Chinese Yuan Renminbi</option>
