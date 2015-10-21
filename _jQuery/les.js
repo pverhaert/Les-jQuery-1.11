@@ -4,7 +4,7 @@ $(function() {
 	
 	$('.codeVersie').html(codeVersie);
 	$('footer p').html('<a href="https://leanpub.com/jq11">Efficiënt scripten met jQuery</a> versie: ' + codeVersie);
-	$('a[href^="http://"]').filter('a:not([target])').attr('target','_blank');
+	$('a[href^="http://"], a[href^="https://"]').filter('a:not([target])').attr('target','_blank');
 	
 	// Plaats ankers op homelink
 	var thisPath = window.location.pathname;
