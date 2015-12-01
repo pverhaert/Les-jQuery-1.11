@@ -40,7 +40,7 @@ $(function() {
 	
 	// Verwerk gegevens
 	function verwerkData() {
-		$.getJSON('http://api.wunderground.com/api/adaebe40743a9ca6/forecast/geolookup/lang:NL/q/' + lat +',' + lng +'.json?callback=?' , function(data){
+		$.getJSON('http://api.wunderground.com/api/291369cc63912a1e/forecast/geolookup/lang:NL/q/' + lat +',' + lng +'.json?callback=?' , function(data){
 			//
 		});
 	};
@@ -59,10 +59,10 @@ $(function() {
       <li>Bepaal uw coördinaten aan de hand van <a href="http://www.w3schools.com/html5/html5_geolocation.asp">HTML5 geolocation API</a>. (Dode staat reeds op de pagina.)<br>
       Toon de coördinaten in de span-tag <strong>#latLng</strong>.</li>
       <li>Haal de gegevens in JSONP op via de URL:<br>
-        <a href="http://api.wunderground.com/api/adaebe40743a9ca6/forecast/geolookup/lang:NL/q/xxx,yyy.json">http://api.wunderground.com/api/adaebe40743a9ca6<strong>/forecast/geolookup</strong>/lang:NL/q/xxx,yyy.json</a><br>
+        <a href="http://api.wunderground.com/api/291369cc63912a1e/forecast/geolookup/lang:NL/q/xxx,yyy.json">http://api.wunderground.com/api/291369cc63912a1e<strong>/forecast/geolookup</strong>/lang:NL/q/xxx,yyy.json</a><br>
       Met <strong>xxx</strong> de waarde van <strong>lat</strong> en <strong>yyy</strong> de waarde van <strong>lng</strong>.<br>
       Onderstaande link toont het weerbericht  voor Bobbejaanland (lat = 51.20164, lng = 4.9025).<br>
-      <a href="http://api.wunderground.com/api/adaebe40743a9ca6/forecast/geolookup/lang:NL/q/51.20164,4.9025.json">http://api.wunderground.com/api/adaebe40743a9ca6/forecast/geolookup/lang:NL/q/51.20164,4.9025.json</a>      </li>
+      <a href="http://api.wunderground.com/api/291369cc63912a1e/forecast/geolookup/lang:NL/q/51.20164,4.9025.json">http://api.wunderground.com/api/291369cc63912a1e/forecast/geolookup/lang:NL/q/51.20164,4.9025.json</a>      </li>
       <li>Bekijk het resultaat van de JSON-requert en toon volgende gegevens:<br>
         Toon gemeente en land in de <strong>h2-tag #locatie</strong>.</li>
       <li>Plaats het weer elke dag (dag, icoon en omschrijving) in een<strong> div-tag</strong> met class <strong>.drop-shadow</strong>.</li>
